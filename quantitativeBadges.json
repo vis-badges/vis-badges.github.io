@@ -1,0 +1,47 @@
+[
+  {
+    "label": "Missing Values",
+    "link": "https://example.com/datasource",
+    "tooltip": "Percentage of missing values in the dataset.",
+    "type": "Data",
+    "values": [
+      { "value": "1%", "color": "success.main", "icon": "Timeline" }
+    ]
+  },
+  {
+    "label": "Missing Values",
+    "link": "https://example.com/datasource",
+    "tooltip": "Percentage of missing values in the dataset.",
+    "type": "Data",
+    "values": [
+      { "value": "10%", "color": "warning.main", "icon": "Timeline" }
+    ]
+  },
+  {
+    "label": "Missing Values",
+    "link": "https://example.com/datasource",
+    "tooltip": "Percentage of missing values in the dataset.",
+    "type": "Data",
+    "values": [
+      { "value": "25%", "color": "error.main", "icon": "Timeline" }
+    ]
+  },
+  {
+    "label": "Data Sources",
+    "link": "https://example.com/datasource",
+    "tooltip": "Indicates the number of data sources used",
+    "type": "Data",
+    "values": [
+      { "value": "3", "color": "primary.main", "icon": "DataArray" }
+    ]
+  },
+  {
+    "label": "Shows only top",
+    "link": "https://example.com/datasource",
+    "tooltip": "Indicates the number of data sources used",
+    "type": "Data",
+    "values": [
+      { "value": "10 elements", "color": "primary.main", "icon": "FilterList" }
+    ]
+  }
+]
