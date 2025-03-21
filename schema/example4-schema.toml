@@ -1,0 +1,23 @@
+[badge]
+badge-name = "Missing data"
+description = "Indicates that "
+intent = "Warning"
+type = "Analysis"
+tags = []
+group = "Uncertainty Representation"
+
+[badge.attributes]
+data-type = "Quantity"
+values = []
+unit = "%"
+
+display-behavior = ["on-hover"]
+
+[badge.relations]
+mutual-exclusive = []
+dependencies = []
+complements = ["Uncertainty Shown"]
+inferred-from = []
+
+[badge.scope]
+value = "Chart"

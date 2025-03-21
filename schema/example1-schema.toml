@@ -1,0 +1,23 @@
+[badge]
+badge-name = "Data Source Disclosed"
+description = "Indicates that this visualization has one or more disclosed data sources."
+intent = "Confirmation"
+type = "Data"
+tags = []
+group = "Data Source"
+
+[badge.attributes]
+data-type = "Binary"
+values = []
+unit = ""
+
+[badge.relations]
+mutual-exclusive = ["No Data Source Disclosed"]
+dependencies = []
+complements = ["Data Source Citation"]
+inferred-from = []
+
+[badge.scope]
+value = "Page"
+
+display-behavior = ["on-hover"]

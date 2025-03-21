@@ -1,0 +1,24 @@
+[badge]
+badge-name = "Truncated Axis"
+description = "Indicates that the axis in the chart is truncated and does not start at zero."
+intent = "Warning"
+type = "Visual Encoding"
+tags = []
+
+group = "Axis Design"
+
+[badge.attributes]
+data-type = "Binary"
+values = []
+unit = ""
+
+display-behavior = ["on-hover"]
+
+[badge.relations]
+mutual-exclusive = ["Axis Starts at Zero"]
+dependencies = []
+complements = []
+inferred-from = []
+
+[badge.scope]
+value = "Chart"

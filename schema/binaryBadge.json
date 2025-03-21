@@ -1,0 +1,6 @@
+{
+  "label": SHORT TEXT,
+  "description": TEXT,
+  "intent": "CONFIRMATION | INFORMATION | WARNING",
+  "category": "DATA | ANALYSIS | VISUAL ENCODING | CONTEXT | INTERACTION"
+},

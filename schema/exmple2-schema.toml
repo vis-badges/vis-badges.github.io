@@ -1,0 +1,24 @@
+[badge]
+badge-name = "Contains Predictions"
+description = "Indicates that the entire or parts of the data are future predictions, implying uncertainty."
+intent = "Confirmation"
+type = "Analysis"
+tags = []
+
+group = "Uncertainty"
+
+[badge.attributes]
+data-type = "Ordinal"
+values = ["No predictions", "Some predictions", "Entire dataset is a prediction"]
+unit = ""
+
+display-behavior = ["on-hover", "on-click"]
+
+[badge.relations]
+mutual-exclusive = []
+dependencies = ["Contains Modeled Data"]
+complements = ["Uncertainty Shown"]
+inferred-from = []
+
+[badge.scope]
+value = "Page"
