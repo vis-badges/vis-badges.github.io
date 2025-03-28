@@ -1,16 +1,11 @@
-// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles.css'; // Import your global styles
+import './styles.css';
 import App from './App';
 import Type1Page from "./pages/Type1Page";
-import {createBrowserRouter, createHashRouter, RouterProvider} from "react-router-dom";
+import {createHashRouter, RouterProvider} from "react-router-dom";
 import DbLayout from "./layout/DbLayout";
-import BadgeTable from "./pages/BadgeTable";
-import OrdinalBadgeDataGrid from "./pages/OrdinalBadgeGrid";
-import QuantitativeBadgeGrid from "./pages/QuantitativeBadgeGrid"
 import BadgeDataGrid from "./pages/BadgeTable";
-import {createTheme, ThemeProvider} from "@mui/material/styles";
 
 const router = createHashRouter([
     {
@@ -25,44 +20,23 @@ const router = createHashRouter([
                         Component: BadgeDataGrid,
                     },
                     {
-                        path: 'type1',
+                        path: 'compact',
                         Component: Type1Page
                     },
                     {
-                        path: 'type2',
+                        path: 'table',
                         Component: BadgeDataGrid
-                    },
-                    {
-                        path: 'ordinalBadges',
-                        Component: OrdinalBadgeDataGrid
-                    },
-                    {
-                        path: 'quantitativeBadges',
-                        Component: QuantitativeBadgeGrid
                     }
                     ]
             },
         ],
     },
 ]);
-const theme = createTheme({
-    components: {
-        MuiChip: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: 'salmon',
-                }
-            },
-        },
-    },
-});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <ThemeProvider theme={theme}>
         <RouterProvider router={router} />
-        </ThemeProvider>
      </React.StrictMode>
 );
 

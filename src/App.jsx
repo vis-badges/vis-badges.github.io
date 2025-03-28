@@ -1,14 +1,9 @@
 import {ReactRouterAppProvider} from "@toolpad/core/react-router";
 import {Outlet} from "react-router-dom";
-import Label from "@mui/icons-material/Label";
 import Type1Page from "./pages/Type1Page";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import Apps from "@mui/icons-material/Apps";
-import DescriptionIcon from "@mui/icons-material/Description";
-import LayersIcon from "@mui/icons-material/Layers";
 import React from "react";
-import {createTheme, ThemeProvider} from "@mui/material/styles";
-import {Create, ViewList} from "@mui/icons-material";
+import {ViewList} from "@mui/icons-material";
 
 
 const BRANDING = {
@@ -19,13 +14,13 @@ const BRANDING = {
 
 const NAVIGATION = [
     {
-        segment: 'type1',
+        segment: 'compact',
         title: 'Chart Badges Catalog',
         icon: <Apps />,
         component: Type1Page
     },
     {
-        segment: 'type2',
+        segment: 'table',
         title: 'Chart Badges',
         icon:  <ViewList />,
     },
