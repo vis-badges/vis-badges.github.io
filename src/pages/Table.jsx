@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import {Box, TextField, IconButton, Tooltip, Button} from '@mui/material';
+import { Box, TextField, IconButton, Tooltip, Button } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import { DataGrid } from '@mui/x-data-grid';
 import useBadges from '../hooks/useBadges';
@@ -57,14 +57,17 @@ export default function BadgeDataGrid() {
                 const badge = params.value;
                 const chipColor = computeChipColor(badge, colorMode, muiColor);
                 return (
-                    <BadgeRenderer
-                        forwardedRef={(el) => (badgeRefs.current[params.id] = el)}
-                        badge={badge}
-                        size={chipSize}
-                        variant={chipVariant}
-                        chipColor={chipColor}
-                        renderProps={{ leftIconKey, rightIconKey }}
-                    />
+                    // Wrap in a Box that disables pointer events to prevent clicks on the badge.
+                    <Box sx={{ pointerEvents: 'none' }}>
+                        <BadgeRenderer
+                            forwardedRef={(el) => (badgeRefs.current[params.id] = el)}
+                            badge={badge}
+                            size={chipSize}
+                            variant={chipVariant}
+                            chipColor={chipColor}
+                            renderProps={{ leftIconKey, rightIconKey }}
+                        />
+                    </Box>
                 );
             },
         },
