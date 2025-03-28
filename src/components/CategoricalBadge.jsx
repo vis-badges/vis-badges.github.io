@@ -1,12 +1,8 @@
-import React, {
-    useState,
-    useRef,
-    forwardRef,
-    useImperativeHandle,
-} from 'react';
+// CategoricalBadge.jsx
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import { Box, Chip, Tooltip, Stack, Collapse, Badge, Avatar } from '@mui/material';
 import * as Icons from '@mui/icons-material';
-import domtoimage from 'dom-to-image';
+import {downloadNodeAsPng} from "./utils/downloadUtils";
 
 function getMuiIcon(iconName) {
     if (!iconName || !Icons[iconName]) return null;
@@ -16,11 +12,17 @@ function getMuiIcon(iconName) {
 
 function getAvatarElement(avatar) {
     if (!avatar) return null;
-    if (avatar.type === 'letter') {
-        return <Avatar>{avatar.value}</Avatar>;
-    }
-    if (avatar.type === 'image') {
-        return <Avatar src={avatar.value} />;
+    if (avatar.type === 'letter') return <Avatar>{avatar.value}</Avatar>;
+    if (avatar.type === 'image') return <Avatar src={avatar.value} />;
+    return null;
+}
+
+// Helper to determine which icon to render.
+function resolveIcon(key, badge) {
+    if (key === 'avatar') return getAvatarElement(badge.avatar);
+    if (key !== 'none') {
+        const iconValue = key === 'icon1' ? badge.icon1 : key === 'icon2' ? badge.icon2 : badge.icon3;
+        return getMuiIcon(iconValue);
     }
     return null;
 }
@@ -30,8 +32,8 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
         badge,
         size = 'medium',
         variant = 'filled',
-        leftIconKey = 'icon1', // 'none', 'avatar', 'icon1', 'icon2', 'icon3'
-        rightIconKey = 'icon1', // 'none', 'icon1', 'icon2', 'icon3'
+        leftIconKey = 'icon1', // options: 'none', 'avatar', 'icon1', 'icon2', 'icon3'
+        rightIconKey = 'icon1', // options: 'none', 'icon1', 'icon2', 'icon3'
         chipColor = 'default',
     },
     ref
@@ -41,70 +43,25 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
 
     const values = Array.isArray(badge.values) ? badge.values : [];
     const count = values.length;
-
-    const validMuiColors = [
-        'default',
-        'primary',
-        'secondary',
-        'success',
-        'warning',
-        'error',
-        'info',
-    ];
+    const validMuiColors = ['default', 'primary', 'secondary', 'success', 'warning', 'error', 'info'];
     const isMuiColor = validMuiColors.includes(chipColor);
 
-    let leftIcon = null;
-    if (leftIconKey === 'avatar') {
-        leftIcon = getAvatarElement(badge.avatar);
-    } else if (leftIconKey !== 'none') {
-        let iconValue;
-        if (leftIconKey === 'icon1') iconValue = badge.icon1;
-        else if (leftIconKey === 'icon2') iconValue = badge.icon2;
-        else if (leftIconKey === 'icon3') iconValue = badge.icon3;
-        leftIcon = getMuiIcon(iconValue);
-    }
-
-    let rightIcon = null;
-    if (rightIconKey !== 'none') {
-        let iconValue;
-        if (rightIconKey === 'icon1') iconValue = badge.icon1;
-        else if (rightIconKey === 'icon2') iconValue = badge.icon2;
-        else if (rightIconKey === 'icon3') iconValue = badge.icon3;
-        rightIcon = getMuiIcon(iconValue);
-    }
+    const leftIcon = resolveIcon(leftIconKey, badge);
+    const rightIcon = resolveIcon(rightIconKey, badge);
 
     const muiSize = size === 'large' ? 'medium' : 'small';
     const labelHidden = size === 'small';
     const mainChipLabel = labelHidden ? '' : badge.label;
 
     const handleExpandClick = () => {
-        setExpanded(!expanded);
+        setExpanded((prev) => !prev);
     };
 
     const downloadBadge = () => {
-        const scale = 100; // Adjust scale for desired resolution
         const node = badgeRef.current;
         if (!node) return;
-        const width = node.clientWidth * scale;
-        const height = node.clientHeight * scale;
-        domtoimage
-            .toPng(node, {
-                width,
-                height,
-                style: {
-                    transform: `scale(${scale})`,
-                    transformOrigin: 'top left',
-                },
-            })
-            .then((dataUrl) => {
-                const pngLink = document.createElement('a');
-                pngLink.download = `${badge.badgeName || badge.label}.png`;
-                pngLink.href = dataUrl;
-                pngLink.click();
-            })
-            .catch((error) => {
-                console.error('oops, something went wrong!', error);
-            });
+        const fileName = `${badge.badgeName || badge.label}.png`;
+        downloadNodeAsPng(node, fileName, 100);
     };
 
     useImperativeHandle(ref, () => ({
@@ -117,7 +74,6 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
                 label={mainChipLabel}
                 size={muiSize}
                 variant={variant}
-                // Render avatar if leftIconKey is 'avatar'; otherwise render icon
                 avatar={leftIconKey === 'avatar' ? leftIcon : null}
                 icon={leftIconKey !== 'avatar' ? leftIcon : null}
                 deleteIcon={rightIcon}
@@ -125,15 +81,15 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
                 clickable
                 onClick={handleExpandClick}
                 color={isMuiColor ? chipColor : 'default'}
-                sx={{
-                    ...(!isMuiColor && {
+                sx={
+                    !isMuiColor && {
                         backgroundColor: chipColor,
                         color: '#fff',
-                    }),
-                }}
+                    }
+                }
             />
 
-            {!expanded && !!count && (
+            {!expanded && count > 0 && (
                 <Badge
                     badgeContent={count}
                     sx={{
@@ -164,16 +120,8 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
             <Collapse in={expanded} timeout={0} sx={{ transition: 'none' }} unmountOnExit>
                 <Stack direction="row" flexWrap="wrap" mt={0.3}>
                     {values.map((val, idx) => {
-                        let subLabel, subTooltip, subLink;
-                        if (typeof val === 'object' && val !== null) {
-                            subLabel = val.label || '';
-                            subTooltip = val.tooltip || '';
-                            subLink = val.link;
-                        } else {
-                            subLabel = String(val);
-                            subTooltip = '';
-                            subLink = null;
-                        }
+                        const { label: subLabel = '', tooltip: subTooltip = '', link: subLink } =
+                            typeof val === 'object' && val !== null ? val : { label: String(val) };
                         return (
                             <Tooltip key={idx} title={subTooltip}>
                                 <Chip

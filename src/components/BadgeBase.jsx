@@ -1,7 +1,7 @@
 import React from 'react';
-import {Avatar, Box, Chip, Tooltip} from '@mui/material';
+import { Avatar, Box, Chip, Tooltip } from '@mui/material';
 import * as Icons from '@mui/icons-material';
-import {BiSolidInfoSquare} from "react-icons/bi";
+import { BiSolidInfoSquare } from 'react-icons/bi';
 
 function mapChipSize(customSize) {
     switch (customSize) {
@@ -16,31 +16,32 @@ function mapChipSize(customSize) {
     }
 }
 
-function getMuiIcon(iconName, customSize) {
+function getMuiIcon(iconName, size) {
     if (!iconName) return null;
 
-    if (iconName === "Info" && customSize === "small") {
-        return <BiSolidInfoSquare size={18} />
-    }
-    else if (iconName === "Info" && customSize === 'medium') {
-        return <BiSolidInfoSquare size={18} />
-    }
-    else if (iconName === "Info" && customSize === 'large') {
-        return <BiSolidInfoSquare size={22} />;
+    if (iconName === 'Info') {
+        const iconSize = size === 'large' ? 22 : 18;
+        return <BiSolidInfoSquare size={iconSize} />;
     }
 
     if (!Icons[iconName]) return null;
-
     const IconComponent = Icons[iconName];
     return <IconComponent fontSize="small" />;
 }
+
 function getAvatarElement(avatar) {
     if (!avatar) return null;
-    if (avatar.type === 'letter') {
-        return <Avatar>{avatar.value}</Avatar>;
-    }
-    if (avatar.type === 'image') {
-        return <Avatar src={avatar.value} />;
+    if (avatar.type === 'letter') return <Avatar>{avatar.value}</Avatar>;
+    if (avatar.type === 'image') return <Avatar src={avatar.value} />;
+    return null;
+}
+
+// Helper to determine which icon to render.
+function resolveIcon(key, { avatar, icon1, icon2, icon3 }, size) {
+    if (key === 'avatar') return getAvatarElement(avatar);
+    if (key !== 'none') {
+        const iconValue = key === 'icon1' ? icon1 : key === 'icon2' ? icon2 : icon3;
+        return getMuiIcon(iconValue, size);
     }
     return null;
 }
@@ -55,40 +56,21 @@ export default function BadgeBase({
                                       size = 'medium',
                                       variant = 'filled',
                                       // leftIconKey and rightIconKey determine what is shown.
-                                      // For left, "avatar" will render the avatar; "none" renders nothing; otherwise the corresponding icon.
+                                      // For left, "avatar" renders the avatar; "none" renders nothing; otherwise the corresponding icon.
                                       leftIconKey = 'icon1',
                                       rightIconKey = 'icon1',
                                       chipColor = 'default',
                                   }) {
     const { muiSize, hideLabel } = mapChipSize(size);
-
-    let leftIcon = null;
-    if (leftIconKey === 'avatar') {
-        leftIcon = getAvatarElement(avatar);
-    } else if (leftIconKey !== 'none') {
-        let iconValue;
-        if (leftIconKey === 'icon1') iconValue = icon1;
-        else if (leftIconKey === 'icon2') iconValue = icon2;
-        else if (leftIconKey === 'icon3') iconValue = icon3;
-        leftIcon = getMuiIcon(iconValue, size);
-    }
-
-    let rightIcon = null;
-    if (rightIconKey !== 'none') {
-        let iconValue;
-        if (rightIconKey === 'icon1') iconValue = icon1;
-        else if (rightIconKey === 'icon2') iconValue = icon2;
-        else if (rightIconKey === 'icon3') iconValue = icon3;
-        rightIcon = getMuiIcon(iconValue, size);
-    }
-
-    const finalLabel = hideLabel ? '' : label;
+    const leftIcon = resolveIcon(leftIconKey, { avatar, icon1, icon2, icon3 }, size);
+    const rightIcon = resolveIcon(rightIconKey, { avatar, icon1, icon2, icon3 }, size);
+    const displayLabel = hideLabel ? '' : label;
 
     return (
         <Box>
             <Tooltip title={description}>
                 <Chip
-                    label={finalLabel}
+                    label={displayLabel}
                     size={muiSize}
                     variant={variant}
                     avatar={leftIconKey === 'avatar' ? leftIcon : null}
@@ -102,4 +84,3 @@ export default function BadgeBase({
         </Box>
     );
 }
-

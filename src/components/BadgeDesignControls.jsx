@@ -1,5 +1,16 @@
+// BadgeDesignControls.jsx
 import React from 'react';
-import { Box, FormControl, InputLabel, Select, MenuItem, ToggleButtonGroup, ToggleButton, IconButton, Tooltip } from '@mui/material';
+import {
+    Box,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem,
+    ToggleButtonGroup,
+    ToggleButton,
+    IconButton,
+    Tooltip,
+} from '@mui/material';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 
 const muiColorOptions = [
@@ -13,12 +24,18 @@ const muiColorOptions = [
 ];
 
 export default function BadgeDesignControls({
-                                                chipSize, setChipSize,
-                                                chipVariant, setChipVariant,
-                                                colorMode, setColorMode,
-                                                muiColor, setMuiColor,
-                                                leftIconKey, setLeftIconKey,
-                                                rightIconKey, setRightIconKey,
+                                                chipSize,
+                                                setChipSize,
+                                                chipVariant,
+                                                setChipVariant,
+                                                colorMode,
+                                                setColorMode,
+                                                muiColor,
+                                                setMuiColor,
+                                                leftIconKey,
+                                                setLeftIconKey,
+                                                rightIconKey,
+                                                setRightIconKey,
                                             }) {
     return (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center', mb: 2 }}>
@@ -44,19 +61,25 @@ export default function BadgeDesignControls({
             {/* Color Mode selection comes before icon selections */}
             <FormControl size="small" sx={{ minWidth: 160 }}>
                 <InputLabel>Color Mode</InputLabel>
-                <Select value={colorMode === 'standard' ? muiColor : colorMode} label="Color Mode" onChange={(e) => {
-                    const val = e.target.value;
-                    if (muiColorOptions.some(opt => opt.value === val)) {
-                        setColorMode('standard');
-                        setMuiColor(val);
-                    } else {
-                        setColorMode(val);
-                    }
-                }}>
+                <Select
+                    value={colorMode === 'standard' ? muiColor : colorMode}
+                    label="Color Mode"
+                    onChange={(e) => {
+                        const val = e.target.value;
+                        if (muiColorOptions.some((opt) => opt.value === val)) {
+                            setColorMode('standard');
+                            setMuiColor(val);
+                        } else {
+                            setColorMode(val);
+                        }
+                    }}
+                >
                     <MenuItem value="intent">INTENT</MenuItem>
                     <MenuItem value="type">CATEGORY</MenuItem>
-                    {muiColorOptions.map(color => (
-                        <MenuItem key={color.value} value={color.value}>{color.label}</MenuItem>
+                    {muiColorOptions.map((color) => (
+                        <MenuItem key={color.value} value={color.value}>
+                            {color.label}
+                        </MenuItem>
                     ))}
                 </Select>
             </FormControl>
