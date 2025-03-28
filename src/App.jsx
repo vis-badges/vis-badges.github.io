@@ -3,12 +3,13 @@ import {Outlet} from "react-router-dom";
 import Compact from "./pages/Compact";
 import Apps from "@mui/icons-material/Apps";
 import React from "react";
-import {ViewList} from "@mui/icons-material";
+import {Category, ViewList} from "@mui/icons-material";
 
 
 const BRANDING = {
-    title: 'Chart Badges: A Framework for communicating Provenance to Non Experts Audiences for Consideration and Awareness',
-    // logo: <InsertEmoticonIcon />,
+    title: 'Visualization Badges: Communicating Design and Provenance through Graphical Labels Alongside Visualizations',
+    logo: ""
+    // logo: <Category />,
     // homeUrl: 'http://google.com',
 };
 
