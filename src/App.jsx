@@ -8,7 +8,6 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import LayersIcon from "@mui/icons-material/Layers";
 import React from "react";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-import BadgeEditorPage from "./pages/BadgeEditor";
 import {Create, ViewList} from "@mui/icons-material";
 
 

@@ -11,7 +11,6 @@ import OrdinalBadgeDataGrid from "./pages/OrdinalBadgeGrid";
 import QuantitativeBadgeGrid from "./pages/QuantitativeBadgeGrid"
 import BadgeDataGrid from "./pages/BadgeTable";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-import BadgeEditorPage from "./pages/BadgeEditor";
 
 const router = createHashRouter([
     {
@@ -40,11 +39,7 @@ const router = createHashRouter([
                     {
                         path: 'quantitativeBadges',
                         Component: QuantitativeBadgeGrid
-                    },
-                    {
-                        path: 'badgeEditor',
-                        Component: BadgeEditorPage
-                    },
+                    }
                     ]
             },
         ],

@@ -2,7 +2,6 @@ import React from 'react';
 import { Stack, IconButton, Tooltip, Box } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { ThemeSwitcher } from "@toolpad/core/DashboardLayout";
-import SearchBar from './SearchBar';
 import useBadges from "../hooks/useBadges"; // Our new search component
 
 export default function ToolbarActionsSearch( ) {
@@ -34,7 +33,7 @@ export default function ToolbarActionsSearch( ) {
                 </IconButton>
             </Tooltip>
 
-            <SearchBar badges={badges} />
+            {/*<SearchBar badges={badges} />*/}
         </Stack>
     );
 }
