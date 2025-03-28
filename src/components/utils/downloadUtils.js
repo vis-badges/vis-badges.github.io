@@ -9,6 +9,7 @@ export function downloadNodeAsPng(node, fileName, scale = 100) {
         .toPng(node, {
             width,
             height,
+            bgcolor: 'transparent', // ensures no background is applied
             style: {
                 transform: `scale(${scale})`,
                 transformOrigin: 'top left',

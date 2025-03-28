@@ -1,20 +1,18 @@
+// Table.jsx
 import React, { useState, useRef } from 'react';
-import { Box, Typography, TextField, IconButton, Tooltip } from '@mui/material';
+import { Box, TextField, IconButton, Tooltip } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import { DataGrid } from '@mui/x-data-grid';
 import useBadges from '../hooks/useBadges';
-import BinaryBadge from '../components/BinaryBadge';
-import OrdinalBadge from '../components/OrdinalBadge';
-import QuantitativeBadge from '../components/QuantitativeBadge';
-import CategoricalBadge from '../components/CategoricalBadge';
 import BadgeDesignControls from '../components/BadgeDesignControls';
+import BadgeRenderer from "../components/BadgeRenderer";
+import {computeChipColor} from "../components/utils/badgeUtils";
 
 export default function BadgeDataGrid() {
     const { badges, loading, error } = useBadges();
-    // Store refs to rendered badge components, keyed by row id
     const badgeRefs = useRef({});
 
-    // State for badge display options
+    // Badge display options
     const [chipSize, setChipSize] = useState("medium");
     const [chipVariant, setChipVariant] = useState("filled");
     const [leftIconKey, setLeftIconKey] = useState("icon1");
@@ -28,7 +26,7 @@ export default function BadgeDataGrid() {
     if (error) return <div>Error: {error.message}</div>;
     if (!Array.isArray(badges)) return <div>Error: Expected badges data to be an array.</div>;
 
-    // Filtering logic
+    // Filter badges based on search and selection
     let filteredBadges = badges;
     if (searchQuery) {
         filteredBadges = filteredBadges.filter(b =>
@@ -40,36 +38,7 @@ export default function BadgeDataGrid() {
         filteredBadges = filteredBadges.filter(b => b.label === selectedBadge);
     }
 
-    function computeChipColor(badge) {
-        switch (colorMode) {
-            case 'standard': return muiColor;
-            case 'intent': return mapIntentToColor(badge.intent);
-            case 'type': return mapTypeToColor(badge.type);
-            default: return 'default';
-        }
-    }
-
-    function mapIntentToColor(intent) {
-        switch (intent) {
-            case 'CONFIRMATION': return 'success';
-            case 'WARNING': return 'warning';
-            case 'INFORMATION': return 'info';
-            default: return 'default';
-        }
-    }
-
-    function mapTypeToColor(type) {
-        switch (type) {
-            case 'DATA': return 'primary';
-            case 'ANALYSIS': return 'secondary';
-            case 'CONTEXT': return 'info';
-            case 'INTERACTION': return 'warning';
-            case 'VISUAL ENCODING': return 'default';
-            default: return 'default';
-        }
-    }
-
-    // Prepare rows for DataGrid; include badgeType from the badge JSON
+    // Prepare rows for DataGrid
     const rows = filteredBadges.map((badge, index) => ({
         id: index,
         badge,
@@ -88,58 +57,17 @@ export default function BadgeDataGrid() {
             filterable: false,
             renderCell: (params) => {
                 const badge = params.value;
-                const chipColor = computeChipColor(badge);
-                // For each badge type, render the appropriate badge component and assign a ref.
-                if (badge.badgeType === "ORDINAL") {
-                    return (
-                        <OrdinalBadge
-                            ref={(el) => (badgeRefs.current[params.id] = el)}
-                            badge={badge}
-                            size={chipSize}
-                            variant={chipVariant}
-                            leftIconKey={leftIconKey}
-                            rightIconKey={rightIconKey}
-                            chipColor={chipColor}
-                        />
-                    );
-                } else if (badge.badgeType === "QUANTITATIVE") {
-                    return (
-                        <QuantitativeBadge
-                            ref={(el) => (badgeRefs.current[params.id] = el)}
-                            badge={badge}
-                            size={chipSize}
-                            variant={chipVariant}
-                            leftIconKey={leftIconKey}
-                            rightIconKey={rightIconKey}
-                            chipColor={chipColor}
-                        />
-                    );
-                } else if (badge.badgeType === "CATEGORICAL") {
-                    return (
-                        <CategoricalBadge
-                            ref={(el) => (badgeRefs.current[params.id] = el)}
-                            badge={badge}
-                            size={chipSize}
-                            variant={chipVariant}
-                            leftIconKey={leftIconKey}
-                            rightIconKey={rightIconKey}
-                            chipColor={chipColor}
-                        />
-                    );
-                } else {
-                    // Default to binary badge
-                    return (
-                        <BinaryBadge
-                            ref={(el) => (badgeRefs.current[params.id] = el)}
-                            badge={badge}
-                            size={chipSize}
-                            variant={chipVariant}
-                            leftIconKey={leftIconKey}
-                            rightIconKey={rightIconKey}
-                            chipColor={chipColor}
-                        />
-                    );
-                }
+                const chipColor = computeChipColor(badge, colorMode, muiColor);
+                return (
+                    <BadgeRenderer
+                        forwardedRef={(el) => (badgeRefs.current[params.id] = el)}
+                        badge={badge}
+                        size={chipSize}
+                        variant={chipVariant}
+                        chipColor={chipColor}
+                        renderProps={{ leftIconKey, rightIconKey }}
+                    />
+                );
             },
         },
         {
@@ -177,7 +105,6 @@ export default function BadgeDataGrid() {
             flex: 0.8,
             filterable: false,
             renderCell: (params) => {
-                const badge = params.row.badge;
                 return (
                     <Tooltip title="Download Badge (PNG)">
                         <IconButton
@@ -201,7 +128,7 @@ export default function BadgeDataGrid() {
 
     return (
         <Box sx={{ p: 2 }}>
-             <BadgeDesignControls
+            <BadgeDesignControls
                 chipSize={chipSize}
                 setChipSize={setChipSize}
                 chipVariant={chipVariant}
@@ -216,9 +143,9 @@ export default function BadgeDataGrid() {
                 setRightIconKey={setRightIconKey}
             />
 
-            {/* Search */}
             <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
                 <TextField
+                    size={"small"}
                     label="Search badges"
                     variant="outlined"
                     fullWidth

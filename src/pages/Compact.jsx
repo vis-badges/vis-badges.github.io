@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
-import { Box, Grid2, Typography } from '@mui/material';
-
-import BinaryBadge from "../components/BinaryBadge";
-import OrdinalBadge from "../components/OrdinalBadge";
-import QuantitativeBadge from "../components/QuantitativeBadge";
-import CategoricalBadge from "../components/CategoricalBadge";
-import BadgeDesignControls from "../components/BadgeDesignControls";
-import useBadges from "../hooks/useBadges";
+import { Box, TextField } from '@mui/material';
+import Grid2 from '@mui/material/Grid';
+import BadgeDesignControls from '../components/BadgeDesignControls';
+import useBadges from '../hooks/useBadges';
+import BadgeRenderer from "../components/BadgeRenderer";
+import { computeChipColor } from "../components/utils/badgeUtils";
 
 export default function Compact() {
     const { badges, loading, error } = useBadges();
 
-    // Default left element is "icon"
-    const [leftElement, setLeftElement] = useState('icon');
+    // Badge design options for compact display using the provided controls
     const [chipSize, setChipSize] = useState("medium");
     const [chipVariant, setChipVariant] = useState("filled");
-    // Remove separate left element states and derive them below.
-    const [withIcon2, setWithIcon2] = useState(false);
-
+    const [leftIconKey, setLeftIconKey] = useState("icon1");
+    const [rightIconKey, setRightIconKey] = useState("none");
     const [colorMode, setColorMode] = useState("intent");
     const [muiColor, setMuiColor] = useState("default");
-
-    const [typeFilter, setTypeFilter] = useState("All");
-    const [badgeTypeFilter, setBadgeTypeFilter] = useState("All");
+    const [searchQuery, setSearchQuery] = useState("");
+    const [selectedBadge, setSelectedBadge] = useState(null);
 
     if (loading) return <div>Loading badges...</div>;
     if (error) return <div>Error: {error.message}</div>;
@@ -35,14 +30,19 @@ export default function Compact() {
         );
     }
 
-    // Filter badges
+    // Filter badges based on searchQuery and selectedBadge
     let filteredBadges = badges;
-    if (typeFilter !== "All") {
-        filteredBadges = filteredBadges.filter(b => b.type === typeFilter);
+    if (searchQuery) {
+        filteredBadges = filteredBadges.filter(b =>
+            b.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (b.description && b.description.toLowerCase().includes(searchQuery.toLowerCase()))
+        );
     }
-    if (badgeTypeFilter !== "All") {
-        filteredBadges = filteredBadges.filter(b => b.badgeType === badgeTypeFilter);
+    if (selectedBadge) {
+        filteredBadges = filteredBadges.filter(b => b.label === selectedBadge);
     }
+
+    // Group badges by intent
     const groupedBadges = filteredBadges.reduce((groups, badge) => {
         const key = badge.intent || "Other";
         if (!groups[key]) groups[key] = [];
@@ -56,41 +56,6 @@ export default function Compact() {
         return indexA - indexB;
     });
 
-    function mapIntentToColor(intent) {
-        switch (intent) {
-            case 'CONFIRMATION': return 'success';
-            case 'WARNING': return 'warning';
-            case 'Information': return 'info';
-            default: return 'default';
-        }
-    }
-    function mapTypeToColor(type) {
-        switch (type) {
-            case 'DATA': return 'primary';
-            case 'ANALYSIS': return 'secondary';
-            case 'CONTEXT': return 'info';
-            case 'INTERACTION': return 'warning';
-            case 'VISUAL ENCODING': return 'default';
-            default: return 'default';
-        }
-    }
-    function computeChipColor(badge) {
-        switch (colorMode) {
-            case 'standard':
-                return muiColor;
-            case 'intent':
-                return mapIntentToColor(badge.intent);
-            case 'type':
-                return mapTypeToColor(badge.type);
-            default:
-                return 'default';
-        }
-    }
-
-    // Derive left side booleans based on leftElement
-    const derivedWithAvatar = leftElement === 'avatar';
-    const derivedWithIcon1 = leftElement === 'icon';
-
     return (
         <Box sx={{ p: 2 }}>
             <BadgeDesignControls
@@ -98,84 +63,51 @@ export default function Compact() {
                 setChipSize={setChipSize}
                 chipVariant={chipVariant}
                 setChipVariant={setChipVariant}
-                leftElement={leftElement}
-                setLeftElement={setLeftElement}
-                withIcon2={withIcon2}
-                setWithIcon2={setWithIcon2}
+                leftIconKey={leftIconKey}
+                setLeftIconKey={setLeftIconKey}
+                rightIconKey={rightIconKey}
+                setRightIconKey={setRightIconKey}
                 colorMode={colorMode}
                 setColorMode={setColorMode}
                 muiColor={muiColor}
                 setMuiColor={setMuiColor}
-                typeFilter={typeFilter}
-                setTypeFilter={setTypeFilter}
-                badgeTypeFilter={badgeTypeFilter}
-                setBadgeTypeFilter={setBadgeTypeFilter}
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                selectedBadge={selectedBadge}
+                setSelectedBadge={setSelectedBadge}
             />
+
+            {/* Optionally include a search bar if not integrated in BadgeDesignControls */}
+            <Box sx={{ mb: 1 }}>
+                <TextField
+                    size={"small"}
+                    label="Search badges"
+                    variant="outlined"
+                    fullWidth={false}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </Box>
 
             {sortedIntentKeys.map((intent) => (
                 <Box key={intent} sx={{ mb: 4 }}>
                     <Grid2 container spacing={2}>
                         {groupedBadges[intent].map((badge, idx) => {
-                            const chipColor = computeChipColor(badge);
-                            // Render appropriate badge component based on badgeType,
-                            // passing derivedWithAvatar and derivedWithIcon1 in place of withAvatar/withIcon1.
-                            if (badge.badgeType === "ORDINAL") {
-                                return (
-                                    <Grid2 item key={idx}>
-                                        <OrdinalBadge
-                                            badge={badge}
-                                            size={chipSize}
-                                            variant={chipVariant}
-                                            withAvatar={derivedWithAvatar}
-                                            withIcon1={derivedWithIcon1}
-                                            withIcon2={withIcon2}
-                                            chipColor={chipColor}
-                                        />
-                                    </Grid2>
-                                );
-                            } else if (badge.badgeType === "QUANTITATIVE") {
-                                return (
-                                    <Grid2 item key={idx}>
-                                        <QuantitativeBadge
-                                            badge={badge}
-                                            size={chipSize}
-                                            variant={chipVariant}
-                                            withAvatar={derivedWithAvatar}
-                                            withIcon1={derivedWithIcon1}
-                                            withIcon2={withIcon2}
-                                            chipColor={chipColor}
-                                        />
-                                    </Grid2>
-                                );
-                            } else if (badge.badgeType === "CATEGORICAL") {
-                                return (
-                                    <Grid2 item key={idx}>
-                                        <CategoricalBadge
-                                            badge={badge}
-                                            size={chipSize}
-                                            variant={chipVariant}
-                                            withAvatar={derivedWithAvatar}
-                                            withIcon1={derivedWithIcon1}
-                                            withIcon2={withIcon2}
-                                            chipColor={chipColor}
-                                        />
-                                    </Grid2>
-                                );
-                            } else {
-                                return (
-                                    <Grid2 item key={idx}>
-                                        <BinaryBadge
-                                            badge={badge}
-                                            size={chipSize}
-                                            variant={chipVariant}
-                                            withAvatar={derivedWithAvatar}
-                                            withIcon1={derivedWithIcon1}
-                                            withIcon2={withIcon2}
-                                            chipColor={chipColor}
-                                        />
-                                    </Grid2>
-                                );
-                            }
+                            const chipColor = computeChipColor(badge, colorMode, muiColor);
+                            return (
+                                <Grid2 item key={idx}>
+                                    <BadgeRenderer
+                                        badge={badge}
+                                        size={chipSize}
+                                        variant={chipVariant}
+                                        chipColor={chipColor}
+                                        renderProps={{
+                                            leftIconKey,
+                                            rightIconKey,
+                                        }}
+                                    />
+                                </Grid2>
+                            );
                         })}
                     </Grid2>
                 </Box>
