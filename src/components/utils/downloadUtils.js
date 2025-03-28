@@ -1,7 +1,7 @@
 // downloadUtils.js
 import domtoimage from 'dom-to-image';
 
-export function downloadNodeAsPng(node, fileName, scale = 100) {
+export function downloadNodeAsPng(node, fileName, scale = 50) {
     if (!node) return;
     const width = node.clientWidth * scale;
     const height = node.clientHeight * scale;

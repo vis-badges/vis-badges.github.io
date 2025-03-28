@@ -14,7 +14,7 @@ const BinaryBadge = forwardRef(function BinaryBadge(
         const node = badgeRef.current;
         if (!node) return;
         const fileName = `${badge.badgeName || badge.label}.png`;
-        downloadNodeAsPng(node, fileName, 100);
+        downloadNodeAsPng(node, fileName);
     };
 
     useImperativeHandle(ref, () => ({
