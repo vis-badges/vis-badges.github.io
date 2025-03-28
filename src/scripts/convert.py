@@ -8,11 +8,11 @@ icon_intent_map = {
 }
 
 icon_scope_map = {
-    "DATA": "DataUsage",
-    "ANALYSIS": "QueryStats",
-    "VISUAL ENCODING": "BlurOn",
-    "INTERACTION": "TouchApp",
-    "CONTEXT": "Album"
+    "DATA": "DatasetOutlined",
+    "ANALYSIS": "AnalyticsOutlined",
+    "VISUAL ENCODING": "BubbleChartOutlined",
+    "INTERACTION": "TouchAppOutlined",
+    "CONTEXT": "QueryStatsOutlined"
 }
 
 # def get_icon_topic(topics, label):
@@ -61,7 +61,7 @@ with open(csv_path, newline='', encoding='utf-8') as csvfile:
         }
         badges.append(badge)
 
-json_output_path = 'badges.json'
+json_output_path = 'db.json'
 with open(json_output_path, 'w', encoding='utf-8') as jsonfile:
     json.dump(badges, jsonfile, indent=2)
 

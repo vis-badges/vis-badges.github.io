@@ -11,7 +11,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -26,7 +26,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -41,7 +41,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -56,7 +56,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -72,7 +72,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -87,7 +87,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -103,7 +103,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -119,7 +119,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -134,7 +134,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -150,7 +150,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -166,7 +166,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -182,7 +182,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -198,7 +198,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -213,7 +213,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -228,7 +228,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -243,7 +243,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -258,7 +258,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -273,7 +273,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -288,7 +288,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -303,7 +303,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -318,7 +318,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -333,7 +333,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -348,7 +348,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -363,7 +363,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -378,7 +378,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -395,7 +395,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -412,7 +412,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -428,7 +428,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -444,7 +444,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -460,7 +460,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -476,7 +476,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -491,7 +491,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -507,7 +507,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -523,7 +523,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -538,7 +538,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -554,7 +554,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -569,7 +569,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -584,7 +584,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -599,7 +599,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -614,7 +614,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -629,7 +629,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -645,7 +645,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -660,7 +660,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -676,7 +676,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -693,7 +693,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -709,7 +709,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -725,7 +725,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -741,7 +741,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -757,7 +757,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -773,7 +773,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -788,7 +788,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -803,7 +803,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -818,7 +818,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -834,7 +834,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -849,7 +849,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -864,7 +864,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -879,7 +879,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -894,7 +894,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -909,7 +909,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -924,7 +924,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -939,7 +939,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -954,7 +954,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -969,7 +969,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -984,7 +984,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -999,7 +999,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1014,7 +1014,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1029,7 +1029,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1044,7 +1044,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1059,7 +1059,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1074,7 +1074,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1089,7 +1089,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1104,7 +1104,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1119,7 +1119,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "TouchApp",
+    "iconScope": "TouchAppOutlined",
     "iconTopic": ""
   },
   {
@@ -1134,7 +1134,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "TouchApp",
+    "iconScope": "TouchAppOutlined",
     "iconTopic": ""
   },
   {
@@ -1149,7 +1149,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "TouchApp",
+    "iconScope": "TouchAppOutlined",
     "iconTopic": ""
   },
   {
@@ -1164,7 +1164,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "TouchApp",
+    "iconScope": "TouchAppOutlined",
     "iconTopic": ""
   },
   {
@@ -1179,7 +1179,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "TouchApp",
+    "iconScope": "TouchAppOutlined",
     "iconTopic": ""
   },
   {
@@ -1194,7 +1194,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "TouchApp",
+    "iconScope": "TouchAppOutlined",
     "iconTopic": ""
   },
   {
@@ -1210,7 +1210,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "TouchApp",
+    "iconScope": "TouchAppOutlined",
     "iconTopic": ""
   },
   {
@@ -1226,7 +1226,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "TouchApp",
+    "iconScope": "TouchAppOutlined",
     "iconTopic": ""
   },
   {
@@ -1241,7 +1241,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1257,7 +1257,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1272,7 +1272,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1287,7 +1287,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1302,7 +1302,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1318,7 +1318,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1334,7 +1334,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1349,7 +1349,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1365,7 +1365,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1381,7 +1381,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1396,7 +1396,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1409,7 +1409,7 @@
     "topics": [],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1422,7 +1422,7 @@
     "topics": [],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1435,7 +1435,7 @@
     "topics": [],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1448,7 +1448,7 @@
     "topics": [],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1464,7 +1464,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1479,7 +1479,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1492,7 +1492,7 @@
     "topics": [],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1508,7 +1508,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1523,7 +1523,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1538,7 +1538,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1553,7 +1553,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1568,7 +1568,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1583,7 +1583,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1598,7 +1598,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1613,7 +1613,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1628,7 +1628,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1643,7 +1643,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1658,7 +1658,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1674,7 +1674,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -1689,7 +1689,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -1704,7 +1704,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1719,7 +1719,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1735,7 +1735,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -1750,7 +1750,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1766,7 +1766,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1781,7 +1781,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1797,7 +1797,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1813,7 +1813,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1829,7 +1829,7 @@
     ],
     "link": "",
     "iconIntent": "CheckCircle",
-    "iconScope": "Album",
+    "iconScope": "QueryStatsOutlined",
     "iconTopic": ""
   },
   {
@@ -1844,7 +1844,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "DataUsage",
+    "iconScope": "DatasetOutlined",
     "iconTopic": ""
   },
   {
@@ -1859,7 +1859,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1874,7 +1874,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1889,7 +1889,7 @@
     ],
     "link": "",
     "iconIntent": "Info",
-    "iconScope": "QueryStats",
+    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
@@ -1904,7 +1904,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1919,7 +1919,7 @@
     ],
     "link": "",
     "iconIntent": "Warning",
-    "iconScope": "BlurOn",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
