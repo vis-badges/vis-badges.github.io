@@ -1,3 +1,4 @@
+// BadgeBase.jsx
 import React from 'react';
 import { Avatar, Box, Chip, Tooltip } from '@mui/material';
 import * as Icons from '@mui/icons-material';
@@ -38,9 +39,12 @@ function getAvatarElement(avatar) {
 
 function resolveIcon(key, { avatar, iconIntent, iconScope, iconTopic }, size) {
     if (key !== 'none') {
-        console.log(key)
-        const iconValue = key === 'iconIntent' ? iconIntent : key === 'iconScope' ? iconScope : iconTopic;
-        console.log(iconValue);
+        const iconValue =
+            key === 'iconIntent'
+                ? iconIntent
+                : key === 'iconScope'
+                    ? iconScope
+                    : iconTopic;
         return getMuiIcon(iconValue, size);
     }
     return null;
@@ -55,11 +59,10 @@ export default function BadgeBase({
                                       iconTopic,
                                       size = 'medium',
                                       variant = 'filled',
-                                      // leftIconKey and rightIconKey determine what is shown.
-                                      // For left, "avatar" renders the avatar; "none" renders nothing; otherwise the corresponding icon.
                                       leftIconKey = 'iconIntent',
                                       rightIconKey = 'iconIntent',
                                       chipColor = 'default',
+                                      chipSx = {},
                                   }) {
     const { muiSize, hideLabel } = mapChipSize(size);
     const leftIcon = resolveIcon(leftIconKey, { avatar, iconIntent, iconScope, iconTopic }, size);
@@ -79,6 +82,7 @@ export default function BadgeBase({
                     onDelete={rightIcon ? () => {} : undefined}
                     clickable
                     color={chipColor}
+                    sx={chipSx}
                 />
             </Tooltip>
         </Box>
