@@ -38,15 +38,20 @@ export default function BadgeDesignControls({
                                                 setRightIconKey,
                                             }) {
     return (
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center', mb: 2 }}>
-            <FormControl size="small" sx={{ minWidth: 100 }}>
-                <InputLabel>Size</InputLabel>
-                <Select value={chipSize} label="Size" onChange={(e) => setChipSize(e.target.value)}>
-                    <MenuItem value="small">MINI</MenuItem>
-                    <MenuItem value="medium">SMALL</MenuItem>
-                    <MenuItem value="large">MEDIUM</MenuItem>
-                </Select>
-            </FormControl>
+        <Box
+            sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center', mb: 2 }}
+        >
+            {/* Refactored: Size selection as a ToggleButtonGroup with only two options */}
+            <ToggleButtonGroup
+                value={chipSize}
+                exclusive
+                onChange={(e, val) => val && setChipSize(val)}
+                size="small"
+            >
+                {/*<ToggleButton value="small">Mini</ToggleButton>*/}
+                <ToggleButton value="medium">Small</ToggleButton>
+                <ToggleButton value="large">Medium</ToggleButton>
+            </ToggleButtonGroup>
 
             <ToggleButtonGroup
                 value={chipVariant}
@@ -58,7 +63,6 @@ export default function BadgeDesignControls({
                 <ToggleButton value="outlined">Outlined</ToggleButton>
             </ToggleButtonGroup>
 
-            {/* Color Mode selection comes before icon selections */}
             <FormControl size="small" sx={{ minWidth: 160 }}>
                 <InputLabel>Color Mode</InputLabel>
                 <Select
@@ -84,10 +88,13 @@ export default function BadgeDesignControls({
                 </Select>
             </FormControl>
 
-            {/* Left Icon Selection: includes "None", "Avatar", "Icon 1", "Icon 2", "Icon 3" */}
             <FormControl size="small" sx={{ minWidth: 150 }}>
                 <InputLabel>Left Icon</InputLabel>
-                <Select value={leftIconKey} label="Left Icon" onChange={(e) => setLeftIconKey(e.target.value)}>
+                <Select
+                    value={leftIconKey}
+                    label="Left Icon"
+                    onChange={(e) => setLeftIconKey(e.target.value)}
+                >
                     <MenuItem value="none">None</MenuItem>
                     <MenuItem value="iconIntent">INTENT</MenuItem>
                     <MenuItem value="iconScope">CATEGORY</MenuItem>
@@ -96,19 +103,27 @@ export default function BadgeDesignControls({
                 </Select>
             </FormControl>
 
-            {/* Right Icon Selection: includes "None", "Icon 1", "Icon 2", "Icon 3" */}
-            <FormControl size="small" sx={{ minWidth: 150 }}>
-                <InputLabel>Right Icon</InputLabel>
-                <Select value={rightIconKey} label="Right Icon" onChange={(e) => setRightIconKey(e.target.value)}>
-                    <MenuItem value="none">None</MenuItem>
-                    <MenuItem value="iconIntent">INTENT</MenuItem>
-                    <MenuItem value="iconScope">CATEGORY</MenuItem>
-                    <MenuItem value="iconTopic">BADGE</MenuItem>
-                </Select>
-            </FormControl>
+
+            {/*<FormControl size="small" sx={{ minWidth: 150 }}>*/}
+            {/*    <InputLabel>Right Icon</InputLabel>*/}
+            {/*    <Select*/}
+            {/*        value={rightIconKey}*/}
+            {/*        label="Right Icon"*/}
+            {/*        onChange={(e) => setRightIconKey(e.target.value)}*/}
+            {/*    >*/}
+            {/*        <MenuItem value="none">None</MenuItem>*/}
+            {/*        <MenuItem value="iconIntent">INTENT</MenuItem>*/}
+            {/*        <MenuItem value="iconScope">CATEGORY</MenuItem>*/}
+            {/*        <MenuItem value="iconTopic">BADGE</MenuItem>*/}
+            {/*    </Select>*/}
+            {/*</FormControl>*/}
 
             <Tooltip title="Reset to default">
-                <IconButton color="secondary" size="small" onClick={() => window.location.reload()}>
+                <IconButton
+                    color="secondary"
+                    size="small"
+                    onClick={() => window.location.reload()}
+                >
                     <RestartAltIcon />
                 </IconButton>
             </Tooltip>
