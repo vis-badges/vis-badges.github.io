@@ -22,8 +22,7 @@ const BinaryBadge = forwardRef(function BinaryBadge(
     }));
 
     return (
-        <Box>
-            <div ref={badgeRef}>
+            <div ref={badgeRef} style={{display: 'inline-block'}}>
                 <BadgeBase
                     label={badge.label}
                     description={badge.description}
@@ -36,7 +35,6 @@ const BinaryBadge = forwardRef(function BinaryBadge(
                     {...otherProps}
                 />
             </div>
-        </Box>
     );
 });
 

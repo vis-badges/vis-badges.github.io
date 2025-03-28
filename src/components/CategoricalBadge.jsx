@@ -69,7 +69,7 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
     }));
 
     return (
-        <Box position="relative" ref={badgeRef}>
+        <div ref={badgeRef} style={{display: 'inline-block'}}>
             <Chip
                 label={mainChipLabel}
                 size={muiSize}
@@ -141,7 +141,7 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
                     })}
                 </Stack>
             </Collapse>
-        </Box>
+        </div>
     );
 });
 

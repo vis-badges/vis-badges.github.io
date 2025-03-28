@@ -19,7 +19,7 @@ const OrdinalBadge = forwardRef(function OrdinalBadge({ badge, ...otherProps }, 
     }));
 
     return (
-        <div ref={badgeRef}>
+        <div ref={badgeRef} style={{display: 'inline-block'}}>
             <BadgeBase
                 label={labelWithValue}
                 description={badge.description}
