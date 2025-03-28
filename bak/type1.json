@@ -1,0 +1,702 @@
+[
+  {
+    "badgeName": "Data source(s) disclosed",
+    "description": "Indicates that this visualization has one or more disclosed data sources",
+    "intent": "Confirmation",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Open data",
+    "description": "Indicates that the data is open and available",
+    "intent": "Confirmation",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Dataset downloadable",
+    "description": "Indicates that there is a link to the data source(s)",
+    "intent": "Confirmation",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Data source citation",
+    "description": "Indicates that the data is described in a written article (e.g., scientific paper, public report) with a citation.",
+    "intent": "Confirmation",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Original data available",
+    "description": "Indicates the availability of primary data sources prior to processing, such as handwritten documents, images, text.",
+    "intent": "Confirmation",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Trusted data source",
+    "description": "Indicates that a visualization author trusts the source for their data indicated",
+    "intent": "Confirmation",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Dynamic data",
+    "description": "Indicates that data in this visualization can be regularly updating",
+    "intent": "Information",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Data up-to-date",
+    "description": "Indicates data is up-to-date",
+    "intent": "Confirmation",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Data limited",
+    "description": "Indicates that the author wants to disclose limitations with their data, e.g., collection, modeling ...",
+    "intent": "Warning",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Analysis limited",
+    "description": "Indicates that the author wants to disclose limitations with their analysis, without wanting to be too precise at this level.",
+    "intent": "Warning",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Missing data",
+    "description": "Indicates some parts of the data is missing",
+    "intent": "Warning",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Contains modeled data",
+    "description": "Indicates that a computational model has been used to create the entire or parts of the data set, e.g., for means of approximation or prediction",
+    "intent": "Warning",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Contains predictions",
+    "description": "Indicates that the entire or parts of the data are future prediction implying (unqualified) uncertainty",
+    "intent": "Warning",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "May contain bias",
+    "description": "",
+    "intent": "",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "May contain noise",
+    "description": "",
+    "intent": "Warning",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Heterogeneous data",
+    "description": "Indicates that a lot of different sources used in a chart (but not as a composite)",
+    "intent": "Warning",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Self-Reported data",
+    "description": "Indicates: The data was reported by subjects (e.g., survey responses, self-assessments).",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Derived data",
+    "description": "Indicates: The data was inferred or model-generated (e.g., part-of-speech tagging, predicted age).",
+    "intent": "Warning",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Manual data collection",
+    "description": "Indicates that humans gathered or collected the data by hand (e.g. manual tagging, coding, )",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Hardware based collection",
+    "description": "Indicates that the data comes from physicial devices (e.g sensors, lab appartus)",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "API-Based collection",
+    "description": "Inidicates that the data was obtained via an API (e.g Twitter data for sentiment analysis)",
+    "intent": "Warning",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Data collection priod specified",
+    "description": "Indicates the period in which a dataset has been collected",
+    "intent": "Information",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "Attributed data creator(s)",
+    "description": "Indicates a named person responsible for data collection",
+    "intent": "Confirmation",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Adapated elsewhere",
+    "description": "Indicates that the data or visualization has been picked up and reused by someone else.",
+    "intent": "Confirmation",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Contains Multiple Data Sources",
+    "description": "Indicates that this visualization includes data from more than one source, i.e., implying aggregation and merging operations.",
+    "intent": "Information",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Single Data Source",
+    "description": "Indicates that a visualization contains a single data source only",
+    "intent": "Information",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Missing Values Processed",
+    "description": "Indicates that the author handled missing data via imputation, deletion, or other strategies.",
+    "intent": "Confirmation",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Outliers Removed",
+    "description": "Indicated that the author removed/handled outliers in data set",
+    "intent": "Confirmation",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Discretization / Bining applied",
+    "description": "Indicates that continouse data were converted into bins/buckets",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Data normalized",
+    "description": "Indicates that certain normalization/scaling techniques were applied. E.g. min-max normalization, z-score standardization)",
+    "intent": "Confirmation",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Tokenization applied",
+    "description": "Indicates that text was tokenized. E.g for NLP tasks",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Part-of-Seech tagging applied",
+    "description": "Indicates that PoS was applied. (e.g in NLP pipelines)",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Features Extracted",
+    "description": "Indicates that features were extracted (e.g., SIFT for images, word embeddings for text, etc.)",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Stemming / Lemmatization applied",
+    "description": "Indicates that Stemming/Lemmatization was applied on text",
+    "intent": "Confirmation",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Stopword Removal",
+    "description": "Indicates that stop words (e.g and, or, in) have been removed during preprocessing",
+    "intent": "Confirmation",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Analysis Tools Available",
+    "description": "Indicates that data analysis was performed using an acknowledged and available tool.",
+    "intent": "Confirmation",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Automatically labled data",
+    "description": "Indicates part of the entire data set comes from automatic labeleling",
+    "intent": "Warning",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Random sampling applied",
+    "description": "Indicates that data points were selected on a purely random or probabilistic method",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Stratisfied sampling applied",
+    "description": "Indicates that subgroups (strata) pre-identified, and samples drawn proportionally from each subgroup",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Systematic sampling applied",
+    "description": "Indicates that the datapoints were chosen at a regular interval",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Clustered sampling applied",
+    "description": "Indicates that a subgroup/cluster is used as the sampling unit",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Alternative Units",
+    "description": "Provides a reference to better comprehend used scales/units in the chart.",
+    "intent": "Confirmation",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Unfamiliar units",
+    "description": "Indicates that this visualization contains units likely unfamilar to the intended audience.",
+    "intent": "Warning",
+    "type": "Data",
+    "tags": []
+  },
+  {
+    "badgeName": "95% CI error bars",
+    "description": "Highlights the correct interpretation of error bars used in a visualization",
+    "intent": "",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Temporal offset",
+    "description": "Indicates that latest time stamp used in a chart is behind the actual time,",
+    "intent": "Warning",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Time Window Filter applied",
+    "description": "Indicates that data was included or excluded based on a specific time range",
+    "intent": "",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Condition Based Filter applied",
+    "description": "Indicates that data was included or excluded based on certain conditions or status indicators",
+    "intent": "",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Geographic Filter applied",
+    "description": "Indicates that the dataset is filtered by location-based rules",
+    "intent": "",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Demographic Filter applied",
+    "description": "Indicates that data was included or excluded based on demographic attributes (e.g., age, gender, income, etc.).",
+    "intent": "",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Data manually Excluded",
+    "description": "Indicates that data has been manually removed for a given reason, e.g., ...",
+    "intent": "",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Sorting and Filtering methods",
+    "description": "Indicates that viewers can individualize their chart reading experience by applying sorting and filtering techniques",
+    "intent": "",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Aggregated data",
+    "description": "Indicates that data in the visualization has been aggregated, implying some sort of aggregation method.",
+    "intent": "",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Simpson's Paradox",
+    "description": "Indicates that aggregated or combined data may hide or reverse underlying trends",
+    "intent": "Warning",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "False Cause Fallacy",
+    "description": "Reminds the reader of a visualization that a correlation in the visualization may not or knowingly is not a cause.",
+    "intent": "Warning",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Major Finding",
+    "description": "Indicates that this visualization contains a major finding for the analysis or communication",
+    "intent": "Confirmation",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Adjusted Baseline Calculations",
+    "description": "Indicates that the chart uses a shifted reference point rather than \"zero\". E.g - per capita rates - moving average ..",
+    "intent": "Information",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Possible Visual Artifacts",
+    "description": "Indicates that a visualization algorithm may introduce visual patterns that are not really in the data.",
+    "intent": "",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Rounding Errors",
+    "description": "Indicates that data in the visualization may contain rounding errors",
+    "intent": "",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Mind false conclusions",
+    "description": "Warns the reader that a seemingly obvious visual pattern may lead to false conclusions.",
+    "intent": "Warning",
+    "type": "Analysis",
+    "tags": []
+  },
+  {
+    "badgeName": "Shows only top X elements",
+    "description": "Indicates that only X slected elements are shown",
+    "intent": "",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "For General Public",
+    "description": "Indicates that this chart was created for the General Public",
+    "intent": "Information",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "For Domain Experts",
+    "description": "Indicates that this chart was created for domain experts",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "For Policy Makers",
+    "description": "Indicates that this chart was created for policy makers",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Chart licensed under Public Domain",
+    "description": "Indicates which licensing information applies for this chart",
+    "intent": "Information",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Chart available under <X> License",
+    "description": "Indicates which licensing information applies for this chart",
+    "intent": "Information",
+    "type": "",
+    "tags": []
+  },
+  {
+    "badgeName": "Data licensed under Public Domain",
+    "description": "Indicates which licensing information applies for this dataset",
+    "intent": "Information",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Attributed visualization creator(s)",
+    "description": "Indicates a named person responsible for chart creation",
+    "intent": "Confirmation",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Content Warning",
+    "description": "Indicates that the chart is about a sensitive topic",
+    "intent": "Warning",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Contains specific terminology",
+    "description": "Highlights specific domain terminology used in the chart, can potentially include explanations (e.g., kp/co2 is the measure of ...)",
+    "intent": "Warning",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Terminology explanations available",
+    "description": "",
+    "intent": "Confirmation",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Background-reading Available",
+    "description": "Indicates that more background reading is available",
+    "intent": "Confirmation",
+    "type": "Context",
+    "tags": []
+  },
+  {
+    "badgeName": "Mouse Over",
+    "description": "Indicates that more details will be provided on hover",
+    "intent": "Information",
+    "type": "Interaction",
+    "tags": []
+  },
+  {
+    "badgeName": "Zoom",
+    "description": "Indicates that the map is zoomable",
+    "intent": "Information",
+    "type": "Interaction",
+    "tags": []
+  },
+  {
+    "badgeName": "Interactive pre-filtering",
+    "description": "Indicates that the visualized data is pre-filtered but can be manually adjusted",
+    "intent": "Warning",
+    "type": "Interaction",
+    "tags": []
+  },
+  {
+    "badgeName": "Chart is device responsive",
+    "description": "Indicates that the chart is not device responsive",
+    "intent": "Confirmation",
+    "type": "Interaction",
+    "tags": []
+  },
+  {
+    "badgeName": "Projection not area preserving",
+    "description": "Indicates that the used map projection is not area preserving",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Points don't match exact locations",
+    "description": "Indicates that the placement of the points on the map does not reflect on their exact location (e.g., zipcode).",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Uncertainty shown",
+    "description": "Highlights how uncertainty is visualized (e.g., error bar, confidence band) and reasons how to correctly read it",
+    "intent": "Confirmation",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Uncertainty not shown",
+    "description": "Reasons why the uncertainty in the dataset is not visualized. E.g., to keep things simple",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Dual-Axis encoding",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Truncated axis",
+    "description": "Justifies why the axis in the chart is truncated",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Inconsistent axis intervals",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Inverted axis",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Y-axes across visualization don't align",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Non-linear scales",
+    "description": "Justifies non-linear scales",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Inverted axis",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Size distortion",
+    "description": "TODO: Check if there is a non-deceptive reason",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Exaggerated small values",
+    "description": "Indicates that very small data points are over exaggerated to not miss them",
+    "intent": "Information",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Some elements too small to be shown",
+    "description": "Indicates that in the chart some data points/marks are too small that they are not shown",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "(Can) contain overlapping visual marks",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Colorblind-Friendly Colors",
+    "description": "Indicates that colorblind friendly colors are used in the chart",
+    "intent": "Confirmation",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Optimized for printing",
+    "description": "Indicates that printing has been optimized",
+    "intent": "Confirmation",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Bubble size encoding",
+    "description": "Indicates that bubbles in the visualization encode a data variable (e.g., size, area)",
+    "intent": "Confirmation",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "False-Friend layout",
+    "description": "Highlights visualizations that look similar but require different interpretation",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Binning",
+    "description": "TODO: Check if there is a non-deceptive reason",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Not visualizing null/infinite vlues",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Different scales across charts",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Rainbow colormap",
+    "description": "Justifies why the chart uses rainbow colormaps.",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Redundant visual encoding",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  },
+  {
+    "badgeName": "Axis label stated in context",
+    "description": "",
+    "intent": "Warning",
+    "type": "Visual Encoding",
+    "tags": []
+  }
+]
