@@ -20,13 +20,13 @@ const NAVIGATION = [
     },
     {
         segment: 'compact',
-        title: 'Compact View',
+        title: 'Visualization Badges Catalog',
         icon: <Apps />,
         component: Compact
     },
     {
         segment: 'table',
-        title: 'Table View',
+        title: 'Visualization Badges Table',
         icon:  <ViewList />,
     },
     {
