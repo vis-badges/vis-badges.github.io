@@ -8,23 +8,24 @@ export default function useBadges() {
     useEffect(() => {
         async function fetchBadges() {
             try {
-                const [res1, res2] = await Promise.all([
-                    fetch('db.json'),
-                    fetch('db-genres.json'),
-                ]);
+                const urls = [
+                    'db.json',
+                    'db-list.json',
+                    'db-ordinal.json',
+                    'db-quantity.json',
+                    'db-score.json'
+                ];
 
-                if (!res1.ok || !res2.ok) {
-                    throw new Error(
-                        `HTTP error! status: ${res1.status}, ${res2.status}`
-                    );
-                }
+                const responses = await Promise.all(urls.map(url => fetch(url)));
+                responses.forEach(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                });
 
-                const [data1, data2] = await Promise.all([
-                    res1.json(),
-                    res2.json(),
-                ]);
+                const data = await Promise.all(responses.map(response => response.json()));
 
-                setBadges([...data1, ...data2]);
+                setBadges(data.flat());
             } catch (err) {
                 console.error('Error fetching badges:', err);
                 setError(err);

@@ -1,0 +1,19 @@
+[
+  {
+  "badgeType": "QUANTITATIVE",
+  "id": "129",
+  "label": "Confidence Intervals",
+  "description": "",
+  "link": "",
+  "type": "ANALYSIS",
+  "value": 95,
+  "unit": "%",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Source"
+    ],
+    "iconIntent": "CheckCircle",
+    "iconScope": "DatasetOutlined",
+    "iconTopic": ""
+}
+]

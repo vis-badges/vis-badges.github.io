@@ -1,4 +1,3 @@
-// QuantitativeBadge.jsx
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import { useTheme } from '@mui/material/styles';
 import BadgeBase from './BadgeBase';
@@ -17,10 +16,8 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
             ? (theme.palette[chipColor]?.main || chipColor)
             : theme.palette.grey[500];
 
-    // Determine the Chip variant; default to 'filled'
     const variant = otherProps.variant || 'filled';
 
-    // Set right-side background and text color based on variant and mode:
     // outlined + light: background = baseColor, text = white
     // filled + light: background = light grey, text = baseColor
     // outlined + dark: background = baseColor, text = black
@@ -36,10 +33,10 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
         }
     } else { // filled variant
         if (isLightMode) {
-            rightBoxBg = '#f0f0f0';
+            rightBoxBg = '#cfcfcf';
             rightTextColor = baseColor;
         } else {
-            rightBoxBg = '#444';
+            rightBoxBg = '#cfcfcf';
             rightTextColor = '#000';
         }
     }
@@ -59,7 +56,7 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
     const unitStr = badge.unit ? ` ${badge.unit}` : '';
 
     const badgeSize = otherProps.size || 'medium';
-    const rightPadding = badgeSize === 'large' ? '3px 3px' : '0 3px';
+    const rightPadding = badgeSize === 'large' ? '2.5px 2.5px' : '0px 2.5px';
 
     const finalLabel = (
         <div
@@ -88,9 +85,11 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
         </div>
     );
 
+    const rightPaddingChip = badgeSize === 'large' ? '4px !important' : '2px !important';
+
     const chipSx = {
         '& .MuiChip-label': {
-            paddingRight: '1.5px !important',
+            paddingRight: rightPaddingChip
         },
     };
 
@@ -102,7 +101,7 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
                 avatar={badge.avatar}
                 iconIntent={badge.iconIntent}
                 iconScope={badge.iconScope}
-                chipColor={chipColor} // ensure the chip gets the proper color
+                chipColor={chipColor}
                 chipSx={chipSx}
                 {...otherProps}
             />

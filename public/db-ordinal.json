@@ -1,0 +1,16 @@
+{
+  "badgeType": "ORDINAL",
+  "id": "",
+  "label": "Original Data",
+  "description": "Availability of original data documents",
+  "value": "available",
+  "type": "DATA",
+  "link": "",
+  "intent": "CONFIRMATION",
+  "topics": [
+    "Source"
+  ],
+  "iconIntent": "CheckCircle",
+  "iconScope": "DatasetOutlined",
+  "iconTopic": ""
+}

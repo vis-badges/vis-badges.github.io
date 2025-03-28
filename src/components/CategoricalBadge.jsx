@@ -1,4 +1,3 @@
-// CategoricalBadge.jsx
 import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import { Box, Chip, Tooltip, Stack, Collapse, Badge, Avatar } from '@mui/material';
 import * as Icons from '@mui/icons-material';
@@ -17,7 +16,6 @@ function getAvatarElement(avatar) {
     return null;
 }
 
-// Helper to determine which icon to render.
 function resolveIcon(key, badge) {
     if (key === 'avatar') return getAvatarElement(badge.avatar);
     if (key !== 'none') {
@@ -61,7 +59,7 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
         const node = badgeRef.current;
         if (!node) return;
         const fileName = `${badge.badgeName || badge.label}.png`;
-        downloadNodeAsPng(node, fileName, 100);
+        downloadNodeAsPng(node, fileName);
     };
 
     useImperativeHandle(ref, () => ({
@@ -118,7 +116,7 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
             )}
 
             <Collapse in={expanded} timeout={0} sx={{ transition: 'none' }} unmountOnExit>
-                <Stack direction="row" flexWrap="wrap" mt={0.3}>
+                <Stack direction="row" flexWrap="wrap" mt={0.1}>
                     {values.map((val, idx) => {
                         const { label: subLabel = '', tooltip: subTooltip = '', link: subLink } =
                             typeof val === 'object' && val !== null ? val : { label: String(val) };

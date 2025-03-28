@@ -1,0 +1,27 @@
+[
+  {
+    "id": "",
+    "badgeType": "CATEGORICAL",
+    "label": "Interaction Available",
+    "description": "",
+    "type": "ANALYSIS",
+    "intent": "CONFIRMATION",
+    "values": [
+      {
+        "label": "Click"
+      },
+      {
+        "label": "Hover"
+      },
+      {
+        "label": "Filter"
+      }
+    ],
+    "topics": [
+      "Source"
+    ],
+    "iconIntent": "CheckCircle",
+    "iconScope": "DatasetOutlined",
+    "iconTopic": ""
+  }
+]
