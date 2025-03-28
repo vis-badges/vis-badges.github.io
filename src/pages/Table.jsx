@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Box, TextField, IconButton, Tooltip } from '@mui/material';
+import {Box, TextField, IconButton, Tooltip, Button} from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import { DataGrid } from '@mui/x-data-grid';
 import useBadges from '../hooks/useBadges';
@@ -36,6 +36,16 @@ export default function BadgeDataGrid() {
         type: badge.type || "Other",
         badgeType: badge.badgeType || "Binary",
     }));
+
+    const handleDownloadAll = () => {
+        Object.values(badgeRefs.current).forEach((badgeComponent) => {
+            if (badgeComponent?.downloadBadge) {
+                badgeComponent.downloadBadge();
+            } else {
+                console.warn('downloadBadge function not available for a badge');
+            }
+        });
+    };
 
     const columns = [
         {
@@ -123,6 +133,9 @@ export default function BadgeDataGrid() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
+                <Button variant="contained" onClick={handleDownloadAll}>
+                    Download All Badges
+                </Button>
             </Box>
 
             <Box sx={{ width: '100%', mt: 2 }}>
