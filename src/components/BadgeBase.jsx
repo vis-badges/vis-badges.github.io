@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Chip, Tooltip, Avatar } from '@mui/material';
+import {Avatar, Box, Chip, Tooltip} from '@mui/material';
 import * as Icons from '@mui/icons-material';
-import { IconInfoSquareFilled } from '@tabler/icons-react'
-import { BiSolidInfoSquare } from "react-icons/bi";
+import {BiSolidInfoSquare} from "react-icons/bi";
 
 function mapChipSize(customSize) {
     switch (customSize) {
@@ -20,7 +19,10 @@ function mapChipSize(customSize) {
 function getMuiIcon(iconName, customSize) {
     if (!iconName) return null;
 
-    if (iconName === "Info" && customSize === 'medium') {
+    if (iconName === "Info" && customSize === "small") {
+        return <BiSolidInfoSquare size={18} />
+    }
+    else if (iconName === "Info" && customSize === 'medium') {
         return <BiSolidInfoSquare size={18} />
     }
     else if (iconName === "Info" && customSize === 'large') {
