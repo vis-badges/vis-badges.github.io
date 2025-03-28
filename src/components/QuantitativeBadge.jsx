@@ -24,8 +24,8 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge({ badge, ...othe
                 label={finalLabel}
                 description={badge.description}
                 avatar={badge.avatar}
-                icon1={badge.icon1}
-                icon2={badge.icon2}
+                iconIntent={badge.iconIntent}
+                iconScope={badge.iconScope}
                 {...otherProps}
             />
         </div>

@@ -36,11 +36,11 @@ function getAvatarElement(avatar) {
     return null;
 }
 
-// Helper to determine which icon to render.
-function resolveIcon(key, { avatar, icon1, icon2, icon3 }, size) {
-    if (key === 'avatar') return getAvatarElement(avatar);
+function resolveIcon(key, { avatar, iconIntent, iconScope, iconTopic }, size) {
     if (key !== 'none') {
-        const iconValue = key === 'icon1' ? icon1 : key === 'icon2' ? icon2 : icon3;
+        console.log(key)
+        const iconValue = key === 'iconIntent' ? iconIntent : key === 'iconScope' ? iconScope : iconTopic;
+        console.log(iconValue);
         return getMuiIcon(iconValue, size);
     }
     return null;
@@ -50,20 +50,20 @@ export default function BadgeBase({
                                       label,
                                       description = '',
                                       avatar,
-                                      icon1,
-                                      icon2,
-                                      icon3,
+                                      iconIntent,
+                                      iconScope,
+                                      iconTopic,
                                       size = 'medium',
                                       variant = 'filled',
                                       // leftIconKey and rightIconKey determine what is shown.
                                       // For left, "avatar" renders the avatar; "none" renders nothing; otherwise the corresponding icon.
-                                      leftIconKey = 'icon1',
-                                      rightIconKey = 'icon1',
+                                      leftIconKey = 'iconIntent',
+                                      rightIconKey = 'iconIntent',
                                       chipColor = 'default',
                                   }) {
     const { muiSize, hideLabel } = mapChipSize(size);
-    const leftIcon = resolveIcon(leftIconKey, { avatar, icon1, icon2, icon3 }, size);
-    const rightIcon = resolveIcon(rightIconKey, { avatar, icon1, icon2, icon3 }, size);
+    const leftIcon = resolveIcon(leftIconKey, { avatar, iconIntent, iconScope, iconTopic }, size);
+    const rightIcon = resolveIcon(rightIconKey, { avatar, iconIntent, iconScope, iconTopic }, size);
     const displayLabel = hideLabel ? '' : label;
 
     return (

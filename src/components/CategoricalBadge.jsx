@@ -21,7 +21,7 @@ function getAvatarElement(avatar) {
 function resolveIcon(key, badge) {
     if (key === 'avatar') return getAvatarElement(badge.avatar);
     if (key !== 'none') {
-        const iconValue = key === 'icon1' ? badge.icon1 : key === 'icon2' ? badge.icon2 : badge.icon3;
+        const iconValue = key === 'iconIntent' ? badge.iconIntent : key === 'iconScope' ? badge.iconScope : badge.iconTopic;
         return getMuiIcon(iconValue);
     }
     return null;
@@ -32,8 +32,8 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
         badge,
         size = 'medium',
         variant = 'filled',
-        leftIconKey = 'icon1', // options: 'none', 'avatar', 'icon1', 'icon2', 'icon3'
-        rightIconKey = 'icon1', // options: 'none', 'icon1', 'icon2', 'icon3'
+        leftIconKey = 'iconIntent', // options: 'none', 'avatar', 'iconIntent', 'iconScope', 'iconTopic'
+        rightIconKey = 'iconIntent', // options: 'none', 'iconIntent', 'iconScope', 'iconTopic'
         chipColor = 'default',
     },
     ref

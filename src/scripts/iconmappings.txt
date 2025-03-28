@@ -1,0 +1,12 @@
+INTENT:
+Confirmation:CheckCircle
+Information:Info
+Warning:Warning
+
+SCOPE
+-----
+DATA:"DataUsage"
+ANALYSIS:"QueryStats"
+VISUAL ENCODING:"BlurOn"
+INTERACTION: "TouchApp"
+CONTEXT:"Album"

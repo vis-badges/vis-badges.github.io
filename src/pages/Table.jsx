@@ -12,10 +12,9 @@ export default function BadgeDataGrid() {
     const { badges, loading, error } = useBadges();
     const badgeRefs = useRef({});
 
-    // Badge display options
     const [chipSize, setChipSize] = useState("medium");
     const [chipVariant, setChipVariant] = useState("filled");
-    const [leftIconKey, setLeftIconKey] = useState("icon1");
+    const [leftIconKey, setLeftIconKey] = useState("iconIntent");
     const [rightIconKey, setRightIconKey] = useState("none");
     const [colorMode, setColorMode] = useState("intent");
     const [muiColor, setMuiColor] = useState("default");

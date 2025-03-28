@@ -89,9 +89,9 @@ export default function BadgeDesignControls({
                 <InputLabel>Left Icon</InputLabel>
                 <Select value={leftIconKey} label="Left Icon" onChange={(e) => setLeftIconKey(e.target.value)}>
                     <MenuItem value="none">None</MenuItem>
-                    <MenuItem value="icon1">INTENT</MenuItem>
-                    <MenuItem value="icon2">CATEGORY</MenuItem>
-                    <MenuItem value="icon3">BADGE</MenuItem>
+                    <MenuItem value="iconIntent">INTENT</MenuItem>
+                    <MenuItem value="iconScope">CATEGORY</MenuItem>
+                    <MenuItem value="iconTopic">BADGE</MenuItem>
                     <MenuItem value="avatar">AVATAR</MenuItem>
                 </Select>
             </FormControl>
@@ -101,9 +101,9 @@ export default function BadgeDesignControls({
                 <InputLabel>Right Icon</InputLabel>
                 <Select value={rightIconKey} label="Right Icon" onChange={(e) => setRightIconKey(e.target.value)}>
                     <MenuItem value="none">None</MenuItem>
-                    <MenuItem value="icon1">INTENT</MenuItem>
-                    <MenuItem value="icon2">CATEGORY</MenuItem>
-                    <MenuItem value="icon3">BADGE</MenuItem>
+                    <MenuItem value="iconIntent">INTENT</MenuItem>
+                    <MenuItem value="iconScope">CATEGORY</MenuItem>
+                    <MenuItem value="iconTopic">BADGE</MenuItem>
                 </Select>
             </FormControl>
 

@@ -24,8 +24,8 @@ const OrdinalBadge = forwardRef(function OrdinalBadge({ badge, ...otherProps }, 
                 label={labelWithValue}
                 description={badge.description}
                 avatar={badge.avatar}
-                icon1={badge.icon1}
-                icon2={badge.icon2}
+                iconIntent={badge.iconIntent}
+                iconScope={badge.iconScope}
                 {...otherProps}
             />
         </div>

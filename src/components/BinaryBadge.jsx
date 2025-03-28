@@ -28,9 +28,9 @@ const BinaryBadge = forwardRef(function BinaryBadge(
                     label={badge.label}
                     description={badge.description}
                     avatar={badge.avatar}
-                    icon1={badge.icon1}
-                    icon2={badge.icon2}
-                    icon3={badge.icon3}
+                    iconIntent={badge.iconIntent}
+                    iconScope={badge.iconScope}
+                    iconTopic={badge.iconTopic}
                     leftIconKey={leftIconKey}
                     rightIconKey={rightIconKey}
                     {...otherProps}

@@ -1,7 +1,5 @@
-// badgeUtils.js
 export const mapIntentToColor = (intent) => {
     if (!intent) return 'default';
-    // Normalize intent to uppercase for consistency
     const normalized = intent.toUpperCase();
     switch (normalized) {
         case 'CONFIRMATION':

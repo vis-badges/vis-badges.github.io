@@ -8,11 +8,10 @@ import { computeChipColor } from "../components/utils/badgeUtils";
 
 export default function Compact() {
     const { badges, loading, error } = useBadges();
-
-    // Badge design options for compact display using the provided controls
+    console.log(badges);
     const [chipSize, setChipSize] = useState("medium");
     const [chipVariant, setChipVariant] = useState("filled");
-    const [leftIconKey, setLeftIconKey] = useState("icon1");
+    const [leftIconKey, setLeftIconKey] = useState("iconScope");
     const [rightIconKey, setRightIconKey] = useState("none");
     const [colorMode, setColorMode] = useState("intent");
     const [muiColor, setMuiColor] = useState("default");
@@ -30,7 +29,6 @@ export default function Compact() {
         );
     }
 
-    // Filter badges based on searchQuery and selectedBadge
     let filteredBadges = badges;
     if (searchQuery) {
         filteredBadges = filteredBadges.filter(b =>
@@ -42,7 +40,6 @@ export default function Compact() {
         filteredBadges = filteredBadges.filter(b => b.label === selectedBadge);
     }
 
-    // Group badges by intent
     const groupedBadges = filteredBadges.reduce((groups, badge) => {
         const key = badge.intent || "Other";
         if (!groups[key]) groups[key] = [];
@@ -77,7 +74,6 @@ export default function Compact() {
                 setSelectedBadge={setSelectedBadge}
             />
 
-            {/* Optionally include a search bar if not integrated in BadgeDesignControls */}
             <Box sx={{ mb: 1 }}>
                 <TextField
                     size={"small"}
