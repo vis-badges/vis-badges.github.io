@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles.css';
 import App from './App';
-import Type1Page from "./pages/Type1Page";
+import Compact from "./pages/Compact";
 import {createHashRouter, RouterProvider} from "react-router-dom";
-import DbLayout from "./layout/DbLayout";
-import BadgeDataGrid from "./pages/BadgeTable";
+import Main from "./Main";
+import BadgeDataGrid from "./pages/Table";
 
 const router = createHashRouter([
     {
@@ -13,7 +13,7 @@ const router = createHashRouter([
         children: [
             {
                 path: '/',
-                Component: DbLayout,
+                Component: Main,
                 children: [
                     {
                         path: '',
@@ -21,7 +21,7 @@ const router = createHashRouter([
                     },
                     {
                         path: 'compact',
-                        Component: Type1Page
+                        Component: Compact
                     },
                     {
                         path: 'table',

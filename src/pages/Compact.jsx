@@ -8,7 +8,7 @@ import CategoricalBadge from "../components/CategoricalBadge";
 import BadgeDesignControls from "../components/BadgeDesignControls";
 import useBadges from "../hooks/useBadges";
 
-export default function Type1Page() {
+export default function Compact() {
     const { badges, loading, error } = useBadges();
 
     // Default left element is "icon"

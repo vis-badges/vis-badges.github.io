@@ -3,7 +3,7 @@ import {DashboardLayout} from '@toolpad/core/DashboardLayout';
 import {Outlet} from "react-router-dom";
 import {PageContainer} from "@toolpad/core";
 
-export default function DbLayout() {
+export default function Main() {
     return (
         <DashboardLayout
             defaultSidebarCollapsed={true}
