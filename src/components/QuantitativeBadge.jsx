@@ -1,10 +1,11 @@
+// QuantitativeBadge.jsx
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import { useTheme } from '@mui/material/styles';
 import BadgeBase from './BadgeBase';
 import { downloadNodeAsPng } from "./utils/downloadUtils";
 
 const QuantitativeBadge = forwardRef(function QuantitativeBadge(
-    { badge, chipColor , ...otherProps },
+    { badge, chipColor, ...otherProps },
     ref
 ) {
     const badgeRef = useRef(null);
@@ -57,6 +58,9 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
     const rightValue = badge.value || '';
     const unitStr = badge.unit ? ` ${badge.unit}` : '';
 
+    const badgeSize = otherProps.size || 'medium';
+    const rightPadding = badgeSize === 'large' ? '3px 3px' : '0 3px';
+
     const finalLabel = (
         <div
             style={{
@@ -71,7 +75,7 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
                 style={{
                     backgroundColor: rightBoxBg,
                     color: rightTextColor,
-                    padding: '0 3px',
+                    padding: rightPadding,
                     fontWeight: 'bold',
                     marginLeft: '3px',
                     borderTopRightRadius: '16px',
@@ -98,7 +102,7 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
                 avatar={badge.avatar}
                 iconIntent={badge.iconIntent}
                 iconScope={badge.iconScope}
-                chipColor={chipColor}  // explicitly pass the chipColor
+                chipColor={chipColor} // ensure the chip gets the proper color
                 chipSx={chipSx}
                 {...otherProps}
             />
