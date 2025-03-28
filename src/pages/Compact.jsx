@@ -5,10 +5,10 @@ import BadgeDesignControls from '../components/BadgeDesignControls';
 import useBadges from '../hooks/useBadges';
 import BadgeRenderer from "../components/BadgeRenderer";
 import { computeChipColor } from "../components/utils/badgeUtils";
+import { filterBadges } from '../components/utils/filterBadges';
 
 export default function Compact() {
     const { badges, loading, error } = useBadges();
-    console.log(badges);
     const [chipSize, setChipSize] = useState("medium");
     const [chipVariant, setChipVariant] = useState("filled");
     const [leftIconKey, setLeftIconKey] = useState("iconScope");
@@ -29,23 +29,15 @@ export default function Compact() {
         );
     }
 
-    let filteredBadges = badges;
-    if (searchQuery) {
-        filteredBadges = filteredBadges.filter(b =>
-            b.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            (b.description && b.description.toLowerCase().includes(searchQuery.toLowerCase()))
-        );
-    }
-    if (selectedBadge) {
-        filteredBadges = filteredBadges.filter(b => b.label === selectedBadge);
-    }
+    const filteredBadges = filterBadges(badges, searchQuery, selectedBadge);
 
     const groupedBadges = filteredBadges.reduce((groups, badge) => {
         const key = badge.intent || "Other";
-        if (!groups[key]) groups[key] = [];
+        groups[key] = groups[key] || [];
         groups[key].push(badge);
         return groups;
     }, {});
+
     const intentOrder = ["CONFIRMATION", "WARNING", "INFORMATION", "Other"];
     const sortedIntentKeys = Object.keys(groupedBadges).sort((a, b) => {
         const indexA = intentOrder.indexOf(a) === -1 ? intentOrder.length : intentOrder.indexOf(a);
@@ -76,10 +68,9 @@ export default function Compact() {
 
             <Box sx={{ mb: 1 }}>
                 <TextField
-                    size={"small"}
+                    size="small"
                     label="Search badges"
                     variant="outlined"
-                    fullWidth={false}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -97,10 +88,7 @@ export default function Compact() {
                                         size={chipSize}
                                         variant={chipVariant}
                                         chipColor={chipColor}
-                                        renderProps={{
-                                            leftIconKey,
-                                            rightIconKey,
-                                        }}
+                                        renderProps={{ leftIconKey, rightIconKey }}
                                     />
                                 </Grid2>
                             );

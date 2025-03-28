@@ -3,7 +3,7 @@ import {Outlet} from "react-router-dom";
 import Compact from "./pages/Compact";
 import Apps from "@mui/icons-material/Apps";
 import React from "react";
-import {Category, ViewList} from "@mui/icons-material";
+import {Assignment, Category, ColorLens, GroupsOutlined, Info, UnfoldMore, ViewList} from "@mui/icons-material";
 
 
 const BRANDING = {
@@ -15,15 +15,55 @@ const BRANDING = {
 
 const NAVIGATION = [
     {
+        kind: 'header',
+        title: 'Catalog',
+    },
+    {
         segment: 'compact',
-        title: 'Chart Badges Catalog',
+        title: 'Compact View',
         icon: <Apps />,
         component: Compact
     },
     {
         segment: 'table',
-        title: 'Chart Badges',
+        title: 'Table View',
         icon:  <ViewList />,
+    },
+    {
+        kind: 'divider',
+    },
+    {
+        kind: 'header',
+        title: 'Visualization Badges',
+    },
+    {
+        segment: 'genres',
+        title: 'Genres',
+        icon: <Category />,
+
+    },
+    {
+        segment: 'design',
+        title: 'Design',
+        icon: <ColorLens/>
+    },
+    {
+        segment: 'guidelines',
+        title: 'Guidelines',
+        icon: <Assignment />,
+    },
+    {
+        segment: 'examples',
+        title: 'Examples',
+        icon: <UnfoldMore />,
+    },
+    {
+        kind: 'divider',
+    },
+    {
+        segment: 'about',
+        title: 'About',
+        icon: <GroupsOutlined />,
     }
 ];
 

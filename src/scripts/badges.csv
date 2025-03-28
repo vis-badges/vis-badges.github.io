@@ -126,5 +126,5 @@ Semi-auto data processing,Indicate the data processing involves manual cleaning 
 Additional manual cleaning,Indicate the data processing is cross checked with manual cleaning,Information,Analysis,Tools
 Irregular patterns,Indicate there are irregular patterns that do not lead to contextual findings.,Warning,Visual Encoding,Uncertainty
 Interval breaks,"Indicates that an axis in the visualization has one or more breaks, i.e., unequal intervals",Warning,Visual Encoding,Interpretation
-Positionless elements now shown,Indicates that this visualization does not or cannot show elements without a geographic position.,,,"Interpretation, Maps"
-Simplified geographic boundaries,Indicates that geographic boundaries have been simplified to improve readability of this visualization. ,,,Maps
+Positionless elements now shown,Indicates that this visualization does not or cannot show elements without a geographic position.,Warning,Visual Encoding,"Interpretation, Maps"
+Simplified geographic boundaries,Indicates that geographic boundaries have been simplified to improve readability of this visualization. ,Warning,Visual Encoding,Maps

@@ -5,6 +5,11 @@ import Compact from "./pages/Compact";
 import {createHashRouter, RouterProvider} from "react-router-dom";
 import Main from "./Main";
 import BadgeDataGrid from "./pages/Table";
+import Design from "./pages/Design";
+import Genres from "./pages/Genres";
+import Examples from "./pages/Examples";
+import About from "./pages/About";
+import Guidelines from "./pages/Guidelines";
 
 const router = createHashRouter([
     {
@@ -25,8 +30,28 @@ const router = createHashRouter([
                     {
                         path: 'table',
                         Component: BadgeDataGrid
+                    },
+                    {
+                        path: 'design',
+                        Component: Design
+                    },
+                    {
+                        path: 'about',
+                        Component: About
+                    },
+                    {
+                        path: 'genres',
+                        Component: Genres
+                    },
+                    {
+                        path: 'examples',
+                        Component: Examples
+                    },
+                    {
+                        path: 'guidelines',
+                        Component: Guidelines
                     }
-                    ]
+               ]
             },
         ],
     },

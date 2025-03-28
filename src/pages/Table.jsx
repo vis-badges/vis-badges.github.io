@@ -1,4 +1,3 @@
-// Table.jsx
 import React, { useState, useRef } from 'react';
 import { Box, TextField, IconButton, Tooltip } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -6,7 +5,8 @@ import { DataGrid } from '@mui/x-data-grid';
 import useBadges from '../hooks/useBadges';
 import BadgeDesignControls from '../components/BadgeDesignControls';
 import BadgeRenderer from "../components/BadgeRenderer";
-import {computeChipColor} from "../components/utils/badgeUtils";
+import { computeChipColor } from "../components/utils/badgeUtils";
+import { filterBadges } from '../components/utils/filterBadges';
 
 export default function BadgeDataGrid() {
     const { badges, loading, error } = useBadges();
@@ -25,19 +25,8 @@ export default function BadgeDataGrid() {
     if (error) return <div>Error: {error.message}</div>;
     if (!Array.isArray(badges)) return <div>Error: Expected badges data to be an array.</div>;
 
-    // Filter badges based on search and selection
-    let filteredBadges = badges;
-    if (searchQuery) {
-        filteredBadges = filteredBadges.filter(b =>
-            b.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            (b.description && b.description.toLowerCase().includes(searchQuery.toLowerCase()))
-        );
-    }
-    if (selectedBadge) {
-        filteredBadges = filteredBadges.filter(b => b.label === selectedBadge);
-    }
+    const filteredBadges = filterBadges(badges, searchQuery, selectedBadge);
 
-    // Prepare rows for DataGrid
     const rows = filteredBadges.map((badge, index) => ({
         id: index,
         badge,
@@ -80,48 +69,31 @@ export default function BadgeDataGrid() {
                 </div>
             ),
         },
-        {
-            field: 'intent',
-            headerName: 'Intent',
-            flex: 1,
-            filterable: true,
-        },
-        {
-            field: 'type',
-            headerName: 'Type',
-            flex: 1,
-            filterable: true,
-        },
-        {
-            field: 'badgeType',
-            headerName: 'Badge Type',
-            flex: 1,
-            filterable: true,
-        },
+        { field: 'intent', headerName: 'Intent', flex: 1, filterable: true },
+        { field: 'type', headerName: 'Type', flex: 1, filterable: true },
+        { field: 'badgeType', headerName: 'Badge Type', flex: 1, filterable: true },
         {
             field: 'download',
             headerName: 'Download',
             flex: 0.8,
             filterable: false,
-            renderCell: (params) => {
-                return (
-                    <Tooltip title="Download Badge (PNG)">
-                        <IconButton
-                            size="small"
-                            onClick={() => {
-                                const badgeComponent = badgeRefs.current[params.id];
-                                if (badgeComponent && badgeComponent.downloadBadge) {
-                                    badgeComponent.downloadBadge();
-                                } else {
-                                    console.warn('Download function not available.');
-                                }
-                            }}
-                        >
-                            <DownloadIcon fontSize="small" />
-                        </IconButton>
-                    </Tooltip>
-                );
-            },
+            renderCell: (params) => (
+                <Tooltip title="Download Badge (PNG)">
+                    <IconButton
+                        size="small"
+                        onClick={() => {
+                            const badgeComponent = badgeRefs.current[params.id];
+                            if (badgeComponent?.downloadBadge) {
+                                badgeComponent.downloadBadge();
+                            } else {
+                                console.warn('Download function not available.');
+                            }
+                        }}
+                    >
+                        <DownloadIcon fontSize="small" />
+                    </IconButton>
+                </Tooltip>
+            ),
         },
     ];
 
@@ -144,7 +116,7 @@ export default function BadgeDataGrid() {
 
             <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
                 <TextField
-                    size={"small"}
+                    size="small"
                     label="Search badges"
                     variant="outlined"
                     fullWidth
@@ -167,9 +139,7 @@ export default function BadgeDataGrid() {
                             paddingTop: '8px',
                             paddingBottom: '8px',
                         },
-                        '& .MuiDataGrid-columnHeaderTitle': {
-                            fontWeight: 'bold',
-                        },
+                        '& .MuiDataGrid-columnHeaderTitle': { fontWeight: 'bold' },
                     }}
                 />
             </Box>
