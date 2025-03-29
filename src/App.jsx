@@ -4,6 +4,7 @@ import Compact from "./pages/Compact";
 import Apps from "@mui/icons-material/Apps";
 import React from "react";
 import {Assignment, Category, ColorLens, GroupsOutlined, Info, UnfoldMore, ViewList} from "@mui/icons-material";
+import TeaserFigure from "./pages/TeaserFigure";
 
 
 const BRANDING = {
@@ -17,6 +18,11 @@ const NAVIGATION = [
     {
         kind: 'header',
         title: 'Catalog',
+    },
+    {
+        segment: 'teaser',
+        title: '[TEMP]TEASER FIG',
+        component: TeaserFigure
     },
     {
         segment: 'compact',

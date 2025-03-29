@@ -10,6 +10,7 @@ import Genres from "./pages/Genres";
 import Examples from "./pages/Examples";
 import About from "./pages/About";
 import Guidelines from "./pages/Guidelines";
+import TeaserFigure from "./pages/TeaserFigure";
 
 const router = createHashRouter([
     {
@@ -26,6 +27,10 @@ const router = createHashRouter([
                     {
                         path: 'compact',
                         Component: Compact
+                    },
+                    {
+                        path: 'teaser',
+                        Component: TeaserFigure
                     },
                     {
                         path: 'table',
