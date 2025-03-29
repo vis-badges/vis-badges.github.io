@@ -1,0 +1,137 @@
+[
+  {
+    "id": "",
+    "badgeType": "CATEGORICAL",
+    "label": "Interaction Available",
+    "description": "",
+    "type": "ANALYSIS",
+    "intent": "CONFIRMATION",
+    "values": [
+      { "label": "Click" },
+      { "label": "Hover" },
+      { "label": "Filter" }
+    ],
+    "topics": ["Source"],
+    "iconIntent": "CheckCircle",
+    "iconScope": "DatasetOutlined",
+    "iconTopic": ""
+  },
+  {
+    "id": "140",
+    "badgeType": "CATEGORICAL",
+    "label": "Data Licensing",
+    "description": "",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Public Domain" },
+      { "label": "Creative Commons" },
+      { "label": "Proprietary" }
+    ],
+    "topics": ["Availability"],
+    "iconIntent": "Info",
+    "iconScope": "DatasetOutlined",
+    "iconTopic": ""
+  },
+  {
+    "id": "141",
+    "badgeType": "LIST",
+    "label": "Data Collection Methods",
+    "description": "Methods used for collecting the data.",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Surveys" },
+      { "label": "Sensors" },
+      { "label": "Manual" }
+    ],
+    "topics": ["Source"],
+    "iconIntent": "Info",
+    "iconScope": "DatasetOutlined",
+    "iconTopic": ""
+  },
+  {
+    "id": "142",
+    "badgeType": "CATEGORICAL",
+    "label": "Primary Audience",
+    "description": "The intended primary audience of the visualization.",
+    "type": "CONTEXT",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "General Public" },
+      { "label": "Policy Makers" }
+    ],
+    "topics": ["Audience"],
+    "iconIntent": "Info",
+    "iconScope": "QueryStatsOutlined",
+    "iconTopic": ""
+  },
+  {
+    "id": "143",
+    "badgeType": "LIST",
+    "label": "Data Transformations",
+    "description": "Types of transformations applied to data.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Normalization" },
+      { "label": "Aggregation" },
+      { "label": "Binning" },
+      { "label": "Tokenization"}
+    ],
+    "topics": ["Preprocessing"],
+    "iconIntent": "Info",
+    "iconScope": "AnalyticsOutlined",
+    "iconTopic": ""
+  },
+  {
+    "id": "144",
+    "badgeType": "CATEGORICAL",
+    "label": "Data Sources",
+    "description": "",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Source1" },
+      { "label": "Source2" },
+      { "label": "Source3" }
+    ],
+    "topics": ["Availability"],
+    "iconIntent": "Info",
+    "iconScope": "DatasetOutlined",
+    "iconTopic": ""
+  },
+  {
+    "id": "145",
+    "badgeType": "CATEGORICAL",
+    "label": "Visualization Types",
+    "description": "Types of visualization techniques used.",
+    "type": "VISUAL_ENCODING",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Bar Chart" },
+      { "label": "Scatter Plot" },
+      { "label": "Heatmap" }
+    ],
+    "topics": ["Interpretation"],
+    "iconIntent": "Info",
+    "iconScope": "QueryStatsOutlined",
+    "iconTopic": ""
+  },
+  {
+    "id": "146",
+    "badgeType": "CATEGORICAL",
+    "label": "Uncertainty Representation",
+    "description": "Methods used for visualizing uncertainty.",
+    "type": "VISUAL_ENCODING",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Confidence Bands" },
+      { "label": "Error Bars" }
+    ],
+    "topics": ["Uncertainty"],
+    "iconIntent": "Info",
+    "iconScope": "QueryStatsOutlined",
+    "iconTopic": ""
+  }
+]
