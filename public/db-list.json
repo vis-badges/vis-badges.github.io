@@ -69,7 +69,7 @@
   {
     "id": "143",
     "badgeType": "LIST",
-    "label": "Data Transformations",
+    "label": "Data Transformations Applied",
     "description": "Types of transformations applied to data.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
@@ -104,7 +104,7 @@
   {
     "id": "145",
     "badgeType": "CATEGORICAL",
-    "label": "Visualization Types",
+    "label": "Visualization Types Used",
     "description": "Types of visualization techniques used.",
     "type": "VISUAL_ENCODING",
     "intent": "INFORMATION",
