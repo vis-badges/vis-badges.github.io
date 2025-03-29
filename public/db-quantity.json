@@ -120,5 +120,17 @@
     "unit": "%",
     "intent": "WARNING",
     "topics": ["Constraints", "Uncertainty"]
+  },
+  {
+    "badgeType": "QUANTITATIVE",
+    "id": "139",
+    "label": "Number of Colors",
+    "description": "Number of distinct colors used in the visualization.",
+    "link": "",
+    "type": "VISUAL_ENCODING",
+    "value": 5,
+    "unit": "",
+    "intent": "INFORMATION",
+    "topics": ["Color"]
   }
 ]
