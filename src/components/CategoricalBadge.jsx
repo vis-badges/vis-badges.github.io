@@ -2,12 +2,7 @@ import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react'
 import { Box, Chip, Tooltip, Stack, Collapse, Badge, Avatar } from '@mui/material';
 import * as Icons from '@mui/icons-material';
 import {downloadNodeAsPng} from "./utils/downloadUtils";
-
-function getMuiIcon(iconName) {
-    if (!iconName || !Icons[iconName]) return null;
-    const IconComponent = Icons[iconName];
-    return <IconComponent fontSize="small" />;
-}
+import {getMuiIcon} from "./utils/getIcon";
 
 function getAvatarElement(avatar) {
     if (!avatar) return null;

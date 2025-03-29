@@ -3,6 +3,7 @@ import React from 'react';
 import { Avatar, Box, Chip, Tooltip } from '@mui/material';
 import * as Icons from '@mui/icons-material';
 import { BiSolidInfoSquare } from 'react-icons/bi';
+import {getMuiIcon} from "./utils/getIcon";
 
 function mapChipSize(customSize) {
     switch (customSize) {
@@ -17,18 +18,6 @@ function mapChipSize(customSize) {
     }
 }
 
-function getMuiIcon(iconName, size) {
-    if (!iconName) return null;
-
-    if (iconName === 'Info') {
-        const iconSize = size === 'large' ? 22 : 18;
-        return <BiSolidInfoSquare size={iconSize} />;
-    }
-
-    if (!Icons[iconName]) return null;
-    const IconComponent = Icons[iconName];
-    return <IconComponent fontSize="small" />;
-}
 
 function getAvatarElement(avatar) {
     if (!avatar) return null;
