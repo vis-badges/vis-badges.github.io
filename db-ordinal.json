@@ -85,20 +85,6 @@
   },
   {
     "badgeType": "ORDINAL",
-    "id": "106",
-    "label": "Interaction Level",
-    "description": "",
-    "value": "Highly Interactive",
-    "type": "INTERACTION",
-    "link": "",
-    "intent": "INFORMATION",
-    "topics": ["Exploration"],
-    "iconIntent": "Info",
-    "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
-  },
-  {
-    "badgeType": "ORDINAL",
     "id": "107",
     "label": "Provenance Transparency",
     "description": "",
@@ -123,20 +109,6 @@
     "topics": [""],
     "iconIntent": "CheckCircle",
     "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
-  },
-  {
-    "badgeType": "ORDINAL",
-    "id": "108",
-    "label": "Sampling Robustness",
-    "description": "",
-    "value": "Robust",
-    "type": "ANALYSIS",
-    "link": "",
-    "intent": "CONFIRMATION",
-    "topics": ["Sampling"],
-    "iconIntent": "CheckCircle",
-    "iconScope": "AnalyticsOutlined",
     "iconTopic": ""
   },
   {
