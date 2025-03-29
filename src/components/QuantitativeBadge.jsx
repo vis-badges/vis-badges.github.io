@@ -73,7 +73,7 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
                     backgroundColor: rightBoxBg,
                     color: rightTextColor,
                     padding: rightPadding,
-                    fontWeight: 'bold',
+                    // fontWeight: 'bold',
                     marginLeft: '3px',
                     borderTopRightRadius: '16px',
                     borderBottomRightRadius: '16px',
