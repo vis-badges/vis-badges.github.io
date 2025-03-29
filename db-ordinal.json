@@ -108,5 +108,27 @@
     "link": "",
     "intent": "INFORMATION",
     "topics": ["Availability"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "111",
+    "label": "Indistinguishable Colors",
+    "description": "",
+    "value": "Red-Green",
+    "type": "VISUAL_ENCODING",
+    "link": "",
+    "intent": "WARNING",
+    "topics": ["Color", "Accessibility"]
+  },
+  {
+    "badgeType":"ORDINAL",
+    "id": "112",
+    "label": "LLM Involvement",
+    "description": "",
+    "value": "gpt4o",
+    "type": "CONTEXT",
+    "link": "",
+    "intent": "INFORMATION",
+    "topics": ["AI"]
   }
 ]

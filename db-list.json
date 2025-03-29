@@ -109,5 +109,19 @@
       { "label": "Error Bars" }
     ],
     "topics": ["Uncertainty"]
+  },
+  {
+    "id": "147",
+    "badgeType": "CATEGORICAL",
+    "label": "Colors Used",
+    "description": "Named colors used in the visualization.",
+    "type": "VISUAL_ENCODING",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Red" },
+      { "label": "Cyan" },
+      { "label": "Yello" }
+    ],
+    "topics": ["Color"]
   }
 ]
