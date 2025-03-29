@@ -11,10 +11,7 @@
     "intent": "CONFIRMATION",
     "topics": [
       "Source"
-    ],
-    "iconIntent": "CheckCircle",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    ]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -26,10 +23,7 @@
     "value": 1000,
     "unit": "People",
     "intent": "INFORMATION",
-    "topics": ["Availability"],
-    "iconIntent": "CheckCircle",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Availability"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -41,10 +35,7 @@
     "value": 7,
     "unit": "days",
     "intent": "INFORMATION",
-    "topics": ["Time"],
-    "iconIntent": "Info",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Time"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -56,10 +47,7 @@
     "value": 5,
     "unit": "%",
     "intent": "WARNING",
-    "topics": ["Constraints", "Uncertainty"],
-    "iconIntent": "Warning",
-    "iconScope": "AnalyticsOutlined",
-    "iconTopic": ""
+    "topics": ["Constraints", "Uncertainty"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -71,10 +59,7 @@
     "value": 2,
     "unit": "%",
     "intent": "INFORMATION",
-    "topics": ["Preprocessing"],
-    "iconIntent": "Info",
-    "iconScope": "AnalyticsOutlined",
-    "iconTopic": ""
+    "topics": ["Preprocessing"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -86,10 +71,7 @@
     "value": 12,
     "unit": "months",
     "intent": "INFORMATION",
-    "topics": ["Uncertainty", "Time"],
-    "iconIntent": "Info",
-    "iconScope": "AnalyticsOutlined",
-    "iconTopic": ""
+    "topics": ["Uncertainty", "Time"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -101,10 +83,7 @@
     "value": 0.99,
     "unit": "%",
     "intent": "CONFIRMATION",
-    "topics": ["Source"],
-    "iconIntent": "CheckCircle",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Source"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -116,10 +95,7 @@
     "value": 24,
     "unit": "hours",
     "intent": "INFORMATION",
-    "topics": ["Time", "Availability"],
-    "iconIntent": "Info",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Time", "Availability"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -129,12 +105,9 @@
     "link": "",
     "type": "DATA",
     "value": 5,
-    "unit": "yeards",
+    "unit": "years",
     "intent": "INFORMATION",
-    "topics": ["Availability", "Time"],
-    "iconIntent": "Info",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Availability", "Time"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -146,9 +119,6 @@
     "value": 0.5,
     "unit": "%",
     "intent": "WARNING",
-    "topics": ["Constraints", "Uncertainty"],
-    "iconIntent": "Warning",
-    "iconScope": "AnalyticsOutlined",
-    "iconTopic": ""
+    "topics": ["Constraints", "Uncertainty"]
   }
 ]

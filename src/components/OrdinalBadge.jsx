@@ -1,10 +1,9 @@
-// OrdinalBadge.jsx
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import BadgeBase from './BadgeBase';
-import {downloadNodeAsPng} from "./utils/downloadUtils";
-import {useTheme} from "@mui/material/styles";
+import { downloadNodeAsPng } from "./utils/downloadUtils";
+import { useTheme } from "@mui/material/styles";
 
-const OrdinalBadge = forwardRef(function QuantitativeBadge(
+const OrdinalBadge = forwardRef(function OrdinalBadge(
     { badge, chipColor, ...otherProps },
     ref
 ) {
@@ -19,10 +18,6 @@ const OrdinalBadge = forwardRef(function QuantitativeBadge(
 
     const variant = otherProps.variant || 'filled';
 
-    // outlined + light: background = baseColor, text = white
-    // filled + light: background = light grey, text = baseColor
-    // outlined + dark: background = baseColor, text = black
-    // filled + dark: background = dark grey, text = black
     let rightBoxBg, rightTextColor;
     if (variant === 'outlined') {
         if (isLightMode) {
@@ -32,7 +27,7 @@ const OrdinalBadge = forwardRef(function QuantitativeBadge(
             rightBoxBg = baseColor;
             rightTextColor = '#000';
         }
-    } else { // filled variant
+    } else {
         if (isLightMode) {
             rightBoxBg = '#cfcfcf';
             rightTextColor = baseColor;
@@ -78,8 +73,8 @@ const OrdinalBadge = forwardRef(function QuantitativeBadge(
                     borderBottomRightRadius: '16px',
                 }}
             >
-        {rightValue}
-      </span>
+                {rightValue}
+            </span>
         </div>
     );
 
@@ -97,8 +92,8 @@ const OrdinalBadge = forwardRef(function QuantitativeBadge(
                 label={finalLabel}
                 description={badge.description}
                 avatar={badge.avatar}
-                iconIntent={badge.iconIntent}
-                iconScope={badge.iconScope}
+                intent={badge.intent}  // Now using badge.intent
+                type={badge.type}      // Now using badge.type
                 chipColor={chipColor}
                 chipSx={chipSx}
                 {...otherProps}

@@ -2,8 +2,8 @@
 import React from 'react';
 import { Avatar, Box, Chip, Tooltip } from '@mui/material';
 import * as Icons from '@mui/icons-material';
-import { BiSolidInfoSquare } from 'react-icons/bi';
-import {getMuiIcon} from "./utils/getIcon";
+import { getMuiIcon } from "./utils/getIcon";
+import {icon_intent_map, icon_scope_map} from "./utils/iconMappings";
 
 function mapChipSize(customSize) {
     switch (customSize) {
@@ -18,7 +18,6 @@ function mapChipSize(customSize) {
     }
 }
 
-
 function getAvatarElement(avatar) {
     if (!avatar) return null;
     if (avatar.type === 'letter') return <Avatar>{avatar.value}</Avatar>;
@@ -26,15 +25,15 @@ function getAvatarElement(avatar) {
     return null;
 }
 
-function resolveIcon(key, { avatar, iconIntent, iconScope, iconTopic }, size) {
+function resolveIcon(key, { intent, type }, size) {
     if (key !== 'none') {
-        const iconValue =
-            key === 'iconIntent'
-                ? iconIntent
-                : key === 'iconScope'
-                    ? iconScope
-                    : iconTopic;
-        return getMuiIcon(iconValue, size);
+        let iconValue = "";
+        if (key === 'iconIntent') {
+            iconValue = icon_intent_map[intent] || "";
+        } else if (key === 'iconScope') {
+            iconValue = icon_scope_map[type] || "";
+        }
+        return iconValue ? getMuiIcon(iconValue, size) : null;
     }
     return null;
 }
@@ -43,9 +42,8 @@ export default function BadgeBase({
                                       label,
                                       description = '',
                                       avatar,
-                                      iconIntent,
-                                      iconScope,
-                                      iconTopic,
+                                      intent, // now comes from badge.intent
+                                      type,   // now comes from badge.type
                                       size = 'medium',
                                       variant = 'filled',
                                       leftIconKey = 'iconIntent',
@@ -54,8 +52,8 @@ export default function BadgeBase({
                                       chipSx = {},
                                   }) {
     const { muiSize, hideLabel } = mapChipSize(size);
-    const leftIcon = resolveIcon(leftIconKey, { avatar, iconIntent, iconScope, iconTopic }, size);
-    const rightIcon = resolveIcon(rightIconKey, { avatar, iconIntent, iconScope, iconTopic }, size);
+    const leftIcon = resolveIcon(leftIconKey, { intent, type }, size);
+    const rightIcon = resolveIcon(rightIconKey, { intent, type }, size);
     const displayLabel = hideLabel ? '' : label;
 
     return (
@@ -65,7 +63,7 @@ export default function BadgeBase({
                     label={displayLabel}
                     size={muiSize}
                     variant={variant}
-                    avatar={leftIconKey === 'avatar' ? leftIcon : null}
+                    avatar={leftIconKey === 'avatar' ? getAvatarElement(avatar) : null}
                     icon={leftIconKey !== 'avatar' ? leftIcon : null}
                     deleteIcon={rightIcon}
                     onDelete={rightIcon ? () => {} : undefined}

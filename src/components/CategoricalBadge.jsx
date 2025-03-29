@@ -1,8 +1,23 @@
 import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import { Box, Chip, Tooltip, Stack, Collapse, Badge, Avatar } from '@mui/material';
 import * as Icons from '@mui/icons-material';
-import {downloadNodeAsPng} from "./utils/downloadUtils";
-import {getMuiIcon} from "./utils/getIcon";
+import { downloadNodeAsPng } from "./utils/downloadUtils";
+import { getMuiIcon } from "./utils/getIcon";
+
+// New mappings derived from intent and type
+const icon_intent_map = {
+    "CONFIRMATION": "CheckCircle",
+    "INFORMATION": "Info",
+    "WARNING": "Warning"
+};
+
+const icon_scope_map = {
+    "DATA": "DatasetOutlined",
+    "ANALYSIS": "AnalyticsOutlined",
+    "VISUAL ENCODING": "BubbleChartOutlined",
+    "INTERACTION": "TouchAppOutlined",
+    "CONTEXT": "QueryStatsOutlined"
+};
 
 function getAvatarElement(avatar) {
     if (!avatar) return null;
@@ -14,8 +29,13 @@ function getAvatarElement(avatar) {
 function resolveIcon(key, badge) {
     if (key === 'avatar') return getAvatarElement(badge.avatar);
     if (key !== 'none') {
-        const iconValue = key === 'iconIntent' ? badge.iconIntent : key === 'iconScope' ? badge.iconScope : badge.iconTopic;
-        return getMuiIcon(iconValue);
+        let iconValue = "";
+        if (key === 'iconIntent') {
+            iconValue = icon_intent_map[badge.intent] || "";
+        } else if (key === 'iconScope') {
+            iconValue = icon_scope_map[badge.type] || "";
+        }
+        return iconValue ? getMuiIcon(iconValue) : null;
     }
     return null;
 }
@@ -25,8 +45,8 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
         badge,
         size = 'medium',
         variant = 'filled',
-        leftIconKey = 'iconIntent', // options: 'none', 'avatar', 'iconIntent', 'iconScope', 'iconTopic'
-        rightIconKey = 'iconIntent', // options: 'none', 'iconIntent', 'iconScope', 'iconTopic'
+        leftIconKey = 'iconIntent', // options: 'none', 'avatar', 'iconIntent', 'iconScope'
+        rightIconKey = 'iconIntent', // options: 'none', 'iconIntent', 'iconScope'
         chipColor = 'default',
     },
     ref
@@ -62,7 +82,7 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
     }));
 
     return (
-        <div ref={badgeRef} style={{display: 'inline-block'}}>
+        <div ref={badgeRef} style={{ display: 'inline-block' }}>
             <Chip
                 label={mainChipLabel}
                 size={muiSize}

@@ -11,10 +11,7 @@
       { "label": "Hover" },
       { "label": "Filter" }
     ],
-    "topics": ["Source"],
-    "iconIntent": "CheckCircle",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Source"]
   },
   {
     "id": "140",
@@ -28,10 +25,7 @@
       { "label": "Creative Commons" },
       { "label": "Proprietary" }
     ],
-    "topics": ["Availability"],
-    "iconIntent": "Info",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Availability"]
   },
   {
     "id": "141",
@@ -45,10 +39,7 @@
       { "label": "Sensors" },
       { "label": "Manual" }
     ],
-    "topics": ["Source"],
-    "iconIntent": "Info",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Source"]
   },
   {
     "id": "142",
@@ -61,10 +52,7 @@
       { "label": "General Public" },
       { "label": "Policy Makers" }
     ],
-    "topics": ["Audience"],
-    "iconIntent": "Info",
-    "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
+    "topics": ["Audience"]
   },
   {
     "id": "143",
@@ -79,10 +67,7 @@
       { "label": "Binning" },
       { "label": "Tokenization"}
     ],
-    "topics": ["Preprocessing"],
-    "iconIntent": "Info",
-    "iconScope": "AnalyticsOutlined",
-    "iconTopic": ""
+    "topics": ["Preprocessing"]
   },
   {
     "id": "144",
@@ -96,10 +81,7 @@
       { "label": "Source2" },
       { "label": "Source3" }
     ],
-    "topics": ["Availability"],
-    "iconIntent": "Info",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Availability"]
   },
   {
     "id": "145",
@@ -113,10 +95,7 @@
       { "label": "Scatter Plot" },
       { "label": "Heatmap" }
     ],
-    "topics": ["Interpretation"],
-    "iconIntent": "Info",
-    "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
+    "topics": ["Interpretation"]
   },
   {
     "id": "146",
@@ -129,9 +108,6 @@
       { "label": "Confidence Bands" },
       { "label": "Error Bars" }
     ],
-    "topics": ["Uncertainty"],
-    "iconIntent": "Info",
-    "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
+    "topics": ["Uncertainty"]
   }
 ]

@@ -18,10 +18,6 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
 
     const variant = otherProps.variant || 'filled';
 
-    // outlined + light: background = baseColor, text = white
-    // filled + light: background = light grey, text = baseColor
-    // outlined + dark: background = baseColor, text = black
-    // filled + dark: background = dark grey, text = black
     let rightBoxBg, rightTextColor;
     if (variant === 'outlined') {
         if (isLightMode) {
@@ -31,7 +27,7 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
             rightBoxBg = baseColor;
             rightTextColor = '#000';
         }
-    } else { // filled variant
+    } else {
         if (isLightMode) {
             rightBoxBg = '#cfcfcf';
             rightTextColor = baseColor;
@@ -73,15 +69,14 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
                     backgroundColor: rightBoxBg,
                     color: rightTextColor,
                     padding: rightPadding,
-                    // fontWeight: 'bold',
                     marginLeft: '3px',
                     borderTopRightRadius: '16px',
                     borderBottomRightRadius: '16px',
                 }}
             >
-        {rightValue}
+                {rightValue}
                 {unitStr}
-      </span>
+            </span>
         </div>
     );
 
@@ -99,8 +94,8 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
                 label={finalLabel}
                 description={badge.description}
                 avatar={badge.avatar}
-                iconIntent={badge.iconIntent}
-                iconScope={badge.iconScope}
+                intent={badge.intent}  // Pass intent from the badge
+                type={badge.type}      // Pass type from the badge
                 chipColor={chipColor}
                 chipSx={chipSx}
                 {...otherProps}

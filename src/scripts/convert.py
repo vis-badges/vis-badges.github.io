@@ -55,9 +55,9 @@ with open(csv_path, newline='', encoding='utf-8') as csvfile:
             "intent": intent,
             "topics": topics,
             "link": "",
-            "iconIntent": icon_intent_map.get(intent, ""),
-            "iconScope": icon_scope_map.get(scope, ""),
-            "iconTopic": ""
+#             "iconIntent": icon_intent_map.get(intent, ""),
+#             "iconScope": icon_scope_map.get(scope, ""),
+#             "iconTopic": ""
         }
         badges.append(badge)
 

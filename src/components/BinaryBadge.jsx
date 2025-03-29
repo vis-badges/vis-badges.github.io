@@ -2,7 +2,7 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import { Box } from '@mui/material';
 import BadgeBase from './BadgeBase';
-import {downloadNodeAsPng} from "./utils/downloadUtils";
+import { downloadNodeAsPng } from "./utils/downloadUtils";
 
 const BinaryBadge = forwardRef(function BinaryBadge(
     { badge, leftIconKey, rightIconKey, ...otherProps },
@@ -22,19 +22,18 @@ const BinaryBadge = forwardRef(function BinaryBadge(
     }));
 
     return (
-            <div ref={badgeRef} style={{display: 'inline-block'}}>
-                <BadgeBase
-                    label={badge.label}
-                    description={badge.description}
-                    avatar={badge.avatar}
-                    iconIntent={badge.iconIntent}
-                    iconScope={badge.iconScope}
-                    iconTopic={badge.iconTopic}
-                    leftIconKey={leftIconKey}
-                    rightIconKey={rightIconKey}
-                    {...otherProps}
-                />
-            </div>
+        <div ref={badgeRef} style={{ display: 'inline-block' }}>
+            <BadgeBase
+                label={badge.label}
+                description={badge.description}
+                avatar={badge.avatar}
+                intent={badge.intent}
+                type={badge.type}
+                leftIconKey={leftIconKey}
+                rightIconKey={rightIconKey}
+                {...otherProps}
+            />
+        </div>
     );
 });
 
