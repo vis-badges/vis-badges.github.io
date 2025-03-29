@@ -13,7 +13,7 @@ export default function useBadges() {
                     'db-list.json',
                     'db-ordinal.json',
                     'db-quantity.json',
-                    'db-score.json'
+                    // 'db-score.json'
                 ];
 
                 const responses = await Promise.all(urls.map(url => fetch(url)));
