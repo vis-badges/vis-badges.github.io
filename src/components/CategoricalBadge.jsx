@@ -3,21 +3,7 @@ import { Box, Chip, Tooltip, Stack, Collapse, Badge, Avatar } from '@mui/materia
 import * as Icons from '@mui/icons-material';
 import { downloadNodeAsPng } from "./utils/downloadUtils";
 import { getMuiIcon } from "./utils/getIcon";
-
-// New mappings derived from intent and type
-const icon_intent_map = {
-    "CONFIRMATION": "CheckCircle",
-    "INFORMATION": "Info",
-    "WARNING": "Warning"
-};
-
-const icon_scope_map = {
-    "DATA": "DatasetOutlined",
-    "ANALYSIS": "AnalyticsOutlined",
-    "VISUAL ENCODING": "BubbleChartOutlined",
-    "INTERACTION": "TouchAppOutlined",
-    "CONTEXT": "QueryStatsOutlined"
-};
+import {icon_intent_map, icon_scope_map} from "./utils/iconMappings";
 
 function getAvatarElement(avatar) {
     if (!avatar) return null;
@@ -45,8 +31,8 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
         badge,
         size = 'medium',
         variant = 'filled',
-        leftIconKey = 'iconIntent', // options: 'none', 'avatar', 'iconIntent', 'iconScope'
-        rightIconKey = 'iconIntent', // options: 'none', 'iconIntent', 'iconScope'
+        leftIconKey = 'iconIntent',
+        rightIconKey = 'iconIntent',
         chipColor = 'default',
     },
     ref
@@ -62,9 +48,11 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
     const leftIcon = resolveIcon(leftIconKey, badge);
     const rightIcon = resolveIcon(rightIconKey, badge);
 
+    // For 'large', use medium size; for small chips, hide the label.
     const muiSize = size === 'large' ? 'medium' : 'small';
     const labelHidden = size === 'small';
-    const mainChipLabel = labelHidden ? '' : badge.label;
+    // When label is hidden, set it to undefined so MUI doesn't reserve space for it.
+    const mainChipLabel = labelHidden ? undefined : badge.label;
 
     const handleExpandClick = () => {
         setExpanded((prev) => !prev);
@@ -94,12 +82,19 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
                 clickable
                 onClick={handleExpandClick}
                 color={isMuiColor ? chipColor : 'default'}
-                sx={
-                    !isMuiColor && {
+                sx={{
+                    ...(!isMuiColor && {
                         backgroundColor: chipColor,
                         color: '#fff',
-                    }
-                }
+                    }),
+                    ...(labelHidden && {
+                        pl: 0,
+                        pr: 0,
+                        minWidth: 26, //IN CASE OF MINI
+                        '& .MuiChip-label': { display: 'none' },
+                        '& .MuiChip-icon': { marginLeft: 0, marginRight: 0 },
+                    }),
+                }}
             />
 
             {!expanded && count > 0 && (

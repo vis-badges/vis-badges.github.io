@@ -3,7 +3,7 @@ import React from 'react';
 import { Avatar, Box, Chip, Tooltip } from '@mui/material';
 import * as Icons from '@mui/icons-material';
 import { getMuiIcon } from "./utils/getIcon";
-import {icon_intent_map, icon_scope_map} from "./utils/iconMappings";
+import { icon_intent_map, icon_scope_map } from "./utils/iconMappings";
 
 function mapChipSize(customSize) {
     switch (customSize) {
@@ -54,7 +54,8 @@ export default function BadgeBase({
     const { muiSize, hideLabel } = mapChipSize(size);
     const leftIcon = resolveIcon(leftIconKey, { intent, type }, size);
     const rightIcon = resolveIcon(rightIconKey, { intent, type }, size);
-    const displayLabel = hideLabel ? '' : label;
+    // Instead of an empty string, use undefined when hideLabel is true.
+    const displayLabel = hideLabel ? undefined : label;
 
     return (
         <Box>
@@ -69,7 +70,17 @@ export default function BadgeBase({
                     onDelete={rightIcon ? () => {} : undefined}
                     clickable
                     color={chipColor}
-                    sx={chipSx}
+                    sx={{
+                        ...chipSx,
+                        // IN CASE OF MINI: Remove extra padding and icon margins.
+                        ...(hideLabel && {
+                            pl: 0,
+                            pr: 0,
+                            minWidth: 26,
+                            '& .MuiChip-label': { display: 'none' },
+                            '& .MuiChip-icon': { marginLeft: 0, marginRight: 0 },
+                        }),
+                    }}
                 />
             </Tooltip>
         </Box>

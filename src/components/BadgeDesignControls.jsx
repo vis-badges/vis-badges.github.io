@@ -72,6 +72,7 @@ export default function BadgeDesignControls({
                     onChange={(e, val) => val && setChipSize(val)}
                     size="small"
                 >
+                    <ToggleButton value="small">Mini</ToggleButton>
                     <ToggleButton value="medium">Small</ToggleButton>
                     <ToggleButton value="large">Medium</ToggleButton>
                 </ToggleButtonGroup>
