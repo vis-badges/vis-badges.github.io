@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Drawer, TextField, Typography } from '@mui/material';
+import { Box, Divider, Drawer, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Grid';
 import BadgeDesignControls from '../components/BadgeDesignControls';
 import useBadges from '../hooks/useBadges';
@@ -16,7 +16,8 @@ export default function Compact() {
     const [colorMode, setColorMode] = useState("intent");
     const [muiColor, setMuiColor] = useState("default");
     const [selectedBadge, setSelectedBadge] = useState(null);
-    const [searchQuery, setSearchQuery] = useState(""); // New search query state
+    const [searchQuery, setSearchQuery] = useState("");
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     if (loading) return <div>Loading badges...</div>;
     if (error) return <div>Error: {error.message}</div>;
@@ -29,7 +30,6 @@ export default function Compact() {
         );
     }
 
-    // Use the searchQuery (a string) to filter badges.
     const filteredBadges = filterBadges(badges, searchQuery);
 
     const groupedBadges = filteredBadges.reduce((groups, badge) => {
@@ -40,14 +40,18 @@ export default function Compact() {
     }, {});
 
     const intentOrder = ["CONFIRMATION", "WARNING", "INFORMATION", "Other"];
-    const sortedIntentKeys = Object.keys(groupedBadges).sort((a, b) => {
-        const indexA = intentOrder.indexOf(a) === -1 ? intentOrder.length : intentOrder.indexOf(a);
-        const indexB = intentOrder.indexOf(b) === -1 ? intentOrder.length : intentOrder.indexOf(b);
-        return indexA - indexB;
-    });
+    const sortedIntentKeys = Object.keys(groupedBadges).sort((a, b) => intentOrder.indexOf(a) - intentOrder.indexOf(b));
+
+    const handleBadgeClick = (badge) => {
+        setSelectedBadge(badge);
+        if (badge.badgeType !== "CATEGORICAL") {
+            setIsDrawerOpen(true);
+        }
+    };
 
     return (
         <Box sx={{ p: 2 }}>
+            <Divider sx={{ mb: 1 }} />
 
             <BadgeDesignControls
                 chipSize={chipSize}
@@ -66,6 +70,8 @@ export default function Compact() {
                 setSelectedBadge={setSelectedBadge}
             />
 
+            <Divider sx={{ mb: 4 }} />
+
             {sortedIntentKeys.map((intent) => (
                 <Box key={intent} sx={{ mb: 4 }}>
                     <Grid2 container spacing={2}>
@@ -75,7 +81,7 @@ export default function Compact() {
                                 <Grid2
                                     item
                                     key={idx}
-                                    onClick={() => setSelectedBadge(badge)}
+                                    onClick={() => handleBadgeClick(badge)}
                                     sx={{ cursor: 'pointer' }}
                                 >
                                     <BadgeRenderer
@@ -92,29 +98,21 @@ export default function Compact() {
                 </Box>
             ))}
 
-            {/* Sidebar Drawer for Badge Information */}
-            // In your Compact component, replace the Drawer section with:
-
             <Drawer
                 anchor="right"
-                open={Boolean(selectedBadge)}
-                onClose={() => setSelectedBadge(null)}
+                open={isDrawerOpen}
+                onClose={() => setIsDrawerOpen(false)}
             >
-                <Box sx={{marginTop:10, width: 300, p: 2 }}>
-                    {selectedBadge && (
+                <Box sx={{ marginTop: 10, width: 300, p: 2 }}>
+                    {selectedBadge && selectedBadge.badgeType !== "CATEGORICAL" && (
                         <>
-                            {/* Badge Label */}
                             <Typography variant="h5" gutterBottom>
                                 {selectedBadge.label || "N/A"}
                             </Typography>
-
-                            {/* Badge Description */}
                             <Typography variant="body2" color="text.secondary" gutterBottom>
                                 {selectedBadge.description}
                             </Typography>
-
-                            {/* Badge Intent */}
-                            <Box sx={{ mb: 1 }}>
+                            <Box sx={{ mt: 2 }}>
                                 <Typography variant="subtitle2" color="text.secondary">
                                     Intent
                                 </Typography>
@@ -122,9 +120,7 @@ export default function Compact() {
                                     {selectedBadge.intent || "N/A"}
                                 </Typography>
                             </Box>
-
-                            {/* Badge Type */}
-                            <Box sx={{ mt: 2, mb: 1 }}>
+                            <Box sx={{ mt: 2 }}>
                                 <Typography variant="subtitle2" color="text.secondary">
                                     Type
                                 </Typography>
@@ -132,9 +128,6 @@ export default function Compact() {
                                     {selectedBadge.type || "N/A"}
                                 </Typography>
                             </Box>
-
-
-                            {/* Badge Topics as Hashtags */}
                             {selectedBadge.topics && selectedBadge.topics.length > 0 && (
                                 <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                                     {selectedBadge.topics.map((topic, idx) => (

@@ -1927,15 +1927,15 @@
     "id": "127",
     "label": "Positionless elements now shown",
     "description": "Indicates that this visualization does not or cannot show elements without a geographic position.",
-    "type": "",
-    "intent": "",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
     "topics": [
       "Interpretation",
       "Maps"
     ],
     "link": "",
-    "iconIntent": "",
-    "iconScope": "",
+    "iconIntent": "Warning",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   },
   {
@@ -1943,14 +1943,14 @@
     "id": "128",
     "label": "Simplified geographic boundaries",
     "description": "Indicates that geographic boundaries have been simplified to improve readability of this visualization.",
-    "type": "",
-    "intent": "",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
     "topics": [
       "Maps"
     ],
     "link": "",
-    "iconIntent": "",
-    "iconScope": "",
+    "iconIntent": "Warning",
+    "iconScope": "BubbleChartOutlined",
     "iconTopic": ""
   }
 ]
