@@ -8,10 +8,7 @@
     "type": "DATA",
     "link": "",
     "intent": "CONFIRMATION",
-    "topics": ["Availability"],
-    "iconIntent": "CheckCircle",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Availability"]
   },
   {
     "badgeType": "ORDINAL",
@@ -22,10 +19,7 @@
     "type": "DATA",
     "link": "",
     "intent": "WARNING",
-    "topics": ["Availability"],
-    "iconIntent": "Warning",
-    "iconScope": "AnalyticsOutlined",
-    "iconTopic": ""
+    "topics": ["Availability"]
   },
   {
     "badgeType": "ORDINAL",
@@ -36,10 +30,7 @@
     "type": "DATA",
     "link": "",
     "intent": "CONFIRMATION",
-    "topics": ["Time"],
-    "iconIntent": "CheckCircle",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Time"]
   },
   {
     "badgeType": "ORDINAL",
@@ -50,10 +41,7 @@
     "type": "ANALYSIS",
     "link": "",
     "intent": "WARNING",
-    "topics": ["Bias", "Uncertainty"],
-    "iconIntent": "Warning",
-    "iconScope": "AnalyticsOutlined",
-    "iconTopic": ""
+    "topics": ["Bias", "Uncertainty"]
   },
   {
     "badgeType": "ORDINAL",
@@ -64,10 +52,7 @@
     "type": "ANALYSIS",
     "link": "",
     "intent": "WARNING",
-    "topics": ["Uncertainty"],
-    "iconIntent": "Warning",
-    "iconScope": "AnalyticsOutlined",
-    "iconTopic": ""
+    "topics": ["Uncertainty"]
   },
   {
     "badgeType": "ORDINAL",
@@ -78,10 +63,7 @@
     "type": "VISUAL_ENCODING",
     "link": "",
     "intent": "INFORMATION",
-    "topics": ["Interpretation"],
-    "iconIntent": "Info",
-    "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
+    "topics": ["Interpretation"]
   },
   {
     "badgeType": "ORDINAL",
@@ -92,10 +74,7 @@
     "type": "CONTEXT",
     "link": "",
     "intent": "CONFIRMATION",
-    "topics": ["Attribution"],
-    "iconIntent": "CheckCircle",
-    "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
+    "topics": ["Attribution"]
   },
   {
     "badgeType": "ORDINAL",
@@ -106,10 +85,7 @@
     "type": "CONTEXT",
     "link": "",
     "intent": "CONFIRMATION",
-    "topics": [""],
-    "iconIntent": "CheckCircle",
-    "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
+    "topics": [""]
   },
   {
     "badgeType": "ORDINAL",
@@ -120,10 +96,7 @@
     "type": "CONTEXT",
     "link": "",
     "intent": "WARNING",
-    "topics": ["Uncertainty"],
-    "iconIntent": "Warning",
-    "iconScope": "QueryStatsOutlined",
-    "iconTopic": ""
+    "topics": ["Uncertainty"]
   },
   {
     "badgeType": "ORDINAL",
@@ -134,9 +107,6 @@
     "type": "DATA",
     "link": "",
     "intent": "INFORMATION",
-    "topics": ["Availability"],
-    "iconIntent": "Info",
-    "iconScope": "DatasetOutlined",
-    "iconTopic": ""
+    "topics": ["Availability"]
   }
 ]
