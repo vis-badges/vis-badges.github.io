@@ -89,7 +89,7 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
     };
 
     return (
-        <div ref={badgeRef}>
+        <div ref={badgeRef} style={{display: 'inline-block'}}>
             <BadgeBase
                 label={finalLabel}
                 description={badge.description}

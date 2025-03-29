@@ -87,13 +87,13 @@ const OrdinalBadge = forwardRef(function OrdinalBadge(
     };
 
     return (
-        <div ref={badgeRef}>
+        <div ref={badgeRef} style={{display: 'inline-block'}}>
             <BadgeBase
                 label={finalLabel}
                 description={badge.description}
                 avatar={badge.avatar}
-                intent={badge.intent}  // Now using badge.intent
-                type={badge.type}      // Now using badge.type
+                intent={badge.intent}
+                type={badge.type}
                 chipColor={chipColor}
                 chipSx={chipSx}
                 {...otherProps}

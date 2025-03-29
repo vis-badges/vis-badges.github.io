@@ -70,7 +70,7 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
     }));
 
     return (
-        <div ref={badgeRef} style={{ display: 'inline-block' }}>
+        <div ref={badgeRef} style={{display: 'inline-block'}}>
             <Chip
                 label={mainChipLabel}
                 size={muiSize}
