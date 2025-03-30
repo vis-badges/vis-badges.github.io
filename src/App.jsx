@@ -24,12 +24,12 @@ const NAVIGATION = [
         title: '[TEMP]TEASER FIG',
         component: TeaserFigure
     },
-    {
-        segment: 'compact',
-        title: 'Visualization Badges Catalog',
-        icon: <Apps />,
-        component: Compact
-    },
+    // {
+    //     segment: 'compact',
+    //     title: 'Visualization Badges Catalog',
+    //     icon: <Apps />,
+    //     component: Compact
+    // },
     {
         segment: 'table',
         title: 'Visualization Badges Table',

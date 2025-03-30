@@ -2,2265 +2,1618 @@
   {
     "badgeType": "BINARY",
     "id": "1",
-    "label": "Data source(s) disclosed",
-    "description": "Indicates that this visualization has one or more disclosed data sources",
+    "label": "Data Sources Disclosed",
+    "description": "Indicates that the data sources for this visualization are known and listed.",
     "type": "DATA",
     "intent": "CONFIRMATION",
-    "link": "",
-    "iconIntent": "CheckCircle",
-    "iconScope": "DataUsage",
-    "iconLabel": "Source"
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "2",
-    "label": "Open data",
-    "description": "Indicates that the data is open and available",
+    "label": "Open Data",
+    "description": "Indicates that the visualization uses publicly accessible data, which can be downloaded, verified, or reused.",
     "type": "DATA",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "OD"
-    },
-    "icon3": "Public"
+    "topics": [
+      "Availability"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "3",
-    "label": "Dataset downloadable",
-    "description": "Indicates that there is a link to the data source(s)",
+    "label": "Dataset Linked",
+    "description": "Indicates that a link to the dataset is provided with the visualization.",
     "type": "DATA",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DD"
-    },
-    "icon3": "Download"
+    "topics": [
+      "Availability"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "4",
-    "label": "Data source citation",
-    "description": "Indicates that the data is described in a written article (e.g., scientific paper, public report) with a citation.",
-    "type": "DATA",
+    "label": "Data Citation",
+    "description": "References a published work that describes or validates the dataset.",
+    "type": "CONTEXT",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DS"
-    },
-    "icon3": "Link"
+    "topics": [
+      "Attribution"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "5",
-    "label": "Original data available",
-    "description": "Indicates the availability of primary data sources prior to processing, such as handwritten documents, images, text.",
+    "label": "Raw Data Available",
+    "description": "Indicates that unprocessed material (e.g., images, scans, text) is accessible.",
     "type": "DATA",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "OD"
-    },
-    "icon3": "AttachFile"
+    "topics": [
+      "Source",
+      "Availability"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "6",
-    "label": "Trusted data source",
-    "description": "Indicates that a visualization author trusts the source for their data indicated",
-    "type": "DATA",
+    "label": "Trusted Data Source",
+    "description": "Indicates that the data is from a source the author deems reliable or reputable.",
+    "type": "CONTEXT",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "TD"
-    },
-    "icon3": "AccountBalance"
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "7",
-    "label": "Dynamic data",
-    "description": "Indicates that data in this visualization can be regularly updating",
+    "label": "Dynamic Data",
+    "description": "Indicates that the information is refreshed regularly or continuously, so the chart may change over time.",
     "type": "DATA",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DD"
-    },
-    "icon3": "DynamicFeed"
+    "topics": [
+      "Availability",
+      "Time"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "8",
-    "label": "Data up-to-date",
-    "description": "Indicates data is up-to-date",
+    "label": "Data Up-to-Date",
+    "description": "Indicates that the dataset reflects the latest available data.",
     "type": "DATA",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DU"
-    },
-    "icon3": "HourglassFull"
+    "topics": [
+      "Availability",
+      "Time"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "9",
-    "label": "Data limited",
-    "description": "Indicates that the author wants to disclose limitations with their",
-    "type": "ANALYSIS",
+    "label": "Data Quality Constraints",
+    "description": "Indicates that the data has known limitations.",
+    "type": "DATA",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "DL"
-    },
-    "icon3": "Report"
+    "topics": [
+      "Constraints"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "10",
-    "label": "Analysis limited",
-    "description": "Indicates that the author wants to disclose limitations with their analysis, without wanting to be too precise at this level.",
+    "label": "Analysis Constraints",
+    "description": "Indicates that the data analysis process has known limitations.",
     "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "AL"
-    },
-    "icon3": "Report"
+    "topics": [
+      "Constraints"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "11",
-    "label": "Missing data",
-    "description": "Indicates some parts of the data is missing",
+    "label": "Missing Data",
+    "description": "Indicates that parts of the data are missing.",
     "type": "DATA",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "MD"
-    },
-    "icon3": "Link"
+    "topics": [
+      "Constraints",
+      "Uncertainty"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "12",
-    "label": "Contains modeled data",
-    "description": "Indicates that a computational model has been used to create the entire or parts of the data set",
-    "type": "ANALYSIS",
+    "label": "Contains Modeled Data",
+    "description": "Indicates that some or all of the dataset is derived from algorithmic modeling.",
+    "type": "DATA",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "CM"
-    },
-    "icon3": "Insights"
+    "topics": [
+      "Uncertainty",
+      "Bias"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "13",
-    "label": "Contains predictions",
-    "description": "Indicates that the entire or parts of the data are future prediction implying (unqualified) uncertainty",
-    "type": "ANALYSIS",
+    "label": "Contains Predictions",
+    "description": "Indicates that some or all of the data represents future predictions with inherent uncertainty.",
+    "type": "DATA",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "CP"
-    },
-    "icon3": "Insights"
+    "topics": [
+      "Uncertainty",
+      "Bias"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "14",
-    "label": "May contain bias",
-    "description": "Description missing.",
-    "type": "DATA",
+    "label": "May Contain Bias",
+    "description": "Indicates potential systematic distortion from collection, sampling, or modeling processes.",
+    "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "MC"
-    },
-    "icon3": "AlignHorizontalLeft"
+    "topics": [
+      "Bias",
+      "Uncertainty"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "15",
-    "label": "Contain noise",
-    "description": "Indicates that data contains noise",
-    "type": "DATA",
+    "label": "May Contain Noise",
+    "description": "Indicates that random variation or measurement errors may be present.",
+    "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "MC"
-    },
-    "icon3": "NoiseAware"
+    "topics": [
+      "Uncertainty"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "16",
-    "label": "Heterogeneous data",
-    "description": "Indicates that a lot of different sources used in a chart (but not as a composite)",
+    "label": "Heterogenous Data",
+    "description": "Indicates that the visualization merges data from diverse sources, e.g., text, images, or sensors.",
     "type": "DATA",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "HD"
-    },
-    "icon3": "Difference"
+    "intent": "INFORMATION",
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "17",
-    "label": "Self-Reported data",
-    "description": "Indicates: The data was reported by subjects (e.g., survey responses, self-assessments).",
+    "label": "Human Survey Data",
+    "description": "Indicates that the data comes directly from individuals\u2019 statements or surveys.",
     "type": "DATA",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "SD"
-    },
-    "icon3": "People"
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "18",
-    "label": "Derived data",
-    "description": "Indicates that the data was inferred or model-generated",
+    "label": "Derived Data",
+    "description": "Indicates that the visualization shows data created by algorithms or processes.",
     "type": "DATA",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DD"
-    },
-    "icon3": "Insight"
+    "intent": "INFORMATION",
+    "topics": [
+      "Transformation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "19",
-    "label": "Manual data collection",
-    "description": "Indicates that humans gathered or collected the data by hand",
+    "label": "Manually Collected Data",
+    "description": "Indicates that humans actively gathered or annotated the data (e.g., via observations or coding).",
     "type": "DATA",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "MD"
-    },
-    "icon3": "Backhand"
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "20",
-    "label": "Hardware based collection",
-    "description": "Indicates that the data comes from physicial devices (e.g sensors, lab appartus)",
+    "label": "Sensor Data",
+    "description": "Indicates that data is captured by physical instruments (e.g., sensors, lab equipment).",
     "type": "DATA",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "HB"
-    },
-    "icon3": "DevicesOther"
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "21",
-    "label": "API-Based collection",
-    "description": "Indicates that the data was obtained via an API (e.g Twitter data for sentiment analysis)",
+    "label": "API-Based Collection",
+    "description": "Indicates that data was retrieved via an API (e.g., social media or open-data endpoints).",
     "type": "DATA",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "AC"
-    },
-    "icon3": "Api"
+    "intent": "INFORMATION",
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "22",
-    "label": "Data Collection Period Specified",
-    "description": "Indicates the period in which a dataset has been collected",
+    "label": "Collection Period Specified",
+    "description": "Indicates that the timeframe of data collection is specified.",
     "type": "DATA",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DC"
-    },
-    "icon3": "EventAvailable"
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "23",
-    "label": "Attributed data creator(s)",
-    "description": "Indicates a named person responsible for data collection",
+    "label": "Data Creator(s) Attributed",
+    "description": "Identifies the individual or team responsible for collecting the dataset.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "AD"
-    },
-    "icon3": "Group"
+    "topics": [
+      "Attribution"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "24",
-    "label": "Adapted elsewhere",
-    "description": "Indicates that the data or visualization has been picked up and reused by someone else.",
+    "label": "Adapted Elsewhere",
+    "description": "Indicates that the same data or visualization was reused by third parties. This can be a sign of endorsement and validity of the data or visulization.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "AE"
-    },
-    "icon3": "Share"
+    "topics": [
+      "Usage"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "25",
-    "label": "Contains Multiple Data Sources",
-    "description": "Indicates that this visualization includes data from more than one source, i.e., implying aggregation and merging operations.",
-    "type": "CONTEXT",
+    "label": "Multiple Data Sources",
+    "description": "Indicates that datasets from multiple origins were combined, likely with some aggregation.",
+    "type": "DATA",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "CM"
-    },
-    "icon3": "DynamicFeed"
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "26",
     "label": "Single Data Source",
-    "description": "Indicates that a visualization contains a single data source only",
-    "type": "CONTEXT",
+    "description": "Indicates that the visualization relies on data from a single source.",
+    "type": "DATA",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "S"
-    },
-    "icon3": "Dataset"
+    "topics": [
+      "Source"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "27",
-    "label": "Missing Values Processed",
-    "description": "Indicates that the author handled missing data via imputation, deletion, or other strategies.",
+    "label": "Missing Values Handled",
+    "description": "Indicates that missing data had been treated by some method, e.g., by imputation, deletion, or a any other custom method.",
     "type": "ANALYSIS",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "MV"
-    },
-    "icon3": "Troubleshoot"
+    "intent": "INFORMATION",
+    "topics": [
+      "Constraints",
+      "Uncertainty",
+      "Preprocessing"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "28",
     "label": "Outliers Removed",
-    "description": "Indicated that the author handled outliers in data set",
+    "description": "Indicates that extreme values were excluded or adjusted, possibly affecting distributions or variance.",
     "type": "ANALYSIS",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "OR"
-    },
-    "icon3": "Troubleshoot"
+    "intent": "INFORMATION",
+    "topics": [
+      "Preprocessing",
+      "Bias",
+      "Transformation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "29",
-    "label": "Binning applied",
-    "description": "Indicates that continuous data were converted into bins/buckets",
+    "label": "Binning Applied",
+    "description": "Indicates that continuous values were grouped into categories.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "D"
-    },
-    "icon3": "Troubleshoot"
+    "topics": [
+      "Preprocessing",
+      "Transformation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "30",
-    "label": "Data normalized",
-    "description": "Indicates that certain normalization/scaling techniques were applied. E.g. min-max normalization, z-score standardization)",
+    "label": "Data Normalized",
+    "description": "Indicates that values were scaled or standardized (e.g., min\u2013max, z-score) for alignment.",
     "type": "ANALYSIS",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "DN"
-    },
-    "icon3": "Troubleshoot"
+    "intent": "INFORMATION",
+    "topics": [
+      "Preprocessing",
+      "Transformation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "31",
-    "label": "Tokenization applied",
-    "description": "Indicates that text was tokenized. e.g for NLP tasks",
+    "label": "Tokenization Applied",
+    "description": "Indicates that text was split into discrete tokens (words or subwords) for analysis.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "TA"
-    },
-    "icon3": "Troubleshoot"
+    "topics": [
+      "Preprocessing",
+      "NLP"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "32",
     "label": "Part-of-Speech Tagging Applied",
-    "description": "Indicates that Part of Speech Tagging was applied. (e.g in NLP pipelines)",
+    "description": "Indicates that each token was labeled with a grammatical function (e.g., noun, verb).",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "PT"
-    },
-    "icon3": "Troubleshoot"
+    "topics": [
+      "Preprocessing",
+      "NLP"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "33",
     "label": "Features Extracted",
-    "description": "Indicates that features were extracted (e.g., SIFT for images, word embeddings for text, etc.)",
+    "description": "Indicates that additional features (e.g., word embeddings) were created from raw data.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "FE"
-    },
-    "icon3": "Troubleshoot"
+    "topics": [
+      "Preprocessing"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "34",
-    "label": "Stemming / Lemmatization applied",
-    "description": "Indicates that Stemming/Lemmatization was applied on text",
+    "label": "Stemming Applied",
+    "description": "Indicates that words were reduced to their base forms, removing morphological variations.",
     "type": "ANALYSIS",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "SL"
-    },
-    "icon3": "Troubleshoot"
+    "intent": "INFORMATION",
+    "topics": [
+      "Preprocessing",
+      "NLP"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "35",
     "label": "Stopwords Removed",
-    "description": "Indicates that stop words (e.g and, or, in) have been removed during preprocessing",
+    "description": "Indicates that common filler words were removed to emphasize key terms.",
     "type": "ANALYSIS",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "SR"
-    },
-    "icon3": "Troubleshoot"
+    "intent": "INFORMATION",
+    "topics": [
+      "Preprocessing",
+      "NLP"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "36",
-    "label": "Analysis Tools Available",
-    "description": "Indicates that data analysis was performed using an acknowledged and available tool",
+    "label": "Analysis Tools Attributed",
+    "description": "Indicates that data analysis was done using a stated, available tool.",
     "type": "ANALYSIS",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "AT"
-    },
-    "icon3": ""
+    "topics": [
+      "Tools"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "37",
     "label": "Automatically Labeled Data",
-    "description": "Indicates part of the entire data set comes from automatic labeling",
+    "description": "Indicates that some or all labels in the dataset were generated automatically.",
     "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "AL"
-    },
-    "icon3": "Label"
+    "topics": [
+      "NLP",
+      "Uncertainty"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "38",
-    "label": "Random sampling applied",
-    "description": "Indicates that data points were selected on a purely random or probabilistic method",
+    "label": "Random Sampling",
+    "description": "Indicates that data points were selected using a purely random or probabilistic method.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "RS"
-    },
-    "icon3": "Shuffle"
+    "topics": [
+      "Sampling"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "39",
-    "label": "Stratified Sampling Applied",
-    "description": "Indicates that subgroups (strata) pre-identified, and samples drawn proportionally from each subgroup",
+    "label": "Stratified Sampling",
+    "description": "Indicates that subgroups (strata) were identified and then sampled proportionally.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "SS"
-    },
-    "icon3": "Flare"
+    "topics": [
+      "Sampling"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "40",
-    "label": "Systematic sampling applied",
-    "description": "Indicates that the data points were chosen at a regular interval",
+    "label": "Systematic Sampling",
+    "description": "Indicates that data points were chosen at regular intervals.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "SS"
-    },
-    "icon3": "SurroundSound"
+    "topics": [
+      "Sampling"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "41",
-    "label": "Clustered sampling applied",
-    "description": "Indicates that a subgroup/cluster is used as the sampling unit",
+    "label": "Cluster Sampling",
+    "description": "Indicates that entire clusters were used as sampling units.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "CS"
-    },
-    "icon3": "Workspaces"
+    "topics": [
+      "Sampling"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "42",
-    "label": "Alternative Units",
-    "description": "Provides a reference to better comprehend used scales/units in the chart.",
-    "type": "ANALYSIS",
+    "label": "Alternative Units as Reference",
+    "description": "Provides a secondary unit or scale to clarify the primary measurements (e.g., kilometers vs. miles).",
+    "type": "VISUAL ENCODING",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "AU"
-    },
-    "icon3": "Adjust"
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "43",
-    "label": "Unfamiliar units",
-    "description": "Indicates that this visualization contains units likely unfamilar to the intended audience.",
-    "type": "DATA",
+    "label": "Complex Units",
+    "description": "Indicates that this visualization contains units likely unfamilar to the intended audience requiring explanation or reference points",
+    "type": "CONTEXT",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "UU"
-    },
-    "icon3": "UnfoldLess"
+    "topics": [
+      "Audience",
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "44",
-    "label": "95% CI error bars",
-    "description": "Highlights the correct interpretation of error bars used in a visualization",
+    "label": "95% CI Error Bars",
+    "description": "Indicates that 95% confidence intervals are displayed; out-of-range values are still possible but less likely.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "9C"
-    },
-    "icon3": "Report"
+    "topics": [
+      "Uncertainty"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "45",
-    "label": "Temporal offset",
-    "description": "Indicates that latest time stamp used in a chart is behind the actual time,",
+    "label": "Actual Time Offset",
+    "description": "Indicates that the chart\u2019s latest timestamp lags behind real time.",
     "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "TO"
-    },
-    "icon3": "HourglassBottom"
+    "topics": [
+      "Uncertainty",
+      "Time"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "46",
-    "label": "Time Window Filter applied",
-    "description": "Indicates that data was included or excluded based on a specific time range",
+    "label": "Time Range Selected",
+    "description": "Indicates that data is shown only for a chosen timeframe, excluding earlier or later periods.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "TW"
-    },
-    "icon3": "AccessTime"
+    "topics": [
+      "Filtering",
+      "Exploration",
+      "Time"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "47",
-    "label": "Condition Based Filter applied",
-    "description": "Indicates that data was included or excluded based on certain conditions or status indicators",
+    "label": "Data Filtered",
+    "description": "Indicates that data was included or excluded based on specific conditions or statuses.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "CB"
-    },
-    "icon3": "Hvac"
+    "topics": [
+      "Filtering",
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "48",
-    "label": "Geographic Filter applied",
-    "description": "Indicates that the dataset is filtered by location-based rules",
+    "label": "Geographically Filtered",
+    "description": "Indicates that the dataset is filtered by geographic criteria.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "GF"
-    },
-    "icon3": "FilterAlt"
+    "topics": [
+      "Filtering",
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "49",
-    "label": "Demographic Filter applied",
-    "description": "Indicates that data was included or excluded based on demographic attributes (e.g., age, gender, income, etc.).",
+    "label": "Demographic Filter",
+    "description": "Indicates that data was filtered by demographic attributes (e.g., age, gender).",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "DF"
-    },
-    "icon3": "FilterAlt"
+    "topics": [
+      "Exploration",
+      "Filtering"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "50",
-    "label": "Data manually Excluded",
-    "description": "Indicates that data has been manually removed for a given reason, e.g., ...",
+    "label": "Data Manually Removed",
+    "description": "Indicates that some data points were intentionally removed for specific reasons.",
     "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "DM"
-    },
-    "icon3": "BackHand"
+    "intent": "WARNING",
+    "topics": [
+      "Constraints",
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "51",
-    "label": "Sorting and Filtering methods",
-    "description": "Indicates that viewers can individualize their chart reading experience by applying sorting and filtering techniques",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "SA"
-    },
-    "icon3": "FilterList"
+    "label": "Can Sort & Filter",
+    "description": "Indicates that viewers can reorder or filter data for a custom view.",
+    "type": "INTERACTION",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Tools",
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "52",
-    "label": "Aggregated data",
-    "description": "Indicates that data in the visualization has been aggregated, implying some sort of aggregation method.",
+    "label": "Aggregated Data",
+    "description": "Indicates that values were combined or averaged, which may hide variation.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "AD"
-    },
-    "icon3": "Category"
+    "topics": [
+      "Aggregation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "53",
     "label": "Simpson's Paradox",
-    "description": "Indicates that aggregated or combined data may hide or reverse underlying trends",
+    "description": "Indicates that aggregated data can mask or reverse trends visible in subgroups (Simpson's paradox).",
     "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "SP"
-    },
-    "icon3": "Pattern"
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "54",
-    "label": "False Cause Fallacy",
-    "description": "Reminds the reader of a visualization that a correlation in the visualization may not or knowingly is not a cause.",
+    "label": "Correlation \u2260 Causation",
+    "description": "Reminds viewers that observed correlation may not imply causation.",
     "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "FC"
-    },
-    "icon3": "Pattern"
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "55",
     "label": "Major Finding",
-    "description": "Indicates that this visualization contains a major finding for the analysis or communication",
+    "description": "Indicates that the visualization presents a key or central result.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "MF"
-    },
-    "icon3": "Lightbulb"
+    "topics": [
+      "Interpretation",
+      "Usage"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "56",
-    "label": "Adjusted Baseline Calculations",
-    "description": "Indicates that the chart uses a shifted reference point rather than \"zero\". E.g - per capita rates - moving average ..",
+    "label": "Adjusted Baseline",
+    "description": "Indicates that a non-zero or shifted reference point is used (e.g., per capita, moving average).",
     "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "AB"
-    },
-    "icon3": "Adjust"
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Transformation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "57",
     "label": "Possible Visual Artifacts",
-    "description": "Indicates that a visualization algorithm may introduce visual patterns that are not really in the data.",
+    "description": "Indicates that the visualization algorithm or scaling method may produce patterns not present in the underlying data",
     "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "PV"
-    },
-    "icon3": "BlurOn"
+    "intent": "WARNING",
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "58",
     "label": "Rounding Errors",
-    "description": "Indicates that data in the visualization may contain rounding errors",
+    "description": "Indicates that data in the visualization may contain rounding errors, e.g., values not adding up to 100%.",
     "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "RE"
-    },
-    "icon3": "Report"
+    "topics": [
+      "Constraints"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "59",
-    "label": "Don't draw False Conclusions",
-    "description": "Warns the reader that a seemingly obvious visual pattern may lead to false conclusions.",
+    "label": "Mind False Conclusions",
+    "description": "Warns the reader that a seemingly obvious visual pattern may lead to false conclusions",
     "type": "ANALYSIS",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "BO"
-    },
-    "icon3": "Pattern"
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "60",
-    "label": "Shows Only Top X Elements",
-    "description": "Indicates that only X slected elements are shown",
-    "type": "CONTEXT",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "SO"
-    },
-    "icon3": "SelectAll"
+    "label": "Shows Top N",
+    "description": "Indicates that only the top N elements are displayed, based on a certain criterion.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Filtering"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "61",
-    "label": "For General Album",
-    "description": "Indicates that this chart was created for the General Album",
+    "label": "For General Audience",
+    "description": "Indicates that this visualization was designed to be easily understood by a general audience without domain-expertise, i.e., that it might make some simplifications or ommits some complexity",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "FG"
-    },
-    "icon3": "Public"
+    "topics": [
+      "Audience"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "62",
-    "label": "For Domain Experts",
-    "description": "Indicates that this chart was created for domain experts",
+    "label": "For Experts Only",
+    "description": "Indicates that the chart requires specialized or technical domain knowledge.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "FD"
-    },
-    "icon3": "Public"
+    "topics": [
+      "Audience"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "63",
     "label": "For Policy Makers",
-    "description": "Indicates that this chart was created for policy makers",
+    "description": "Indicates that the chart is primarily aimed at government officials or decision-makers, the visualization contains very condensed, high-level information.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "FP"
-    },
-    "icon3": "Policy"
+    "topics": [
+      "Audience"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "64",
-    "label": "Chart licensed under Album Domain",
-    "description": "Indicates which licensing information applies for this chart",
+    "label": "Public Domain Visualization",
+    "description": "Indicates that the chart is free of copyright restrictions.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "CL"
-    },
-    "icon3": "Ballot"
+    "topics": [
+      "License"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "65",
-    "label": "Chart available under <X> License",
-    "description": "Indicates which licensing information applies for this chart",
+    "label": "<X> License",
+    "description": "Indicates a specific license governing the chart\u2019s distribution.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "CA"
-    },
-    "icon3": "Ballot"
+    "topics": [
+      "License"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "66",
-    "label": "Data licensed under Album Domain",
-    "description": "Indicates which licensing information applies for this dataset",
+    "label": "Public Domain Data",
+    "description": "Indicates that the dataset is free from copyright or usage restrictions.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "DL"
-    },
-    "icon3": "Ballot"
+    "topics": [
+      "License"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "67",
-    "label": "Attributed visualization creator(s)",
-    "description": "Indicates a named person responsible for chart creation",
+    "label": "Data: CC0 Dedication",
+    "description": "Indicates that the data is under the Creative Commons Public Domain Dedication (CC0).",
     "type": "CONTEXT",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "AV"
-    },
-    "icon3": "Ballot"
+    "intent": "INFORMATION",
+    "topics": [
+      "License"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "68",
-    "label": "Content Warning",
-    "description": "Indicates that the chart is about a sensitive topic",
+    "label": "Data: ODC-PDDL",
+    "description": "Indicates that the dataset is licensed under the Open Data Commons Public Domain Dedication and License (PDDL).",
     "type": "CONTEXT",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "CW"
-    },
-    "icon3": "Report"
+    "intent": "INFORMATION",
+    "topics": [
+      "License"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "69",
-    "label": "Contains specific terminology",
-    "description": "Highlights specific domain terminology used in the chart, can potentially include explanations (e.g., kp/co2 is the measure of ...)",
+    "label": "Attributed Visualization Creators",
+    "description": "Indicates that the individual or organization responsible for creation is acknowledged.",
     "type": "CONTEXT",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "CS"
-    },
-    "icon3": "Biotech"
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Attribution"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "70",
-    "label": "Terminology explanations available",
-    "description": "Description missing.",
+    "label": "Sensitive Topic",
+    "description": "Indicates that the chart covers a sensitive topic that may upset some viewers.",
     "type": "CONTEXT",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "TE"
-    },
-    "icon3": "Explore"
+    "intent": "WARNING",
+    "topics": [
+      "Audience"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "71",
-    "label": "Background Reading Available",
-    "description": "Indicates that more background reading is available",
+    "label": "Technical Terminology",
+    "description": "Indicates that the visualization uses domain-specific terms that may be unfamiliar to many.",
     "type": "CONTEXT",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Album",
-    "avatar": {
-      "type": "letter",
-      "value": "BR"
-    },
-    "icon3": "ReadMore"
+    "intent": "WARNING",
+    "topics": [
+      "Audience"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "72",
-    "label": "Mouse Over",
-    "description": "Indicates that more details will be provided on hover",
-    "type": "INTERACTION",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "TouchApp",
-    "avatar": {
-      "type": "letter",
-      "value": "MO"
-    },
-    "icon3": "ReadMore"
+    "label": "Terminology Explained",
+    "description": "Indicates that definitions or clarifications of specialized terms are provided.",
+    "type": "CONTEXT",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Audience"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "73",
-    "label": "Zoom",
-    "description": "Indicates that the map is zoomable",
-    "type": "INTERACTION",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "TouchApp",
-    "avatar": {
-      "type": "letter",
-      "value": "ZO"
-    },
-    "icon3": "ReadMore"
+    "label": "Background Reading Available",
+    "description": "Indicates that extra materials or readings are provided for additional context.",
+    "type": "CONTEXT",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Usage"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "74",
-    "label": "Interactive pre-filtering",
-    "description": "Indicates that the visualized data is pre-filtered but can be manually adjusted",
+    "label": "Can Mouse Over",
+    "description": "Indicates that hovering over elements reveals additional details.",
     "type": "INTERACTION",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "TouchApp",
-    "avatar": {
-      "type": "letter",
-      "value": "IP"
-    },
-    "icon3": "ReadMore"
+    "intent": "INFORMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "75",
-    "label": "Chart is device responsive",
-    "description": "Indicates that the chart is not device responsive",
+    "label": "Zoomable",
+    "description": "Indicates that the map can be zoomed in or out.",
     "type": "INTERACTION",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "TouchApp",
-    "avatar": {
-      "type": "letter",
-      "value": "CI"
-    },
-    "icon3": "DevicesOther"
+    "intent": "INFORMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "76",
-    "label": "Projection not area preserving",
-    "description": "Indicates that the used map projection is not area preserving",
-    "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "PN"
-    },
-    "icon3": "Report"
+    "label": "Can Sort",
+    "description": "Indicates that users can reorder elements by a certain dimension.",
+    "type": "INTERACTION",
+    "intent": "INFORMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "77",
-    "label": "Points don't match exact locations",
-    "description": "Indicates that the placement of the points on the map does not reflect on their exact location (e.g., zipcode).",
-    "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "PD"
-    },
-    "icon3": "Report"
+    "label": "Parameterizable",
+    "description": "Indicates that users can modify parameters or settings.",
+    "type": "INTERACTION",
+    "intent": "INFORMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "78",
-    "label": "Uncertainty shown",
-    "description": "Highlights how uncertainty is visualized (e.g., error bar, confidence band) and reasons how to correctly read it",
-    "type": "VISUAL ENCODING",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "US"
-    },
-    "icon3": "StackedLineChart"
+    "label": "Brushing & Linking",
+    "description": "Indicates that users can brush or highlight elements within or across multiple visualizations.",
+    "type": "INTERACTION",
+    "intent": "INFORMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "79",
-    "label": "Uncertainty not shown",
-    "description": "Reasons why the uncertainty in the dataset is not visualized. E.g., to keep things simple",
-    "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "UN"
-    },
-    "icon3": "ShowChart"
+    "label": "Details-on-Demand",
+    "description": "Indicates that details appear when elements are hovered or selected.",
+    "type": "INTERACTION",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "80",
-    "label": "Dual-Axis encoding",
-    "description": "Indicates the visualization uses two different axes.",
-    "type": "VISUAL ENCODING",
+    "label": "Interactive Pre-Filter",
+    "description": "Indicates that the data is initially pre-filtered but can be manually adjusted.",
+    "type": "INTERACTION",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "DE"
-    },
-    "icon3": "LooksTwo"
+    "topics": [
+      "Exploration",
+      "Filtering"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "81",
-    "label": "Truncated axis",
-    "description": "Justifies why the axis in the chart is truncated",
-    "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "TA"
-    },
-    "icon3": "Report"
+    "label": "Device-Responsive",
+    "description": "Indicates that the chart adapts to different screen sizes and aspect ratios.",
+    "type": "INTERACTION",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Exploration",
+      "Accessibility"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "82",
-    "label": "Inconsistent axis intervals",
-    "description": "Axis intervals are inconsistent, potentially misleading.",
+    "label": "Non-Area-Preserving Projection",
+    "description": "Indicates that the chosen map projection does not preserve consistent area proportions.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "IA"
-    },
-    "icon3": "Report"
+    "topics": [
+      "Maps"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "83",
-    "label": "Inverted axis",
-    "description": "Indicates an axis is inverted, potentially misleading interpretation.",
+    "label": "Points Don't Match Exact Locations",
+    "description": "Indicates that symbol positions on the map may not reflect precise coordinates",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "IA"
-    },
-    "icon3": "Report"
+    "topics": [
+      "Maps",
+      "Uncertainty"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "84",
-    "label": "Y-axes across visualization don't align",
-    "description": "Indicates Y-axes have different scales across visualizations.",
+    "label": "Points Match Exact Locations",
+    "description": "Indicated that symbol positions have exact coordinates for the event.",
     "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "YA"
-    },
-    "icon3": "Report"
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Maps"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "85",
-    "label": "Non-linear scales",
-    "description": "Justifies non-linear scales",
+    "label": "Uncertainty Visualized",
+    "description": "Indicates that statistical or model uncertainty (e.g., error bars, confidence bands) is shown.",
     "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "NS"
-    },
-    "icon3": "Report"
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Uncertainty"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "86",
-    "label": "Size distortion",
-    "description": "TODO: Check if there is a non-deceptive reason",
+    "label": "Uncertainty Omitted",
+    "description": "Indicates that known uncertainty is not shown in the visualization.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "SD"
-    },
-    "icon3": "PhotoSizeSelectLarge"
+    "topics": [
+      "Uncertainty"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "87",
-    "label": "Exaggerated small values",
-    "description": "Indicates that very small data points are over exaggerated to not miss them",
+    "label": "Dual-Axis Encoding",
+    "description": "Indicates that two different (vertical) axes are used to represent separate variables in the same chart.",
     "type": "VISUAL ENCODING",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "ES"
-    },
-    "icon3": "Loupe"
+    "intent": "WARNING",
+    "topics": [
+      "Axes",
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "88",
-    "label": "Some elements too small to be shown",
-    "description": "Indicates that in the chart some data points/marks are too small that they are not shown",
+    "label": "Truncated Axis",
+    "description": "Indicates that an axis starts from a non-zero point, explaining the rationale for that",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "SE"
-    },
-    "icon3": "Loupe"
+    "topics": [
+      "Axes",
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
-    "id": "peacerep-1",
-    "label": "Contains overlapping visual marks",
-    "description": "Visual marks may overlap.",
+    "id": "89",
+    "label": "Inconsistent Axis Intervals",
+    "description": "Indicates that intervals on the axis are not uniform, potentially confusing scale perception.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "(C"
-    },
-    "icon3": "Report"
+    "topics": [
+      "Axes"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "90",
-    "label": "Colorblind-Friendly Colors",
-    "description": "Indicates that colorblind friendly colors are used in the chart",
+    "label": "Inverted Axis",
+    "description": "Indicates that an axis direction is reversed with respect to an otherwise intuitive direction, e.g., higher values on the top, time passing from left to right, etc.",
     "type": "VISUAL ENCODING",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "CC"
-    },
-    "icon3": "ColorLens"
+    "intent": "WARNING",
+    "topics": [
+      "Axes",
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "91",
-    "label": "Optimized for printing",
-    "description": "Indicates that printing has been optimized",
+    "label": "Differing Y-Axis",
+    "description": "Indicates that multiple charts use different y-axis scales or baselines.",
     "type": "VISUAL ENCODING",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "OF"
-    },
-    "icon3": "ColorLens"
+    "intent": "WARNING",
+    "topics": [
+      "Axes",
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "92",
-    "label": "Bubble size encoding",
-    "description": "Indicates that bubbles in the visualization encode a data variable (e.g., size, area)",
+    "label": "Log Scale",
+    "description": "Indicates that the data is plotted on a logarithmic scale.",
     "type": "VISUAL ENCODING",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "BS"
-    },
-    "icon3": "BubbleChart"
+    "intent": "WARNING",
+    "topics": [
+      "Axes"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "93",
-    "label": "False-Friend layout",
-    "description": "Highlights visualizations that look similar but require different interpretation",
+    "label": "Size Distortion",
+    "description": "Indicates that element sizes may not strictly match their underlying data values.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "FL"
-    },
-    "icon3": "ChangeHistory"
+    "topics": [],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "94",
-    "label": "Binning",
-    "description": "TODO: Check if there is a non-deceptive reason",
+    "label": "Small Values Exaggerated",
+    "description": "Indicates that very small data points are magnified for better visibility.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "BI"
-    },
-    "icon3": "ChangeHistory"
+    "topics": [],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "95",
-    "label": "Null or Infinite Values Not Visualized",
-    "description": "Description missing.",
+    "label": "Invisible Small Values",
+    "description": "Indicates that extremely small items may not be visible at the current scale, e.g., they cannot be seen at the current screen resolution or zoom level.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "NO"
-    },
-    "icon3": "Report"
+    "topics": [],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "96",
-    "label": "Different scales across charts",
-    "description": "Different scales used across charts.",
+    "label": "Overlapping Elements",
+    "description": "Indicates that elements can overlap in dense areas.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "DS"
-    },
-    "icon3": "Report"
+    "topics": [],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "97",
-    "label": "Rainbow colormap",
-    "description": "Justifies why the chart uses rainbow colormaps.",
+    "label": "Colorblind Safe",
+    "description": "Indicates that color choices remain distinguishable for colorblind viewers.",
     "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "RC"
-    },
-    "icon3": "Looks"
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Accessibility",
+      "Color"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "98",
-    "label": "Redundant visual encoding",
-    "description": "Multiple visual encodings are used redundantly.",
+    "label": "Printer Safe",
+    "description": "Indicates that the design remains clear and readable when printed",
     "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "RV"
-    },
-    "icon3": "CastForEducation"
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Accessibility"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "99",
-    "label": "Axis label stated in Context",
-    "description": "Axis labels provided in context rather than directly on axis.",
+    "label": "Area Encoding",
+    "description": "Indicates that the size of visual elements is calculated as function of their value mapped to the area.",
+    "type": "VISUAL ENCODING",
+    "intent": "INFORMATION",
+    "topics": [],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "100",
+    "label": "False Friend",
+    "description": "Indicates that a visualization may resemble a common visualization yet might require different interpretation",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "avatar": {
-      "type": "letter",
-      "value": "AL"
-    },
-    "icon3": "Explicit"
-  },
-  {
-    "badgeType": "ORDINAL",
-    "id": "100",
-    "label": "Data Source",
-    "description": "Indicates data availability",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "value": "Available",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DS"
-    },
-    "icon3": "Dataset"
-  },
-  {
-    "badgeType": "QUANTITATIVE",
-    "id": "101",
-    "label": "Data Sources used",
-    "description": "Indicates number of data sources used",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "value": 3,
-    "unit": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "DS"
-    },
-    "icon3": "Dataset"
-  },
-  {
-    "badgeType": "CATEGORICAL",
-    "id": "102",
-    "label": "Data Collection Methods",
-    "description": "Description missing.",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "values": [
-      {
-        "label": "Observation",
-        "tooltip": "Observed in lab settings",
-        "link": "https://..."
-      },
-      {
-        "label": "Survey",
-        "tooltip": "Anonymous online survey"
-      },
-      {
-        "label": "Experiment",
-        "tooltip": "Randomized control trial"
-      }
+    "topics": [
+      "Interpretation",
+      "Bias"
     ],
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "DC"
-    },
-    "icon3": "Dataset"
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "101",
+    "label": "Null-Values Removed",
+    "description": "Indicates that null or infinite values have been excluded from the data.",
+    "type": "ANALYSIS",
+    "intent": "WARNING",
+    "topics": [
+      "Constraints"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "102",
+    "label": "Varying Scales",
+    "description": "Indicates that multiple adjacent charts use different axis scales, complicating comparison across charts.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Axes"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "103",
-    "label": "Data source(s) disclosed",
-    "description": "Indicates that this visualization has one or more disclosed data sources",
-    "type": "DATA",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DS"
-    },
-    "icon3": "Dataset"
+    "label": "Rainbow Required",
+    "description": "Indicates that a rainbow-like color gradient is required to show the specific data.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Color"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "104",
-    "label": "Multiple sources",
-    "description": "Click to know more about our data.",
-    "type": "DATA",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "MS"
-    },
-    "icon3": "DynamicFeed"
+    "label": "Redundant Encodings",
+    "description": "Indicates that more than one visual channel (e.g., color and shape) encodes the same attribute.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
   },
   {
-    "badgeType": "CATEGORICAL",
+    "badgeType": "BINARY",
     "id": "105",
-    "label": "Data source citation",
-    "description": "Multiple data sources with citations",
-    "type": "DATA",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DS"
-    },
-    "values": [
-      {
-        "label": "source1",
-        "link": "url1"
-      },
-      {
-        "label": "source2",
-        "link": "url2"
-      },
-      {
-        "label": "source3",
-        "link": "url3"
-      }
+    "label": "Labels Omitted",
+    "description": "Indicates that axis text is provided in accompanying descriptions rather than on the axis itself",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Axes"
     ],
-    "icon3": "Link"
+    "link": ""
   },
   {
-    "badgeType": "QUANTITATIVE",
+    "badgeType": "BINARY",
     "id": "106",
-    "label": "Missing Data",
-    "description": "Percentage of missing data points",
+    "label": "Composite Index",
+    "description": "Indicates that a combined metric synthesized from multiple factors is displayed",
     "type": "ANALYSIS",
-    "intent": "WARNING",
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "MD"
-    },
-    "value": 30,
-    "unit": "%",
-    "icon3": "Link"
+    "intent": "INFORMATION",
+    "topics": [
+      "Aggregation"
+    ],
+    "link": ""
   },
   {
-    "badgeType": "ORDINAL",
+    "badgeType": "BINARY",
     "id": "107",
-    "label": "Original Data Availability",
-    "description": "Availability of original data documents",
-    "type": "DATA",
+    "label": "Qualitative Categories",
+    "description": "Indicates that data is grouped into descriptive categories (e.g., high, medium, low).",
+    "type": "ANALYSIS",
     "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "OD"
-    },
-    "value": "Partial",
-    "unit": "",
-    "icon3": "Attach"
+    "topics": [
+      "Transformation"
+    ],
+    "link": ""
   },
   {
-    "badgeType": "ORDINAL",
+    "badgeType": "BINARY",
     "id": "108",
-    "label": "Dynamic Data",
-    "description": "Frequency of data updates, subject to changes.",
-    "type": "DATA",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "avatar": {
-      "type": "letter",
-      "value": "DD"
-    },
-    "value": "Weekly",
-    "unit": "",
-    "icon3": "Link"
+    "label": "Approximate Times",
+    "description": "Indicates that the displayed timeframe is approximate.",
+    "type": "VISUAL ENCODING",
+    "intent": "INFORMATION",
+    "topics": [
+      "Time"
+    ],
+    "link": ""
   },
   {
-    "badgeType": "ORDINAL",
+    "badgeType": "BINARY",
     "id": "109",
-    "label": "Adjusted Baseline",
-    "description": "Uses adjusted baseline such as per capita rates",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "avatar": {
-      "type": "letter",
-      "value": "AB"
-    },
-    "value": "Per Capita",
-    "unit": "",
-    "icon3": "Report"
+    "label": "Estimated Geographic Boundaries",
+    "description": "Indicates that shapes or borders are inferred rather than exact.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Maps"
+    ],
+    "link": ""
   },
   {
     "badgeType": "BINARY",
-    "label": "Data Collection Method",
-    "description": "The data has been collected using specific methods.",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "values": [
-      {
-        "label": "Self-reported",
-        "tooltip": "Collected through self-reporting."
-      },
-      {
-        "label": "Heterogeneous",
-        "tooltip": "Data from mixed sources."
-      },
-      {
-        "label": "Derived",
-        "tooltip": "Data generated or inferred from models."
-      },
-      {
-        "label": "Manual",
-        "tooltip": "Data manually collected by individuals."
-      },
-      {
-        "label": "API",
-        "tooltip": "Data collected via API."
-      },
-      {
-        "label": "Hardware-based",
-        "tooltip": "Data collected from physical devices."
-      }
-    ],
     "id": "110",
-    "avatar": {
-      "type": "letter",
-      "value": "DC"
-    },
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "icon3": "Category"
-  },
-  {
-    "badgeType": "ORDINAL",
-    "label": "Missing Data",
-    "description": "Extent of missing data.",
-    "values": [
-      "No missing data",
-      "A few values missing",
-      "A lot of data missing"
-    ],
-    "type": "DATA",
-    "intent": "WARNING",
-    "id": "111",
-    "avatar": {
-      "type": "letter",
-      "value": "MD"
-    },
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "icon3": "Report"
-  },
-  {
-    "badgeType": "CATEGORICAL",
-    "label": "Data collection Method",
-    "description": "Data collection method specified",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "values": [
-      {
-        "label": "Self-reported"
-      },
-      {
-        "label": "Heterogeneous"
-      },
-      {
-        "label": "Derived"
-      },
-      {
-        "label": "Manual"
-      },
-      {
-        "label": "API"
-      },
-      {
-        "label": "Hardware-based"
-      }
-    ],
-    "id": "112",
-    "avatar": {
-      "type": "letter",
-      "value": "DC"
-    },
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "icon3": ""
-  },
-  {
-    "badgeType": "QUANTITATIVE",
-    "label": "% of the data showed",
-    "description": "Percentage of the data shown",
+    "label": "Uneven Time Intervals",
+    "description": "Indicates that the intervals between time points are inconsistent.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
-    "value": null,
-    "unit": "%",
-    "id": "113",
-    "avatar": {
-      "type": "letter",
-      "value": "%O"
-    },
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "BubbleChart",
-    "icon3": ""
-  },
-  {
-    "badgeType": "QUANTITATIVE",
-    "label": "Rounding",
-    "description": "The data has been rounded",
-    "type": "DATA",
-    "intent": "WARNING",
-    "value": null,
-    "unit": "decimals",
-    "id": "114",
-    "avatar": {
-      "type": "letter",
-      "value": "RO"
-    },
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "icon3": ""
-  },
-  {
-    "badgeType": "CATEGORICAL",
-    "label": "Target Audience",
-    "description": "Intended audience for the visualization",
-    "type": "CONTEXT",
-    "intent": "INFORMATION",
-    "values": [
-      {
-        "label": "General public"
-      },
-      {
-        "label": "Domain experts"
-      },
-      {
-        "label": "Policy makers"
-      }
+    "topics": [
+      "Time"
     ],
-    "id": "115",
-    "avatar": {
-      "type": "letter",
-      "value": "TA"
-    },
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Album",
-    "icon3": ""
-  },
-  {
-    "badgeType": "CATEGORICAL",
-    "label": "Aggregation Function",
-    "description": "The function used to aggregate the data",
-    "type": "DATA",
-    "intent": "CONFIRMATION",
-    "values": [
-      {
-        "label": "Mean"
-      },
-      {
-        "label": "Median"
-      },
-      {
-        "label": "Count"
-      }
-    ],
-    "id": "116",
-    "avatar": {
-      "type": "letter",
-      "value": "AF"
-    },
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "icon3": ""
-  },
-  {
-    "badgeType": "QUANTITATIVE",
-    "label": "Number of Data Sources",
-    "description": "Number of different data sources used",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "value": null,
-    "unit": "",
-    "id": "117",
-    "avatar": {
-      "type": "letter",
-      "value": "NO"
-    },
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "icon3": ""
+    "link": ""
   },
   {
     "badgeType": "BINARY",
-    "id": "269",
-    "label": "Open data practice: 5/5",
-    "description": "FIGMA TODO",
-    "type": "DATA",
-    "intent": "CONFIRMATION",
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "Verified",
-    "avatar": {
-      "type": "letter",
-      "value": ""
-    },
-    "icon3": "Explicit"
-  },
-  {
-    "badgeType": "QUANTITATIVE",
-    "label": "Rounding",
-    "description": "Data rounded to specified decimals",
+    "id": "111",
+    "label": "Known Data Gap",
+    "description": "Indicates that there is a known gap in the dataset.",
     "type": "DATA",
     "intent": "WARNING",
-    "value": null,
-    "unit": "decimal places",
+    "topics": [
+      "Uncertainty",
+      "Constraints"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "112",
+    "label": "3D",
+    "description": "Indicates that the chart visualizes three-dimensional or volume-based measurements. The chart may contain occlusion.",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "topics": [
+      "Source"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "113",
+    "label": "Experts Involved",
+    "description": "Indicates that domain experts provided insights or guided the design and analysis",
+    "type": "CONTEXT",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Attribution"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "114",
+    "label": "AI-Generated Visualization",
+    "description": "Indicates that the chart was produced by generative AI tools (e.g., GPT, DALL-E).",
+    "type": "CONTEXT",
+    "intent": "WARNING",
+    "topics": [
+      "AI"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "115",
+    "label": "AI-Generated Data",
+    "description": "Indicates that part or all of the dataset was generated by an AI model.",
+    "type": "DATA",
+    "intent": "WARNING",
+    "topics": [
+      "AI",
+      "Uncertainty"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "116",
+    "label": "AI-Assisted Analysis",
+    "description": "Indicates that AI methods (e.g., clustering, pattern recognition) were used in data analysis.",
+    "type": "ANALYSIS",
+    "intent": "WARNING",
+    "topics": [
+      "AI"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "117",
+    "label": "AI-Generated Captions",
+    "description": "Indicates that descriptive text or annotations were produced by an AI system.",
+    "type": "CONTEXT",
+    "intent": "WARNING",
+    "topics": [
+      "AI",
+      "Interpretation"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
     "id": "118",
-    "avatar": {
-      "type": "letter",
-      "value": "RO"
-    },
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "icon3": ""
+    "label": "AI-Derived Insight",
+    "description": "Indicates that the key insights rely on AI-based evaluation.",
+    "type": "ANALYSIS",
+    "intent": "WARNING",
+    "topics": [
+      "AI"
+    ],
+    "link": ""
   },
   {
-    "badgeType": "CATEGORICAL",
-    "label": "Aggregation",
-    "description": "Data aggregation method visually",
-    "type": "VISUAL ENCODING",
-    "intent": "CONFIRMATION",
-    "values": [
-      {
-        "label": "Binning"
-      },
-      {
-        "label": "Discretization"
-      },
-      {
-        "label": "Packing"
-      },
-      {
-        "label": "Stacking"
-      }
-    ],
+    "badgeType": "BINARY",
     "id": "119",
-    "avatar": {
-      "type": "letter",
-      "value": "AG"
-    },
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "BubbleChart",
-    "icon3": ""
+    "label": "Human-Verified AI",
+    "description": "Indicates that humans verified AI-generated results.",
+    "type": "ANALYSIS",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Attribution",
+      "Bias"
+    ],
+    "link": ""
   },
   {
-    "badgeType": "CATEGORICAL",
-    "label": "Aggregation Function",
-    "description": "Function used for data aggregation",
-    "type": "DATA",
-    "intent": "CONFIRMATION",
-    "values": [
-      {
-        "label": "Mean"
-      },
-      {
-        "label": "Median"
-      },
-      {
-        "label": "Count"
-      }
-    ],
+    "badgeType": "BINARY",
     "id": "120",
-    "avatar": {
-      "type": "letter",
-      "value": "AF"
-    },
-    "link": "",
-    "icon1": "CheckCircle",
-    "icon2": "DataUsage",
-    "icon3": ""
+    "label": "Possible AI Bias",
+    "description": "Indicates that the visualization may reflect distortions introduced by AI systems",
+    "type": "ANALYSIS",
+    "intent": "WARNING",
+    "topics": [
+      "Bias",
+      "AI"
+    ],
+    "link": ""
   },
   {
-    "badgeType": "CATEGORICAL",
-    "label": "Content Warning",
-    "description": "Visualization involves sensitive topics",
-    "type": "DATA",
-    "intent": "WARNING",
-    "values": [
-      {
-        "label": "Sensitive Content"
-      }
-    ],
+    "badgeType": "BINARY",
     "id": "121",
-    "avatar": {
-      "type": "letter",
-      "value": "CW"
-    },
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "icon3": ""
-  },
-  {
-    "badgeType": "ORDINAL",
-    "label": "Data Source Trust Level",
-    "description": "Indicates the trust level of the data source.",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "values": [
-      "High",
-      "Medium",
-      "Low"
-    ],
-    "avatar": {
-      "type": "letter",
-      "value": "DS"
-    },
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "id": "122",
-    "link": "",
-    "icon3": ""
-  },
-  {
-    "badgeType": "CATEGORICAL",
-    "label": "Data Update Frequency",
-    "description": "Frequency at which data is updated.",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "values": [
-      {
-        "label": "Real-time"
-      },
-      {
-        "label": "Daily"
-      },
-      {
-        "label": "Weekly"
-      },
-      {
-        "label": "Monthly"
-      },
-      {
-        "label": "Yearly"
-      }
-    ],
-    "id": "123",
-    "avatar": {
-      "type": "letter",
-      "value": "DU"
-    },
-    "link": "",
-    "icon1": "Info",
-    "icon2": "DataUsage",
-    "icon3": ""
-  },
-  {
-    "badgeType": "QUANTITATIVE",
-    "label": "Percentage of Modeled Data",
-    "description": "Percentage of data derived from computational models.",
-    "type": "ANALYSIS",
-    "intent": "WARNING",
-    "value": null,
-    "unit": "%",
-    "id": "124",
-    "avatar": {
-      "type": "letter",
-      "value": "PO"
-    },
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "Sort",
-    "icon3": ""
-  },
-  {
-    "badgeType": "ORDINAL",
-    "label": "Level of Data Bias",
-    "description": "Estimated level of bias present in the dataset.",
-    "type": "DATA",
-    "intent": "WARNING",
-    "values": [
-      "Low",
-      "Moderate",
-      "High"
-    ],
-    "id": "125",
-    "avatar": {
-      "type": "letter",
-      "value": "LO"
-    },
-    "link": "",
-    "icon1": "Warning",
-    "icon2": "DataUsage",
-    "icon3": ""
-  },
-  {
-    "badgeType": "QUANTITATIVE",
-    "label": "Number of Aggregation Levels",
-    "description": "Number of different aggregation levels applied in visualization.",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "value": null,
-    "unit": "",
-    "id": "126",
-    "avatar": {
-      "type": "letter",
-      "value": "NO"
-    },
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "icon3": ""
-  },
-  {
-    "badgeType": "CATEGORICAL",
-    "label": "Sampling Method",
-    "description": "Method used for data sampling.",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "values": [
-      {
-        "label": "Random Sampling"
-      },
-      {
-        "label": "Cluster Sampling"
-      },
-      {
-        "label": "Systematic Sampling"
-      },
-      {
-        "label": "Stratified Sampling"
-      }
-    ],
-    "id": "127",
-    "avatar": {
-      "type": "letter",
-      "value": "SM"
-    },
-    "link": "",
-    "icon1": "Info",
-    "icon2": "Sort",
-    "icon3": ""
-  },
-  {
-    "badgeType": "CATEGORICAL",
-    "label": "Interaction Available",
-    "description": "",
-    "type": "ANALYSIS",
+    "label": "No AI Involved",
+    "description": "Confirms that no AI was involved in creating this visualization.",
+    "type": "CONTEXT",
     "intent": "CONFIRMATION",
-    "values": [
-      {
-        "label": "Click"
-      },
-      {
-        "label": "Hover"
-      },
-      {
-        "label": "Filter"
-      }
+    "topics": [
+      "Attribution",
+      "Bias"
     ],
-    "id": "peacerep2",
-    "avatar": {
-      "type": "letter",
-      "value": "SM"
-    },
-    "link": "",
-    "icon1": "TouchApp",
-    "icon2": "Sort",
-    "icon3": ""
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "122",
+    "label": "Secondary Data",
+    "description": "Indicates that the dataset is derived from secondary or aggregated sources rather than raw data.",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "topics": [
+      "Source"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "123",
+    "label": "Data Off the Map",
+    "description": "Indicates that some data points lie outside the current view and are not displayed.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Maps"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "124",
+    "label": "Semi-Auto Data Processing",
+    "description": "Indicates that data processing involves both machine automation and manual cleaning.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Tools"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "125",
+    "label": "Additional Manual Cleaning",
+    "description": "Indicates that the data processing was cross-checked manually.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Tools"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "126",
+    "label": "Irregular Patterns",
+    "description": "Indicates that there are irregular patterns that may not yield meaningful conclusions.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Uncertainty"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "127",
+    "label": "Standard Scale Used",
+    "description": "Indicates that the visualization uses a standard scale (e.g., linear).",
+    "type": "VISUAL ENCODING",
+    "intent": "INFORMATION",
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "128",
+    "label": "Interval Breaks",
+    "description": "Indicates that an axis in the visualization has one or more breaks, i.e., unequal intervals.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "129",
+    "label": "Positionless Elements Not Shown",
+    "description": "Indicates that this visualization does not or cannot show elements without a geographic position.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Maps"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "130",
+    "label": "Simplified Geographic Boundaries",
+    "description": "Indicates that geographic boundaries have been simplified to improve readability of this visualization.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [
+      "Maps"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "131",
+    "label": "Interaction Linked Across Multiple Views",
+    "description": "Indicates that interactive changes in one view affect other views (e.g., linked small multiples).",
+    "type": "INTERACTION",
+    "intent": "INFORMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "132",
+    "label": "User-Tested Vis",
+    "description": "Indicates that the visualization was validated through user testing (e.g., user study).",
+    "type": "CONTEXT",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Audience"
+    ],
+    "link": ""
   }
 ]

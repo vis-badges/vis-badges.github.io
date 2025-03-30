@@ -28,10 +28,10 @@ const router = createHashRouter([
                         path: 'compact',
                         Component: Compact
                     },
-                    {
-                        path: 'teaser',
-                        Component: TeaserFigure
-                    },
+                    // {
+                    //     path: 'teaser',
+                    //     Component: TeaserFigure
+                    // },
                     {
                         path: 'table',
                         Component: BadgeDataGrid
