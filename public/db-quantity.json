@@ -88,7 +88,7 @@
   {
     "badgeType": "QUANTITATIVE",
     "id": "136",
-    "label": "Data Refresh Delay",
+    "label": "Update Interval",
     "description": "Time lag between data collection and dataset availability.",
     "link": "",
     "type": "DATA",
@@ -127,7 +127,7 @@
     "label": "Number of Colors",
     "description": "Number of distinct colors used in the visualization.",
     "link": "",
-    "type": "VISUAL_ENCODING",
+    "type": "VISUAL ENCODING",
     "value": 5,
     "unit": "",
     "intent": "INFORMATION",

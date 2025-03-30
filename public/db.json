@@ -618,7 +618,7 @@
     "id": "50",
     "label": "Can sort & filter",
     "description": "Indicates that viewers can reorder or filter data for a customized view",
-    "type": "ANALYSIS",
+    "type": "INTERACTION",
     "intent": "CONFIRMATION",
     "topics": [
       "Tools",
@@ -930,7 +930,7 @@
   {
     "badgeType": "BINARY",
     "id": "76",
-    "label": "Paramterizable",
+    "label": "Parameterizable",
     "description": "Indicates that users can modify parameters or settings of the visualization.",
     "type": "INTERACTION",
     "intent": "INFORMATION",

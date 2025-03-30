@@ -60,7 +60,7 @@
     "label": "Visual Complexity",
     "description": "Level of visual complexity or interpretive difficulty (Simple, Moderate, Complex)",
     "value": "Moderate",
-    "type": "VISUAL_ENCODING",
+    "type": "VISUAL ENCODING",
     "link": "",
     "intent": "INFORMATION",
     "topics": ["Interpretation"]
@@ -115,7 +115,7 @@
     "label": "Indistinguishable Colors",
     "description": "",
     "value": "Red-Green",
-    "type": "VISUAL_ENCODING",
+    "type": "VISUAL ENCODING",
     "link": "",
     "intent": "WARNING",
     "topics": ["Color", "Accessibility"]
