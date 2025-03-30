@@ -15,7 +15,7 @@
     "badgeType": "BINARY",
     "id": "2",
     "label": "Open Data",
-    "description": "Indicates that this visualization shows open data, i.e., that is publicly accessible, allowing viewers to download, verify, or reuse it.",
+    "description": "Indicates that the visualization uses publicly accessible data, which can be downloaded, verified, or reused.",
     "type": "DATA",
     "intent": "CONFIRMATION",
     "topics": [
@@ -27,7 +27,7 @@
     "badgeType": "BINARY",
     "id": "3",
     "label": "Dataset Linked",
-    "description": "Indicates that a link to the dataset is provided with the visualization",
+    "description": "Indicates that a link to the dataset is provided with the visualization.",
     "type": "DATA",
     "intent": "CONFIRMATION",
     "topics": [
@@ -39,7 +39,7 @@
     "badgeType": "BINARY",
     "id": "4",
     "label": "Data Citation",
-    "description": "References a published document that describes or validates the dataset",
+    "description": "References a published work that describes or validates the dataset.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
     "topics": [
@@ -51,7 +51,7 @@
     "badgeType": "BINARY",
     "id": "5",
     "label": "Raw Data Available",
-    "description": "Indicates that raw or unprocessed material is accessible, such as images, scans, text, etc.",
+    "description": "Indicates that unprocessed material (e.g., images, scans, text) is accessible.",
     "type": "DATA",
     "intent": "CONFIRMATION",
     "topics": [
@@ -64,7 +64,7 @@
     "badgeType": "BINARY",
     "id": "6",
     "label": "Trusted Data Source",
-    "description": "Indicates that the data is obtained from a source considered reliable or reputable by the author.",
+    "description": "Indicates that the data is from a source the author deems reliable or reputable.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
     "topics": [
@@ -76,7 +76,7 @@
     "badgeType": "BINARY",
     "id": "7",
     "label": "Dynamic Data",
-    "description": "Indicates the information is refreshed periodically or continuously, so the chart may change over time",
+    "description": "Indicates that the information is refreshed regularly or continuously, so the chart may change over time.",
     "type": "DATA",
     "intent": "INFORMATION",
     "topics": [
@@ -88,8 +88,8 @@
   {
     "badgeType": "BINARY",
     "id": "8",
-    "label": "Data Up-To-Date",
-    "description": "Indicates that the dataset reflects the latest data available",
+    "label": "Data Up-to-Date",
+    "description": "Indicates that the dataset reflects the latest available data.",
     "type": "DATA",
     "intent": "CONFIRMATION",
     "topics": [
@@ -101,9 +101,9 @@
   {
     "badgeType": "BINARY",
     "id": "9",
-    "label": "Analysis Constraints",
-    "description": "Indicates limitations in the data analysis process",
-    "type": "ANALYSIS",
+    "label": "Data Quality Constraints",
+    "description": "Indicates that the data has known limitations.",
+    "type": "DATA",
     "intent": "WARNING",
     "topics": [
       "Constraints"
@@ -113,8 +113,20 @@
   {
     "badgeType": "BINARY",
     "id": "10",
+    "label": "Analysis Constraints",
+    "description": "Indicates that the data analysis process has known limitations.",
+    "type": "ANALYSIS",
+    "intent": "WARNING",
+    "topics": [
+      "Constraints"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "11",
     "label": "Missing Data",
-    "description": "Indicates some parts of the data is missing",
+    "description": "Indicates that parts of the data are missing.",
     "type": "DATA",
     "intent": "WARNING",
     "topics": [
@@ -125,22 +137,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "11",
-    "label": "Contains Modeled Data",
-    "description": "Indicates that a portion or all of the dataset is derived from algorithmic modeling",
-    "type": "DATA",
-    "intent": "WARNING",
-    "topics": [
-      "Uncertainty",
-      "Bias"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "12",
-    "label": "Contains Predictions",
-    "description": "Indicates that the entire or parts of the data are future prediction implying (unqualified) uncertainty",
+    "label": "Contains Modeled Data",
+    "description": "Indicates that some or all of the dataset is derived from algorithmic modeling.",
     "type": "DATA",
     "intent": "WARNING",
     "topics": [
@@ -152,8 +151,21 @@
   {
     "badgeType": "BINARY",
     "id": "13",
+    "label": "Contains Predictions",
+    "description": "Indicates that some or all of the data represents future predictions with inherent uncertainty.",
+    "type": "DATA",
+    "intent": "WARNING",
+    "topics": [
+      "Uncertainty",
+      "Bias"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "14",
     "label": "May Contain Bias",
-    "description": "Indicates potential systematic distortion from data collection, sampling, or modeling processes.",
+    "description": "Indicates potential systematic distortion from collection, sampling, or modeling processes.",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -164,9 +176,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "14",
+    "id": "15",
     "label": "May Contain Noise",
-    "description": "Indicates random variation or measurement errors in the data.",
+    "description": "Indicates that random variation or measurement errors may be present.",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -176,21 +188,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "15",
-    "label": "Heterogenous Data",
-    "description": "Indicates that the visualization combines data from very heterogenous sources, e.g., text, images, sensors, etc.",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "topics": [
-      "Source"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "16",
-    "label": "Human Survey Data",
-    "description": "Indicates that the data comes directly from individuals\u2019 own statements or surveys.",
+    "label": "Heterogenous Data",
+    "description": "Indicates that the visualization merges data from diverse sources, e.g., text, images, or sensors.",
     "type": "DATA",
     "intent": "INFORMATION",
     "topics": [
@@ -201,20 +201,8 @@
   {
     "badgeType": "BINARY",
     "id": "17",
-    "label": "Derived Data",
-    "description": "Indicates that data was ceated by processing and combining existing raw data sets",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "topics": [
-      "Transformation"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
-    "id": "18",
-    "label": "Manually Collected Data",
-    "description": "Indicates that humans actively gathered or annotated the data (e.g., observations, surveys, qualitative coding)",
+    "label": "Human Survey Data",
+    "description": "Indicates that the data comes directly from individuals\u2019 statements or surveys.",
     "type": "DATA",
     "intent": "INFORMATION",
     "topics": [
@@ -224,9 +212,21 @@
   },
   {
     "badgeType": "BINARY",
+    "id": "18",
+    "label": "Derived Data",
+    "description": "Indicates that the visualization shows data created by algorithms or processes.",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "topics": [
+      "Transformation"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
     "id": "19",
-    "label": "Sensor Data",
-    "description": "Indicates that data is captured using physical instruments or devices (e.g., sensors, lab equipment).",
+    "label": "Manually Collected Data",
+    "description": "Indicates that humans actively gathered or annotated the data (e.g., via observations or coding).",
     "type": "DATA",
     "intent": "INFORMATION",
     "topics": [
@@ -237,8 +237,8 @@
   {
     "badgeType": "BINARY",
     "id": "20",
-    "label": "API-Based Collection",
-    "description": "Indicates that the data was retrieved through an Application Programming Interface (API), such as online social media or online open-data APIs.",
+    "label": "Sensor Data",
+    "description": "Indicates that data is captured by physical instruments (e.g., sensors, lab equipment).",
     "type": "DATA",
     "intent": "INFORMATION",
     "topics": [
@@ -249,8 +249,20 @@
   {
     "badgeType": "BINARY",
     "id": "21",
+    "label": "API-Based Collection",
+    "description": "Indicates that data was retrieved via an API (e.g., social media or open-data endpoints).",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "topics": [
+      "Source"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "22",
     "label": "Collection Period Specified",
-    "description": "Indicates that the time period of data collection is known.",
+    "description": "Indicates that the timeframe of data collection is specified.",
     "type": "DATA",
     "intent": "CONFIRMATION",
     "topics": [
@@ -260,9 +272,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "22",
+    "id": "23",
     "label": "Data Creator(s) Attributed",
-    "description": "Identifies the individual or team who collected the dataset",
+    "description": "Identifies the individual or team responsible for collecting the dataset.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
     "topics": [
@@ -272,7 +284,7 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "23",
+    "id": "24",
     "label": "Adapted Elsewhere",
     "description": "Indicates that the same data or visualization was reused by third parties. This can be a sign of endorsement and validity of the data or visulization.",
     "type": "CONTEXT",
@@ -284,21 +296,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "24",
-    "label": "Multiple Data Sources",
-    "description": "Indicates that the visualization combines datasets from multiple origins, likely involving aggreagtion",
-    "type": "DATA",
-    "intent": "INFORMATION",
-    "topics": [
-      "Source"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "25",
-    "label": "Single Data Source",
-    "description": "Indicates that the visualization shows data originating only from a single data source.",
+    "label": "Multiple Data Sources",
+    "description": "Indicates that datasets from multiple origins were combined, likely with some aggregation.",
     "type": "DATA",
     "intent": "INFORMATION",
     "topics": [
@@ -309,6 +309,18 @@
   {
     "badgeType": "BINARY",
     "id": "26",
+    "label": "Single Data Source",
+    "description": "Indicates that the visualization relies on data from a single source.",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "topics": [
+      "Source"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "27",
     "label": "Missing Values Handled",
     "description": "Indicates that missing data had been treated by some method, e.g., by imputation, deletion, or a any other custom method.",
     "type": "ANALYSIS",
@@ -322,9 +334,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "27",
+    "id": "28",
     "label": "Outliers Removed",
-    "description": "Indicates that extreme values have been excluded or adjusted, which may affect distributions, variance, and other statistics.",
+    "description": "Indicates that extreme values were excluded or adjusted, possibly affecting distributions or variance.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -336,22 +348,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "28",
-    "label": "Binning Applied",
-    "description": "Indicates that continuous values were grouped into categories",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "topics": [
-      "Preprocessing",
-      "Transformation"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "29",
-    "label": "Data Normalized",
-    "description": "Indicates that values have been scaled or standardized (e.g., min\u2013max, z-score) to align ranges or distributions.",
+    "label": "Binning Applied",
+    "description": "Indicates that continuous values were grouped into categories.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -363,21 +362,21 @@
   {
     "badgeType": "BINARY",
     "id": "30",
-    "label": "Tokenization Applied",
-    "description": "Indicates that text has been split into discrete tokens (words or subwords) for analysis",
+    "label": "Data Normalized",
+    "description": "Indicates that values were scaled or standardized (e.g., min\u2013max, z-score) for alignment.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
       "Preprocessing",
-      "NLP"
+      "Transformation"
     ],
     "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "31",
-    "label": "Part-of-Speech Tagging Applied",
-    "description": "Indicates that each token was labeled with its grammatical function (noun, verb, etc.).",
+    "label": "Tokenization Applied",
+    "description": "Indicates that text was split into discrete tokens (words or subwords) for analysis.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -389,20 +388,8 @@
   {
     "badgeType": "BINARY",
     "id": "32",
-    "label": "Features Extracted",
-    "description": "Indicates that additional variables or representations (e.g., SIFT, word embeddings) were created from raw data.",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "topics": [
-      "Preprocessing"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
-    "id": "33",
-    "label": "Stemming Applied",
-    "description": "Indicates that words were reduced to base forms, removing morphological variations",
+    "label": "Part-of-Speech Tagging Applied",
+    "description": "Indicates that each token was labeled with a grammatical function (e.g., noun, verb).",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -413,9 +400,21 @@
   },
   {
     "badgeType": "BINARY",
+    "id": "33",
+    "label": "Features Extracted",
+    "description": "Indicates that additional features (e.g., word embeddings) were created from raw data.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Preprocessing"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
     "id": "34",
-    "label": "Stopwords Removed",
-    "description": "Indicates that common filler words were removed to emphasize meaningful terms",
+    "label": "Stemming Applied",
+    "description": "Indicates that words were reduced to their base forms, removing morphological variations.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -427,8 +426,21 @@
   {
     "badgeType": "BINARY",
     "id": "35",
+    "label": "Stopwords Removed",
+    "description": "Indicates that common filler words were removed to emphasize key terms.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Preprocessing",
+      "NLP"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "36",
     "label": "Analysis Tools Attributed",
-    "description": "Indicates that data analysis was performed using an acknowledged and available tool.",
+    "description": "Indicates that data analysis was done using a stated, available tool.",
     "type": "ANALYSIS",
     "intent": "CONFIRMATION",
     "topics": [
@@ -438,9 +450,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "36",
+    "id": "37",
     "label": "Automatically Labeled Data",
-    "description": "Indicates part of the entire data set comes from automatic labelling",
+    "description": "Indicates that some or all labels in the dataset were generated automatically.",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -451,21 +463,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "37",
-    "label": "Random Sampling",
-    "description": "Indicates that data points were selected on  a purely random or probabilistic method",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "topics": [
-      "Sampling"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "38",
-    "label": "Stratified Sampling",
-    "description": "Indicates that subgroups (strata) pre-identified, and samples drawn proportionally from each subgroup",
+    "label": "Random Sampling",
+    "description": "Indicates that data points were selected using a purely random or probabilistic method.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -476,8 +476,8 @@
   {
     "badgeType": "BINARY",
     "id": "39",
-    "label": "Systematic Sampling",
-    "description": "Indicates that the datapoints were chosen at a regular interval",
+    "label": "Stratified Sampling",
+    "description": "Indicates that subgroups (strata) were identified and then sampled proportionally.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -488,8 +488,8 @@
   {
     "badgeType": "BINARY",
     "id": "40",
-    "label": "Cluster Sampling",
-    "description": "Indicates that a subgroup/cluster is used as the sampling unit",
+    "label": "Systematic Sampling",
+    "description": "Indicates that data points were chosen at regular intervals.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -500,9 +500,21 @@
   {
     "badgeType": "BINARY",
     "id": "41",
-    "label": "Alternative Units as Reference",
-    "description": "Provides a reference to better comprehend used scales/units in the visualization",
+    "label": "Cluster Sampling",
+    "description": "Indicates that entire clusters were used as sampling units.",
     "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Sampling"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "42",
+    "label": "Alternative Units as Reference",
+    "description": "Provides a secondary unit or scale to clarify the primary measurements (e.g., kilometers vs. miles).",
+    "type": "VISUAL ENCODING",
     "intent": "CONFIRMATION",
     "topics": [
       "Interpretation"
@@ -511,9 +523,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "42",
-    "label": "Complex units",
-    "description": "Indicates that this visualization contains units likely unfamilar to the intended audience requiring explanation of reference points",
+    "id": "43",
+    "label": "Complex Units",
+    "description": "Indicates that this visualization contains units likely unfamilar to the intended audience requiring explanation or reference points",
     "type": "CONTEXT",
     "intent": "WARNING",
     "topics": [
@@ -524,9 +536,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "43",
+    "id": "44",
     "label": "95% CI Error Bars",
-    "description": "Indicates that the chart displays 95% confidence intervals. Values outside these bars are still possible but less likely.",
+    "description": "Indicates that 95% confidence intervals are displayed; out-of-range values are still possible but less likely.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -536,9 +548,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "44",
-    "label": "Actual time offset",
-    "description": "Indicates that latest time stamp used in a chart is behind the actual time,",
+    "id": "45",
+    "label": "Actual Time Offset",
+    "description": "Indicates that the chart\u2019s latest timestamp lags behind real time.",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -549,9 +561,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "45",
-    "label": "Time range selected",
-    "description": "Indicates that data is filtered to a chosen timeframe, so earlier or later periods may be omitted",
+    "id": "46",
+    "label": "Time Range Selected",
+    "description": "Indicates that data is shown only for a chosen timeframe, excluding earlier or later periods.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -563,22 +575,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "46",
-    "label": "Data filtered",
-    "description": "Indicates that data was included or excluded based on certain conditions or status indicators",
-    "type": "CONTEXT",
-    "intent": "INFORMATION",
-    "topics": [
-      "Filtering",
-      "Exploration"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "47",
-    "label": "Geographically filtered",
-    "description": "Indicates that the dataset is filtered by location-based rules",
+    "label": "Data Filtered",
+    "description": "Indicates that data was included or excluded based on specific conditions or statuses.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -590,8 +589,21 @@
   {
     "badgeType": "BINARY",
     "id": "48",
-    "label": "Demographic filter",
-    "description": "Indicates that data was included or excluded based on demographic attributes (e.g., age, gender, income, etc.)",
+    "label": "Geographically Filtered",
+    "description": "Indicates that the dataset is filtered by geographic criteria.",
+    "type": "CONTEXT",
+    "intent": "INFORMATION",
+    "topics": [
+      "Filtering",
+      "Exploration"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "49",
+    "label": "Demographic Filter",
+    "description": "Indicates that data was filtered by demographic attributes (e.g., age, gender).",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -602,9 +614,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "49",
-    "label": "Data manually removed",
-    "description": "Indicates that certain data points were intentionally removed for specific reasons",
+    "id": "50",
+    "label": "Data Manually Removed",
+    "description": "Indicates that some data points were intentionally removed for specific reasons.",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -615,10 +627,10 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "50",
-    "label": "Can sort & filter",
-    "description": "Indicates that viewers can reorder or filter data for a customized view",
-    "type": "ANALYSIS",
+    "id": "51",
+    "label": "Can Sort & Filter",
+    "description": "Indicates that viewers can reorder or filter data for a custom view.",
+    "type": "INTERACTION",
     "intent": "CONFIRMATION",
     "topics": [
       "Tools",
@@ -628,9 +640,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "51",
-    "label": "Aggregated data",
-    "description": "Indicates that values have been combined or averaged, which may hide detailed variations",
+    "id": "52",
+    "label": "Aggregated Data",
+    "description": "Indicates that values were combined or averaged, which may hide variation.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -640,21 +652,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "52",
-    "label": "Simpson's Paradox",
-    "description": "Indicates that combined data may conceal or reverse trends visible in separate subgroups. This is know at Simpson's paradox",
-    "type": "ANALYSIS",
-    "intent": "WARNING",
-    "topics": [
-      "Interpretation"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "53",
-    "label": "Correlation \u2260 Causation",
-    "description": "Reminds the reader of a visualization that a correlation in the visualization may not or knowingly is not a cause.",
+    "label": "Simpson's Paradox",
+    "description": "Indicates that aggregated data can mask or reverse trends visible in subgroups (Simpson's paradox).",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -665,8 +665,20 @@
   {
     "badgeType": "BINARY",
     "id": "54",
+    "label": "Correlation \u2260 Causation",
+    "description": "Reminds viewers that observed correlation may not imply causation.",
+    "type": "ANALYSIS",
+    "intent": "WARNING",
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "55",
     "label": "Major Finding",
-    "description": "Indicates that a this visulization shows a central result",
+    "description": "Indicates that the visualization presents a key or central result.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
     "topics": [
@@ -677,9 +689,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "55",
-    "label": "Adjusted baseline",
-    "description": "Indicates that a non-zero or shifted reference point is used (e.g., per capita, moving averages).",
+    "id": "56",
+    "label": "Adjusted Baseline",
+    "description": "Indicates that a non-zero or shifted reference point is used (e.g., per capita, moving average).",
     "type": "ANALYSIS",
     "intent": "CONFIRMATION",
     "topics": [
@@ -689,8 +701,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "56",
-    "label": "Possible visual artifacts",
+    "id": "57",
+    "label": "Possible Visual Artifacts",
     "description": "Indicates that the visualization algorithm or scaling method may produce patterns not present in the underlying data",
     "type": "ANALYSIS",
     "intent": "WARNING",
@@ -701,8 +713,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "57",
-    "label": "Rounding errors",
+    "id": "58",
+    "label": "Rounding Errors",
     "description": "Indicates that data in the visualization may contain rounding errors, e.g., values not adding up to 100%.",
     "type": "ANALYSIS",
     "intent": "WARNING",
@@ -713,8 +725,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "58",
-    "label": "Mind false conclusions",
+    "id": "59",
+    "label": "Mind False Conclusions",
     "description": "Warns the reader that a seemingly obvious visual pattern may lead to false conclusions",
     "type": "ANALYSIS",
     "intent": "WARNING",
@@ -725,9 +737,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "59",
-    "label": "Shows top N",
-    "description": "Indicates that the visualization only shows the top N elements of some selection and based on some criterion.",
+    "id": "60",
+    "label": "Shows Top N",
+    "description": "Indicates that only the top N elements are displayed, based on a certain criterion.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -737,21 +749,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "60",
-    "label": "For general audience",
-    "description": "Indicates that this visualization was designed to be easily understood by a general audience without domain-expertise, i.e., that it migth make some simplifications or ommits some complexity",
-    "type": "CONTEXT",
-    "intent": "INFORMATION",
-    "topics": [
-      "Audience"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "61",
-    "label": "For experts only",
-    "description": "Indicates that the chart is created for those with specialized or technical knowledge in that domain",
+    "label": "For General Audience",
+    "description": "Indicates that this visualization was designed to be easily understood by a general audience without domain-expertise, i.e., that it might make some simplifications or ommits some complexity",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -762,8 +762,8 @@
   {
     "badgeType": "BINARY",
     "id": "62",
-    "label": "For policy makers",
-    "description": "Indicates that the chart is primarily aimed at government officials or decision-makers, the visualization contains very condensed, high-level information.",
+    "label": "For Experts Only",
+    "description": "Indicates that the chart requires specialized or technical domain knowledge.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -774,20 +774,20 @@
   {
     "badgeType": "BINARY",
     "id": "63",
-    "label": "Public domain visualization",
-    "description": "Indicates that the chart is free from copyright restrictions",
+    "label": "For Policy Makers",
+    "description": "Indicates that the chart is primarily aimed at government officials or decision-makers, the visualization contains very condensed, high-level information.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
-      "License"
+      "Audience"
     ],
     "link": ""
   },
   {
     "badgeType": "BINARY",
     "id": "64",
-    "label": "<X> License",
-    "description": "Indicates a specific license under which the chart is distributed",
+    "label": "Public Domain Visualization",
+    "description": "Indicates that the chart is free of copyright restrictions.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -798,8 +798,8 @@
   {
     "badgeType": "BINARY",
     "id": "65",
-    "label": "Public domain data",
-    "description": "Indicates that the dataset is free from copyright or usage restrictions",
+    "label": "<X> License",
+    "description": "Indicates a specific license governing the chart\u2019s distribution.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -810,8 +810,8 @@
   {
     "badgeType": "BINARY",
     "id": "66",
-    "label": "Data: CC0 Dedication",
-    "description": "Indicates that the data is under the Creative Commons Public Domain Dedication (CC0)",
+    "label": "Public Domain Data",
+    "description": "Indicates that the dataset is free from copyright or usage restrictions.",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -822,8 +822,8 @@
   {
     "badgeType": "BINARY",
     "id": "67",
-    "label": "Data: ODC-PDDL",
-    "description": "Indicates that the dataset is licensed under the Open Data Commons Public Domain Dedication and License",
+    "label": "Data: CC0 Dedication",
+    "description": "Indicates that the data is under the Creative Commons Public Domain Dedication (CC0).",
     "type": "CONTEXT",
     "intent": "INFORMATION",
     "topics": [
@@ -834,8 +834,20 @@
   {
     "badgeType": "BINARY",
     "id": "68",
+    "label": "Data: ODC-PDDL",
+    "description": "Indicates that the dataset is licensed under the Open Data Commons Public Domain Dedication and License (PDDL).",
+    "type": "CONTEXT",
+    "intent": "INFORMATION",
+    "topics": [
+      "License"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "69",
     "label": "Attributed Visualization Creators",
-    "description": "Indicates that the individual or organization responsible for the visualizatio creation",
+    "description": "Indicates that the individual or organization responsible for creation is acknowledged.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
     "topics": [
@@ -845,21 +857,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "69",
-    "label": "Sensitive topic",
-    "description": "Indicates that the charts is about a sensitive topic and who's findings may offset readers.",
-    "type": "CONTEXT",
-    "intent": "WARNING",
-    "topics": [
-      "Audience"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "70",
-    "label": "Technical terminology",
-    "description": "Indicates that the visulization uses domain-specific technical terms unfamiliar to many people.",
+    "label": "Sensitive Topic",
+    "description": "Indicates that the chart covers a sensitive topic that may upset some viewers.",
     "type": "CONTEXT",
     "intent": "WARNING",
     "topics": [
@@ -870,8 +870,20 @@
   {
     "badgeType": "BINARY",
     "id": "71",
-    "label": "Terminology explained",
-    "description": "Indicates that definitions or clarifications of special terms are provided.",
+    "label": "Technical Terminology",
+    "description": "Indicates that the visualization uses domain-specific terms that may be unfamiliar to many.",
+    "type": "CONTEXT",
+    "intent": "WARNING",
+    "topics": [
+      "Audience"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "72",
+    "label": "Terminology Explained",
+    "description": "Indicates that definitions or clarifications of specialized terms are provided.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
     "topics": [
@@ -881,9 +893,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "72",
-    "label": "Background reading available",
-    "description": "Indicates that extra materials or readings are provided for further context.",
+    "id": "73",
+    "label": "Background Reading Available",
+    "description": "Indicates that extra materials or readings are provided for additional context.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
     "topics": [
@@ -893,21 +905,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "73",
-    "label": "Can mouseover",
-    "description": "Indicates that users see additional details upon hovering over elements",
-    "type": "INTERACTION",
-    "intent": "INFORMATION",
-    "topics": [
-      "Exploration"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "74",
-    "label": "Zoomable",
-    "description": "Indicates that the map is zoomable",
+    "label": "Can Mouse Over",
+    "description": "Indicates that hovering over elements reveals additional details.",
     "type": "INTERACTION",
     "intent": "INFORMATION",
     "topics": [
@@ -918,8 +918,8 @@
   {
     "badgeType": "BINARY",
     "id": "75",
-    "label": "Can sort",
-    "description": "Indicates that users can reorder elements along a particular dimension.",
+    "label": "Zoomable",
+    "description": "Indicates that the map can be zoomed in or out.",
     "type": "INTERACTION",
     "intent": "INFORMATION",
     "topics": [
@@ -930,8 +930,8 @@
   {
     "badgeType": "BINARY",
     "id": "76",
-    "label": "Paramterizable",
-    "description": "Indicates that users can modify parameters or settings of the visualization.",
+    "label": "Can Sort",
+    "description": "Indicates that users can reorder elements by a certain dimension.",
     "type": "INTERACTION",
     "intent": "INFORMATION",
     "topics": [
@@ -942,8 +942,8 @@
   {
     "badgeType": "BINARY",
     "id": "77",
-    "label": "Brushing & linking",
-    "description": "Indicates that users can brush and highlight elements within or across a set of visualizations",
+    "label": "Parameterizable",
+    "description": "Indicates that users can modify parameters or settings.",
     "type": "INTERACTION",
     "intent": "INFORMATION",
     "topics": [
@@ -954,8 +954,20 @@
   {
     "badgeType": "BINARY",
     "id": "78",
-    "label": "Details-on-demand",
-    "description": "Indicates that details-on-demand are available for hovered or selected elements",
+    "label": "Brushing & Linking",
+    "description": "Indicates that users can brush or highlight elements within or across multiple visualizations.",
+    "type": "INTERACTION",
+    "intent": "INFORMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "79",
+    "label": "Details-on-Demand",
+    "description": "Indicates that details appear when elements are hovered or selected.",
     "type": "INTERACTION",
     "intent": "CONFIRMATION",
     "topics": [
@@ -965,9 +977,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "79",
-    "label": "Interactive pre-filter",
-    "description": "Indicates that the visualized data is pre-filtered but can be manually adjusted",
+    "id": "80",
+    "label": "Interactive Pre-Filter",
+    "description": "Indicates that the data is initially pre-filtered but can be manually adjusted.",
     "type": "INTERACTION",
     "intent": "WARNING",
     "topics": [
@@ -978,9 +990,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "80",
-    "label": "Device-responsive",
-    "description": "Indicates that the chart automatically adapts to various screen sizes and aspect ratios.",
+    "id": "81",
+    "label": "Device-Responsive",
+    "description": "Indicates that the chart adapts to different screen sizes and aspect ratios.",
     "type": "INTERACTION",
     "intent": "CONFIRMATION",
     "topics": [
@@ -991,9 +1003,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "81",
-    "label": "Non-area-preserving projection",
-    "description": "Indicates that the chosen map projection does not keep area proportions consistent",
+    "id": "82",
+    "label": "Non-Area-Preserving Projection",
+    "description": "Indicates that the chosen map projection does not preserve consistent area proportions.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1003,8 +1015,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "82",
-    "label": "Points don't match exact locations",
+    "id": "83",
+    "label": "Points Don't Match Exact Locations",
     "description": "Indicates that symbol positions on the map may not reflect precise coordinates",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
@@ -1016,8 +1028,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "83",
-    "label": "Points match exact locations",
+    "id": "84",
+    "label": "Points Match Exact Locations",
     "description": "Indicated that symbol positions have exact coordinates for the event.",
     "type": "VISUAL ENCODING",
     "intent": "CONFIRMATION",
@@ -1028,9 +1040,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "84",
-    "label": "Uncertainty visualized",
-    "description": "Indicates that statistical or model uncertainty is displayed (e.g., error bars, confidence bands)",
+    "id": "85",
+    "label": "Uncertainty Visualized",
+    "description": "Indicates that statistical or model uncertainty (e.g., error bars, confidence bands) is shown.",
     "type": "VISUAL ENCODING",
     "intent": "CONFIRMATION",
     "topics": [
@@ -1040,9 +1052,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "85",
-    "label": "Uncertainty omitted",
-    "description": "Indicates that uncertainty in the data is potentially known but not visualized.",
+    "id": "86",
+    "label": "Uncertainty Omitted",
+    "description": "Indicates that known uncertainty is not shown in the visualization.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1052,8 +1064,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "86",
-    "label": "Dual-axis encoding",
+    "id": "87",
+    "label": "Dual-Axis Encoding",
     "description": "Indicates that two different (vertical) axes are used to represent separate variables in the same chart.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
@@ -1065,8 +1077,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "87",
-    "label": "Truncated axis",
+    "id": "88",
+    "label": "Truncated Axis",
     "description": "Indicates that an axis starts from a non-zero point, explaining the rationale for that",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
@@ -1078,8 +1090,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "88",
-    "label": "Inconsistent axis intervals",
+    "id": "89",
+    "label": "Inconsistent Axis Intervals",
     "description": "Indicates that intervals on the axis are not uniform, potentially confusing scale perception.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
@@ -1090,8 +1102,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "89",
-    "label": "Inverted axis",
+    "id": "90",
+    "label": "Inverted Axis",
     "description": "Indicates that an axis direction is reversed with respect to an otherwise intuitive direction, e.g., higher values on the top, time passing from left to right, etc.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
@@ -1103,9 +1115,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "90",
-    "label": "Differing Y-axis",
-    "description": "Indicates that multiple charts use differing y-axis scales or baselines",
+    "id": "91",
+    "label": "Differing Y-Axis",
+    "description": "Indicates that multiple charts use different y-axis scales or baselines.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1116,9 +1128,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "91",
-    "label": "Log scale",
-    "description": "Indicates that a logarithmic scale is used to represent data",
+    "id": "92",
+    "label": "Log Scale",
+    "description": "Indicates that the data is plotted on a logarithmic scale.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1128,19 +1140,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "92",
-    "label": "Size distortion",
-    "description": "Indicates that graphical elements\u2019 sizes may not be strictly proportional to their data values",
-    "type": "VISUAL ENCODING",
-    "intent": "WARNING",
-    "topics": [],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "93",
-    "label": "Small values exaggerated",
-    "description": "Indicates that tiny data points are magnified for visibility",
+    "label": "Size Distortion",
+    "description": "Indicates that element sizes may not strictly match their underlying data values.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [],
@@ -1149,8 +1151,8 @@
   {
     "badgeType": "BINARY",
     "id": "94",
-    "label": "Invisible small values",
-    "description": "Indicates that extremely small items may not be visible at the current scale, e.g., they cannot be seen at the current screen resolution or zoom level.",
+    "label": "Small Values Exaggerated",
+    "description": "Indicates that very small data points are magnified for better visibility.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [],
@@ -1159,8 +1161,8 @@
   {
     "badgeType": "BINARY",
     "id": "95",
-    "label": "Overlapping elements",
-    "description": "Indicates that visual elements may overlap in dense areas",
+    "label": "Invisible Small Values",
+    "description": "Indicates that extremely small items may not be visible at the current scale, e.g., they cannot be seen at the current screen resolution or zoom level.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [],
@@ -1169,8 +1171,18 @@
   {
     "badgeType": "BINARY",
     "id": "96",
-    "label": "Colorblind-safe",
-    "description": "Indicates that colors were chosen to remain distinguishable for colorblind viewers",
+    "label": "Overlapping Elements",
+    "description": "Indicates that elements can overlap in dense areas.",
+    "type": "VISUAL ENCODING",
+    "intent": "WARNING",
+    "topics": [],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "97",
+    "label": "Colorblind Safe",
+    "description": "Indicates that color choices remain distinguishable for colorblind viewers.",
     "type": "VISUAL ENCODING",
     "intent": "CONFIRMATION",
     "topics": [
@@ -1181,8 +1193,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "97",
-    "label": "Printer-safe",
+    "id": "98",
+    "label": "Printer Safe",
     "description": "Indicates that the design remains clear and readable when printed",
     "type": "VISUAL ENCODING",
     "intent": "CONFIRMATION",
@@ -1193,8 +1205,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "98",
-    "label": "Area encoding",
+    "id": "99",
+    "label": "Area Encoding",
     "description": "Indicates that the size of visual elements is calculated as function of their value mapped to the area.",
     "type": "VISUAL ENCODING",
     "intent": "INFORMATION",
@@ -1203,8 +1215,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "99",
-    "label": "False friend",
+    "id": "100",
+    "label": "False Friend",
     "description": "Indicates that a visualization may resemble a common visualization yet might require different interpretation",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
@@ -1216,9 +1228,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "100",
-    "label": "Null-values removed",
-    "description": "Indicates that data points with null or infinite values have been excluded.",
+    "id": "101",
+    "label": "Null-Values Removed",
+    "description": "Indicates that null or infinite values have been excluded from the data.",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -1228,8 +1240,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "101",
-    "label": "Varying scales",
+    "id": "102",
+    "label": "Varying Scales",
     "description": "Indicates that multiple adjacent charts use different axis scales, complicating comparison across charts.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
@@ -1240,8 +1252,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "102",
-    "label": "Rainbow required",
+    "id": "103",
+    "label": "Rainbow Required",
     "description": "Indicates that a rainbow-like color gradient is required to show the specific data.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
@@ -1252,9 +1264,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "103",
-    "label": "Redundant encodings",
-    "description": "Indicates that multiple visual channels (e.g., color + shape) convey the same attribute",
+    "id": "104",
+    "label": "Redundant Encodings",
+    "description": "Indicates that more than one visual channel (e.g., color and shape) encodes the same attribute.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1264,10 +1276,10 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "104",
-    "label": "Labels ommitted",
+    "id": "105",
+    "label": "Labels Omitted",
     "description": "Indicates that axis text is provided in accompanying descriptions rather than on the axis itself",
-    "type": "CONTEXT",
+    "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
       "Axes"
@@ -1276,8 +1288,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "105",
-    "label": "Composite index",
+    "id": "106",
+    "label": "Composite Index",
     "description": "Indicates that a combined metric synthesized from multiple factors is displayed",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
@@ -1288,9 +1300,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "106",
-    "label": "Qualitative categories",
-    "description": "Indicates that data is presented in categorical groupings (e.g., high, medium, low)",
+    "id": "107",
+    "label": "Qualitative Categories",
+    "description": "Indicates that data is grouped into descriptive categories (e.g., high, medium, low).",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -1300,9 +1312,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "107",
-    "label": "Approximate times",
-    "description": "Indicates that the timeframe shown is approximate",
+    "id": "108",
+    "label": "Approximate Times",
+    "description": "Indicates that the displayed timeframe is approximate.",
     "type": "VISUAL ENCODING",
     "intent": "INFORMATION",
     "topics": [
@@ -1312,9 +1324,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "108",
-    "label": "Estimated geographic boundaries",
-    "description": "Indicates that geographic shapes or borders are inferred and not exact",
+    "id": "109",
+    "label": "Estimated Geographic Boundaries",
+    "description": "Indicates that shapes or borders are inferred rather than exact.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1324,9 +1336,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "109",
-    "label": "Uneven time intervals",
-    "description": "Indicates that the spacing between time points is inconsistent",
+    "id": "110",
+    "label": "Uneven Time Intervals",
+    "description": "Indicates that the intervals between time points are inconsistent.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1336,9 +1348,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "110",
-    "label": "Known data gap",
-    "description": "Indicates that a recognized period or portion of missing records exists",
+    "id": "111",
+    "label": "Known Data Gap",
+    "description": "Indicates that there is a known gap in the dataset.",
     "type": "DATA",
     "intent": "WARNING",
     "topics": [
@@ -1349,7 +1361,7 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "111",
+    "id": "112",
     "label": "3D",
     "description": "Indicates that the chart visualizes three-dimensional or volume-based measurements. The chart may contain occlusion.",
     "type": "DATA",
@@ -1361,8 +1373,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "112",
-    "label": "Experts involved",
+    "id": "113",
+    "label": "Experts Involved",
     "description": "Indicates that domain experts provided insights or guided the design and analysis",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
@@ -1373,9 +1385,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "113",
-    "label": "AI-generate visualization",
-    "description": "Indicates that the chart was produced using generative AI tools (e.g., GPT, DALL-E)",
+    "id": "114",
+    "label": "AI-Generated Visualization",
+    "description": "Indicates that the chart was produced by generative AI tools (e.g., GPT, DALL-E).",
     "type": "CONTEXT",
     "intent": "WARNING",
     "topics": [
@@ -1385,9 +1397,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "114",
-    "label": "AI-generated data",
-    "description": "Indicates that part or all of the dataset was created by an AI model",
+    "id": "115",
+    "label": "AI-Generated Data",
+    "description": "Indicates that part or all of the dataset was generated by an AI model.",
     "type": "DATA",
     "intent": "WARNING",
     "topics": [
@@ -1398,9 +1410,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "115",
-    "label": "AI-assisted analysis",
-    "description": "Indicates that AI methods (e.g., clustering, pattern recognition) assisted in data analysis.",
+    "id": "116",
+    "label": "AI-Assisted Analysis",
+    "description": "Indicates that AI methods (e.g., clustering, pattern recognition) were used in data analysis.",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -1410,9 +1422,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "116",
-    "label": "AI-generated captions",
-    "description": "Indicates that descriptive text or annotations were produced by an AI system",
+    "id": "117",
+    "label": "AI-Generated Captions",
+    "description": "Indicates that descriptive text or annotations were produced by an AI system.",
     "type": "CONTEXT",
     "intent": "WARNING",
     "topics": [
@@ -1423,9 +1435,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "117",
-    "label": "AI-derived insight",
-    "description": "Indicates that key insights or interpretations rely on AI-based evaluations",
+    "id": "118",
+    "label": "AI-Derived Insight",
+    "description": "Indicates that the key insights rely on AI-based evaluation.",
     "type": "ANALYSIS",
     "intent": "WARNING",
     "topics": [
@@ -1435,9 +1447,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "118",
-    "label": "Human-verified AI",
-    "description": "Indicates that humans verified results generated by an AI",
+    "id": "119",
+    "label": "Human-Verified AI",
+    "description": "Indicates that humans verified AI-generated results.",
     "type": "ANALYSIS",
     "intent": "CONFIRMATION",
     "topics": [
@@ -1448,8 +1460,8 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "119",
-    "label": "Possible AI bias",
+    "id": "120",
+    "label": "Possible AI Bias",
     "description": "Indicates that the visualization may reflect distortions introduced by AI systems",
     "type": "ANALYSIS",
     "intent": "WARNING",
@@ -1461,9 +1473,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "120",
-    "label": "No AI involved",
-    "description": "Confirms that no AI was used during the creation of this visualization",
+    "id": "121",
+    "label": "No AI Involved",
+    "description": "Confirms that no AI was involved in creating this visualization.",
     "type": "CONTEXT",
     "intent": "CONFIRMATION",
     "topics": [
@@ -1474,9 +1486,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "121",
-    "label": "Secondary data",
-    "description": "Indicates that the dataset is itself derived from secondary or aggregated sources, rather than the original raw data",
+    "id": "122",
+    "label": "Secondary Data",
+    "description": "Indicates that the dataset is derived from secondary or aggregated sources rather than raw data.",
     "type": "DATA",
     "intent": "INFORMATION",
     "topics": [
@@ -1486,9 +1498,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "122",
-    "label": "Data off the map",
-    "description": "Indicates that there are elements not shown in the current view.",
+    "id": "123",
+    "label": "Data Off the Map",
+    "description": "Indicates that some data points lie outside the current view and are not displayed.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1498,21 +1510,9 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "123",
-    "label": "Semi-auto data processing",
-    "description": "Indicate the data processing involves manual cleaning in addition to machine processing",
-    "type": "ANALYSIS",
-    "intent": "INFORMATION",
-    "topics": [
-      "Tools"
-    ],
-    "link": ""
-  },
-  {
-    "badgeType": "BINARY",
     "id": "124",
-    "label": "Additional manual cleaning",
-    "description": "Indicate the data processing is cross checked with manual cleaning",
+    "label": "Semi-Auto Data Processing",
+    "description": "Indicates that data processing involves both machine automation and manual cleaning.",
     "type": "ANALYSIS",
     "intent": "INFORMATION",
     "topics": [
@@ -1523,8 +1523,20 @@
   {
     "badgeType": "BINARY",
     "id": "125",
-    "label": "Irregular patterns",
-    "description": "Indicate there are irregular patterns that do not lead to contextual findings.",
+    "label": "Additional Manual Cleaning",
+    "description": "Indicates that the data processing was cross-checked manually.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Tools"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "126",
+    "label": "Irregular Patterns",
+    "description": "Indicates that there are irregular patterns that may not yield meaningful conclusions.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1534,9 +1546,21 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "126",
-    "label": "Interval breaks",
-    "description": "Indicates that an axis in the visualization has one or more breaks, i.e., unequal intervals",
+    "id": "127",
+    "label": "Standard Scale Used",
+    "description": "Indicates that the visualization uses a standard scale (e.g., linear).",
+    "type": "VISUAL ENCODING",
+    "intent": "INFORMATION",
+    "topics": [
+      "Interpretation"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "128",
+    "label": "Interval Breaks",
+    "description": "Indicates that an axis in the visualization has one or more breaks, i.e., unequal intervals.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
@@ -1546,26 +1570,49 @@
   },
   {
     "badgeType": "BINARY",
-    "id": "127",
-    "label": "Positionless elements now shown",
+    "id": "129",
+    "label": "Positionless Elements Not Shown",
     "description": "Indicates that this visualization does not or cannot show elements without a geographic position.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
-      "Interpretation",
       "Maps"
     ],
     "link": ""
   },
   {
     "badgeType": "BINARY",
-    "id": "128",
-    "label": "Simplified geographic boundaries",
+    "id": "130",
+    "label": "Simplified Geographic Boundaries",
     "description": "Indicates that geographic boundaries have been simplified to improve readability of this visualization.",
     "type": "VISUAL ENCODING",
     "intent": "WARNING",
     "topics": [
       "Maps"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "131",
+    "label": "Interaction Linked Across Multiple Views",
+    "description": "Indicates that interactive changes in one view affect other views (e.g., linked small multiples).",
+    "type": "INTERACTION",
+    "intent": "INFORMATION",
+    "topics": [
+      "Exploration"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "132",
+    "label": "User-Tested Vis",
+    "description": "Indicates that the visualization was validated through user testing (e.g., user study).",
+    "type": "CONTEXT",
+    "intent": "CONFIRMATION",
+    "topics": [
+      "Audience"
     ],
     "link": ""
   }

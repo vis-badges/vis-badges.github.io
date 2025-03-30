@@ -3,15 +3,13 @@
     "badgeType": "QUANTITATIVE",
     "id": "129",
     "label": "Confidence Intervals",
-    "description": "",
+    "description": "Indicates the confidence level used in statistical intervals.",
     "link": "",
     "type": "ANALYSIS",
     "value": 95,
     "unit": "%",
     "intent": "CONFIRMATION",
-    "topics": [
-      "Source"
-    ]
+    "topics": ["Source"]
   },
   {
     "badgeType": "QUANTITATIVE",
@@ -65,7 +63,7 @@
     "badgeType": "QUANTITATIVE",
     "id": "134",
     "label": "Prediction Horizon",
-    "description": ".",
+    "description": "Indicates how far into the future the predictions extend.",
     "link": "",
     "type": "ANALYSIS",
     "value": 12,
@@ -80,7 +78,7 @@
     "description": "Measurement accuracy of sensors used.",
     "link": "",
     "type": "DATA",
-    "value": 0.99,
+    "value": 98,
     "unit": "%",
     "intent": "CONFIRMATION",
     "topics": ["Source"]
@@ -88,7 +86,7 @@
   {
     "badgeType": "QUANTITATIVE",
     "id": "136",
-    "label": "Data Refresh Delay",
+    "label": "Update Interval",
     "description": "Time lag between data collection and dataset availability.",
     "link": "",
     "type": "DATA",
@@ -132,5 +130,25 @@
     "unit": "",
     "intent": "INFORMATION",
     "topics": ["Color"]
+  },
+  {
+    "badgeType": "QUANTITATIVE",
+    "label": "Sampling Rate",
+    "description": "Frequency at which data is sampled or collected.",
+    "type": "DATA",
+    "value": 100,
+    "unit": "Hz",
+    "intent": "INFORMATION",
+    "topics": ["Source"]
+  },
+  {
+    "badgeType": "QUANTITATIVE",
+    "label": "Feature Count",
+    "description": "Number of distinct features or dimensions in the dataset.",
+    "type": "DATA",
+    "value": 12,
+    "unit": "",
+    "intent": "INFORMATION",
+    "topics": ["Availability"]
   }
 ]
