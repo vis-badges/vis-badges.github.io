@@ -3,21 +3,21 @@
     "id": "",
     "badgeType": "CATEGORICAL",
     "label": "Interaction Available",
-    "description": "",
-    "type": "ANALYSIS",
+    "description": "Indicates which user interactions are supported by the visualization.",
+    "type": "INTERACTION",
     "intent": "CONFIRMATION",
     "values": [
       { "label": "Click" },
       { "label": "Hover" },
       { "label": "Filter" }
     ],
-    "topics": ["Source"]
+    "topics": ["Exploration"]
   },
   {
     "id": "140",
     "badgeType": "CATEGORICAL",
     "label": "Data Licensing",
-    "description": "",
+    "description": "Indicates the license under which data is provided (e.g., public, CC, or proprietary).",
     "type": "DATA",
     "intent": "INFORMATION",
     "values": [
@@ -65,7 +65,7 @@
       { "label": "Normalization" },
       { "label": "Aggregation" },
       { "label": "Binning" },
-      { "label": "Tokenization"}
+      { "label": "Tokenization" }
     ],
     "topics": ["Preprocessing"]
   },
@@ -73,7 +73,7 @@
     "id": "144",
     "badgeType": "CATEGORICAL",
     "label": "Data Sources",
-    "description": "",
+    "description": "Indicates the named data sources in use (e.g., Source1, Source2).",
     "type": "DATA",
     "intent": "INFORMATION",
     "values": [
@@ -120,8 +120,35 @@
     "values": [
       { "label": "Red" },
       { "label": "Cyan" },
-      { "label": "Yello" }
+      { "label": "Yellow" }
     ],
     "topics": ["Color"]
+  },
+  {
+    "badgeType": "CATEGORICAL",
+    "label": "Data Types Used",
+    "description": "Indicates the types of data included in the visualization.",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Numeric" },
+      { "label": "Textual" },
+      { "label": "Time Series" },
+      { "label": "Categorical" }
+    ],
+    "topics": ["Source"]
+  },
+  {
+    "badgeType": "LIST",
+    "label": "Collaboration Features",
+    "description": "Indicates user collaboration or social features offered by the visualization.",
+    "type": "INTERACTION",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Annotations" },
+      { "label": "Comments" },
+      { "label": "Sharing" }
+    ],
+    "topics": ["Exploration"]
   }
 ]
