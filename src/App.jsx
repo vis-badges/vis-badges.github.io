@@ -19,17 +19,17 @@ const NAVIGATION = [
         kind: 'header',
         title: 'Catalog',
     },
-    {
-        segment: 'teaser',
-        title: '[TEMP]TEASER FIG',
-        component: TeaserFigure
-    },
     // {
-    //     segment: 'compact',
-    //     title: 'Visualization Badges Catalog',
-    //     icon: <Apps />,
-    //     component: Compact
+    //     segment: 'teaser',
+    //     title: '[TEMP]TEASER FIG',
+    //     component: TeaserFigure
     // },
+    {
+        segment: 'compact',
+        title: 'Visualization Badges Catalog',
+        icon: <Apps />,
+        component: Compact
+    },
     {
         segment: 'table',
         title: 'Visualization Badges Table',
