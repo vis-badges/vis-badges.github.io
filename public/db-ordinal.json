@@ -78,17 +78,6 @@
   },
   {
     "badgeType": "ORDINAL",
-    "id": "107",
-    "label": "Printer Friendly",
-    "description": "Indicates how suitable the visualization is for printing (e.g., CMYK, Grayscale).",
-    "value": "CMYK",
-    "type": "CONTEXT",
-    "link": "",
-    "intent": "CONFIRMATION",
-    "topics": []
-  },
-  {
-    "badgeType": "ORDINAL",
     "id": "109",
     "label": "Uncertainty Communication",
     "description": "Indicates how thoroughly uncertainty is displayed (Low, Medium, High).",
