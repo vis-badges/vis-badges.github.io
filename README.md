@@ -25,10 +25,4 @@ npm install
 npm start
 ```
 
-## Deploy
-
-```bash
-npm run deploy
-```
-
 

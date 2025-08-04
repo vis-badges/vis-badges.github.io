@@ -95,7 +95,13 @@ export default function About() {
                 </Typography>
                 <Card sx={{ p: 2 }}>
                     <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.4 }}>
-                        Valentin Edelsbrunner, Jinrui Wang, Alexis Pister, Tomas Vancisin, Sian Phillips, Min Chen, and Benjamin Bach: Visualization Badges: Communicating Design and Provenance through Graphical Labels Alongside Visualizations. IEEE Transactions in Visualization and Computer Graphics (TVCG), 2026 (published at the IEEE VIS Conference 2025, Vienna, Austria).
+                        @article{'{'}edelsbrunner2026visualization,
+                        {'\n'}  title={'{'}Visualization Badges: Communicating Design and Provenance through Graphical Labels Alongside Visualizations},
+                        {'\n'}  author={'{'}Edelsbrunner, Valentin and Wang, Jinrui and Pister, Alexis and Vancisin, Tomas and Phillips, Sian and Chen, Min and Bach, Benjamin},
+                        {'\n'}  journal={'{'}IEEE Transactions in Visualization and Computer Graphics (TVCG)},
+                        {'\n'}  year={'{'}2026},
+                        {'\n'}  note={'{'}Published at the IEEE VIS Conference 2025, Vienna, Austria}
+                        {'\n'}{'}'}
                     </Typography>
                 </Card>
             </Box>
