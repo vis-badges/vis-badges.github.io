@@ -1,8 +1,9 @@
+// BadgeBase.jsx
 import React from 'react';
-import { Box, Chip, Tooltip, Avatar } from '@mui/material';
+import { Avatar, Box, Chip, Tooltip } from '@mui/material';
 import * as Icons from '@mui/icons-material';
-import { IconInfoSquareFilled } from '@tabler/icons-react'
-import { BiSolidInfoSquare } from "react-icons/bi";
+import { getMuiIcon } from "./utils/getIcon";
+import { icon_intent_map, icon_scope_map } from "./utils/iconMappings";
 
 function mapChipSize(customSize) {
     switch (customSize) {
@@ -17,28 +18,22 @@ function mapChipSize(customSize) {
     }
 }
 
-function getMuiIcon(iconName, customSize) {
-    if (!iconName) return null;
-
-    if (iconName === "Info" && customSize === 'medium') {
-        return <BiSolidInfoSquare size={18} />
-    }
-    else if (iconName === "Info" && customSize === 'large') {
-        return <BiSolidInfoSquare size={22} />;
-    }
-
-    if (!Icons[iconName]) return null;
-
-    const IconComponent = Icons[iconName];
-    return <IconComponent fontSize="small" />;
-}
 function getAvatarElement(avatar) {
     if (!avatar) return null;
-    if (avatar.type === 'letter') {
-        return <Avatar>{avatar.value}</Avatar>;
-    }
-    if (avatar.type === 'image') {
-        return <Avatar src={avatar.value} />;
+    if (avatar.type === 'letter') return <Avatar>{avatar.value}</Avatar>;
+    if (avatar.type === 'image') return <Avatar src={avatar.value} />;
+    return null;
+}
+
+function resolveIcon(key, { intent, type }, size) {
+    if (key !== 'none') {
+        let iconValue = "";
+        if (key === 'iconIntent') {
+            iconValue = icon_intent_map[intent] || "";
+        } else if (key === 'iconScope') {
+            iconValue = icon_scope_map[type] || "";
+        }
+        return iconValue ? getMuiIcon(iconValue, size) : null;
     }
     return null;
 }
@@ -47,57 +42,47 @@ export default function BadgeBase({
                                       label,
                                       description = '',
                                       avatar,
-                                      icon1,
-                                      icon2,
-                                      icon3,
+                                      intent, // now comes from badge.intent
+                                      type,   // now comes from badge.type
                                       size = 'medium',
                                       variant = 'filled',
-                                      // leftIconKey and rightIconKey determine what is shown.
-                                      // For left, "avatar" will render the avatar; "none" renders nothing; otherwise the corresponding icon.
-                                      leftIconKey = 'icon1',
-                                      rightIconKey = 'icon1',
+                                      leftIconKey = 'iconIntent',
+                                      rightIconKey = 'iconIntent',
                                       chipColor = 'default',
+                                      chipSx = {},
                                   }) {
     const { muiSize, hideLabel } = mapChipSize(size);
-
-    let leftIcon = null;
-    if (leftIconKey === 'avatar') {
-        leftIcon = getAvatarElement(avatar);
-    } else if (leftIconKey !== 'none') {
-        let iconValue;
-        if (leftIconKey === 'icon1') iconValue = icon1;
-        else if (leftIconKey === 'icon2') iconValue = icon2;
-        else if (leftIconKey === 'icon3') iconValue = icon3;
-        leftIcon = getMuiIcon(iconValue, size);
-    }
-
-    let rightIcon = null;
-    if (rightIconKey !== 'none') {
-        let iconValue;
-        if (rightIconKey === 'icon1') iconValue = icon1;
-        else if (rightIconKey === 'icon2') iconValue = icon2;
-        else if (rightIconKey === 'icon3') iconValue = icon3;
-        rightIcon = getMuiIcon(iconValue, size);
-    }
-
-    const finalLabel = hideLabel ? '' : label;
+    const leftIcon = resolveIcon(leftIconKey, { intent, type }, size);
+    const rightIcon = resolveIcon(rightIconKey, { intent, type }, size);
+    // Instead of an empty string, use undefined when hideLabel is true.
+    const displayLabel = hideLabel ? undefined : label;
 
     return (
         <Box>
             <Tooltip title={description}>
                 <Chip
-                    label={finalLabel}
+                    label={displayLabel}
                     size={muiSize}
                     variant={variant}
-                    avatar={leftIconKey === 'avatar' ? leftIcon : null}
+                    avatar={leftIconKey === 'avatar' ? getAvatarElement(avatar) : null}
                     icon={leftIconKey !== 'avatar' ? leftIcon : null}
                     deleteIcon={rightIcon}
                     onDelete={rightIcon ? () => {} : undefined}
                     clickable
                     color={chipColor}
+                    sx={{
+                        ...chipSx,
+                        // IN CASE OF MINI: Remove extra padding and icon margins.
+                        ...(hideLabel && {
+                            pl: 0,
+                            pr: 0,
+                            minWidth: 26,
+                            '& .MuiChip-label': { display: 'none' },
+                            '& .MuiChip-icon': { marginLeft: 0, marginRight: 0 },
+                        }),
+                    }}
                 />
             </Tooltip>
         </Box>
     );
 }
-

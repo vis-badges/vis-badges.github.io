@@ -1,0 +1,133 @@
+[
+  {
+    "badgeType": "ORDINAL",
+    "id": "101",
+    "label": "Data Completeness",
+    "description": "Indicates how complete the dataset is (e.g., Complete, Low).",
+    "value": "Complete",
+    "type": "DATA",
+    "link": "",
+    "intent": "CONFIRMATION",
+    "topics": ["Availability"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "101",
+    "label": "Data Completeness",
+    "description": "Indicates how complete the dataset is (e.g., Complete, Low).",
+    "value": "Low",
+    "type": "DATA",
+    "link": "",
+    "intent": "WARNING",
+    "topics": ["Availability"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "102",
+    "label": "Data Currency",
+    "description": "Reflects how current the dataset is (Up-to-date, Slightly Outdated, Outdated).",
+    "value": "Up-to-date",
+    "type": "DATA",
+    "link": "",
+    "intent": "CONFIRMATION",
+    "topics": ["Time"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "103",
+    "label": "Bias Potential",
+    "description": "Degree to which the data might contain systematic bias (Low, Medium, High).",
+    "value": "High",
+    "type": "ANALYSIS",
+    "link": "",
+    "intent": "WARNING",
+    "topics": ["Bias", "Uncertainty"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "104",
+    "label": "Prediction Confidence",
+    "description": "Confidence level associated with any predictive elements (High, Moderate, Low).",
+    "value": "Low",
+    "type": "ANALYSIS",
+    "link": "",
+    "intent": "WARNING",
+    "topics": ["Uncertainty"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "105",
+    "label": "Visual Complexity",
+    "description": "Level of visual complexity or interpretive difficulty (Simple, Moderate, Complex).",
+    "value": "Moderate",
+    "type": "VISUAL ENCODING",
+    "link": "",
+    "intent": "INFORMATION",
+    "topics": ["Interpretation"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "107",
+    "label": "Provenance Transparency",
+    "description": "Indicates how much detail is provided about data/analysis provenance.",
+    "value": "Detailed",
+    "type": "CONTEXT",
+    "link": "",
+    "intent": "CONFIRMATION",
+    "topics": ["Attribution"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "109",
+    "label": "Uncertainty Communication",
+    "description": "Indicates how thoroughly uncertainty is displayed (Low, Medium, High).",
+    "value": "Low",
+    "type": "CONTEXT",
+    "link": "",
+    "intent": "WARNING",
+    "topics": ["Uncertainty"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "110",
+    "label": "Dataset Size",
+    "description": "Indicates the dataset’s relative size (Small, Medium, Large).",
+    "value": "Large",
+    "type": "DATA",
+    "link": "",
+    "intent": "INFORMATION",
+    "topics": ["Availability"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "111",
+    "label": "Indistinguishable Colors",
+    "description": "Indicates which colors may be hard to distinguish (e.g., Red-Green).",
+    "value": "Red-Green",
+    "type": "VISUAL ENCODING",
+    "link": "",
+    "intent": "WARNING",
+    "topics": ["Color", "Accessibility"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "112",
+    "label": "LLM Involvement",
+    "description": "Indicates the level or manner in which an LLM was used (e.g., GPT4, None).",
+    "value": "gpt4o",
+    "type": "CONTEXT",
+    "link": "",
+    "intent": "INFORMATION",
+    "topics": ["AI"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "210",
+    "label": "Topic Sensitivity",
+    "description": "Indicates how sensitive or controversial the topic is (Low, Medium, High).",
+    "value": "Medium",
+    "type": "CONTEXT",
+    "intent": "WARNING",
+    "topics": ["Audience"]
+  }
+]

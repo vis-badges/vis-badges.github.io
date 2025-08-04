@@ -1,0 +1,154 @@
+[
+  {
+    "id": "",
+    "badgeType": "CATEGORICAL",
+    "label": "Interaction Available",
+    "description": "Indicates which user interactions are supported by the visualization.",
+    "type": "INTERACTION",
+    "intent": "CONFIRMATION",
+    "values": [
+      { "label": "Click" },
+      { "label": "Hover" },
+      { "label": "Filter" }
+    ],
+    "topics": ["Exploration"]
+  },
+  {
+    "id": "140",
+    "badgeType": "CATEGORICAL",
+    "label": "Data Licensing",
+    "description": "Indicates the license under which data is provided (e.g., public, CC, or proprietary).",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Public Domain" },
+      { "label": "Creative Commons" },
+      { "label": "Proprietary" }
+    ],
+    "topics": ["Availability"]
+  },
+  {
+    "id": "141",
+    "badgeType": "LIST",
+    "label": "Data Collection Methods",
+    "description": "Methods used for collecting the data.",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Surveys" },
+      { "label": "Sensors" },
+      { "label": "Manual" }
+    ],
+    "topics": ["Source"]
+  },
+  {
+    "id": "142",
+    "badgeType": "CATEGORICAL",
+    "label": "Primary Audience",
+    "description": "The intended primary audience of the visualization.",
+    "type": "CONTEXT",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "General Public" },
+      { "label": "Policy Makers" }
+    ],
+    "topics": ["Audience"]
+  },
+  {
+    "id": "143",
+    "badgeType": "LIST",
+    "label": "Data Transformations Applied",
+    "description": "Types of transformations applied to data.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Normalization" },
+      { "label": "Aggregation" },
+      { "label": "Binning" },
+      { "label": "Tokenization" }
+    ],
+    "topics": ["Preprocessing"]
+  },
+  {
+    "id": "144",
+    "badgeType": "CATEGORICAL",
+    "label": "Data Sources",
+    "description": "Indicates the named data sources in use (e.g., Source1, Source2).",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Source1" },
+      { "label": "Source2" },
+      { "label": "Source3" }
+    ],
+    "topics": ["Availability"]
+  },
+  {
+    "id": "145",
+    "badgeType": "CATEGORICAL",
+    "label": "Visualization Types Used",
+    "description": "Types of visualization techniques used.",
+    "type": "VISUAL_ENCODING",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Bar Chart" },
+      { "label": "Scatter Plot" },
+      { "label": "Heatmap" }
+    ],
+    "topics": ["Interpretation"]
+  },
+  {
+    "id": "146",
+    "badgeType": "CATEGORICAL",
+    "label": "Uncertainty Representation",
+    "description": "Methods used for visualizing uncertainty.",
+    "type": "VISUAL_ENCODING",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Confidence Bands" },
+      { "label": "Error Bars" }
+    ],
+    "topics": ["Uncertainty"]
+  },
+  {
+    "id": "147",
+    "badgeType": "CATEGORICAL",
+    "label": "Colors Used",
+    "description": "Named colors used in the visualization.",
+    "type": "VISUAL_ENCODING",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Red" },
+      { "label": "Cyan" },
+      { "label": "Yellow" }
+    ],
+    "topics": ["Color"]
+  },
+  {
+    "badgeType": "CATEGORICAL",
+    "label": "Data Types Used",
+    "description": "Indicates the types of data included in the visualization.",
+    "type": "DATA",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Numeric" },
+      { "label": "Textual" },
+      { "label": "Time Series" },
+      { "label": "Categorical" }
+    ],
+    "topics": ["Source"]
+  },
+  {
+    "badgeType": "LIST",
+    "label": "Collaboration Features",
+    "description": "Indicates user collaboration or social features offered by the visualization.",
+    "type": "INTERACTION",
+    "intent": "INFORMATION",
+    "values": [
+      { "label": "Annotations" },
+      { "label": "Comments" },
+      { "label": "Sharing" }
+    ],
+    "topics": ["Exploration"]
+  }
+]

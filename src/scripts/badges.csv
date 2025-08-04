@@ -1,0 +1,133 @@
+LABEL,DESCRIPTION,INTENT,SCOPE,TOPIC
+Data Sources Disclosed,Indicates that the data sources for this visualization are known and listed.,Confirmation,Data,Source
+Open Data,"Indicates that the visualization uses publicly accessible data, which can be downloaded, verified, or reused.",Confirmation,Data,Availability
+Dataset Linked,Indicates that a link to the dataset is provided with the visualization.,Confirmation,Data,Availability
+Data Citation,References a published work that describes or validates the dataset.,Confirmation,Context,Attribution
+Raw Data Available,"Indicates that unprocessed material (e.g., images, scans, text) is accessible.",Confirmation,Data,"Source, Availability"
+Trusted Data Source,Indicates that the data is from a source the author deems reliable or reputable.,Confirmation,Context,Source
+Dynamic Data,"Indicates that the information is refreshed regularly or continuously, so the chart may change over time.",Information,Data,"Availability, Time"
+Data Up-to-Date,Indicates that the dataset reflects the latest available data.,Confirmation,Data,"Availability, Time"
+Data Quality Constraints,Indicates that the data has known limitations.,Warning,Data,Constraints
+Analysis Constraints,Indicates that the data analysis process has known limitations.,Warning,Analysis,Constraints
+Missing Data,Indicates that parts of the data are missing.,Warning,Data,"Constraints, Uncertainty"
+Contains Modeled Data,Indicates that some or all of the dataset is derived from algorithmic modeling.,Warning,Data,"Uncertainty, Bias"
+Contains Predictions,Indicates that some or all of the data represents future predictions with inherent uncertainty.,Warning,Data,"Uncertainty, Bias"
+May Contain Bias,"Indicates potential systematic distortion from collection, sampling, or modeling processes.",Warning,Analysis,"Bias, Uncertainty"
+May Contain Noise,Indicates that random variation or measurement errors may be present.,Warning,Analysis,Uncertainty
+Heterogenous Data,"Indicates that the visualization merges data from diverse sources, e.g., text, images, or sensors.",Information,Data,Source
+Human Survey Data,Indicates that the data comes directly from individuals’ statements or surveys.,Information,Data,Source
+Derived Data,Indicates that the visualization shows data created by algorithms or processes.,Information,Data,Transformation
+Manually Collected Data,"Indicates that humans actively gathered or annotated the data (e.g., via observations or coding).",Information,Data,Source
+Sensor Data,"Indicates that data is captured by physical instruments (e.g., sensors, lab equipment).",Information,Data,Source
+API-Based Collection,"Indicates that data was retrieved via an API (e.g., social media or open-data endpoints).",Information,Data,Source
+Collection Period Specified,Indicates that the timeframe of data collection is specified.,Confirmation,Data,Source
+Data Creator(s) Attributed,Identifies the individual or team responsible for collecting the dataset.,Confirmation,Context,Attribution
+Adapted Elsewhere,Indicates that the same data or visualization was reused by third parties. This can be a sign of endorsement and validity of the data or visulization. ,Confirmation,Context,Usage
+Multiple Data Sources,"Indicates that datasets from multiple origins were combined, likely with some aggregation.",Information,Data,Source
+Single Data Source,Indicates that the visualization relies on data from a single source.,Information,Data,Source
+Missing Values Handled,"Indicates that missing data had been treated by some method, e.g., by imputation, deletion, or a any other custom method.",Information,Analysis,"Constraints, Uncertainty, Preprocessing"
+Outliers Removed,"Indicates that extreme values were excluded or adjusted, possibly affecting distributions or variance.",Information,Analysis,"Preprocessing, Bias, Transformation"
+Binning Applied,Indicates that continuous values were grouped into categories.,Information,Analysis,"Preprocessing, Transformation"
+Data Normalized,"Indicates that values were scaled or standardized (e.g., min–max, z-score) for alignment.",Information,Analysis,"Preprocessing, Transformation"
+Tokenization Applied,Indicates that text was split into discrete tokens (words or subwords) for analysis.,Information,Analysis,"Preprocessing, NLP"
+Part-of-Speech Tagging Applied,"Indicates that each token was labeled with a grammatical function (e.g., noun, verb).",Information,Analysis,"Preprocessing, NLP"
+Features Extracted,"Indicates that additional features (e.g., word embeddings) were created from raw data.",Information,Analysis,Preprocessing
+Stemming Applied,"Indicates that words were reduced to their base forms, removing morphological variations.",Information,Analysis,"Preprocessing, NLP"
+Stopwords Removed,Indicates that common filler words were removed to emphasize key terms.,Information,Analysis,"Preprocessing, NLP"
+Analysis Tools Attributed,"Indicates that data analysis was done using a stated, available tool.",Confirmation,Analysis,Tools
+Automatically Labeled Data,Indicates that some or all labels in the dataset were generated automatically.,Warning,Analysis,"NLP, Uncertainty"
+Random Sampling,Indicates that data points were selected using a purely random or probabilistic method.,Information,Analysis,Sampling
+Stratified Sampling,Indicates that subgroups (strata) were identified and then sampled proportionally.,Information,Analysis,Sampling
+Systematic Sampling,Indicates that data points were chosen at regular intervals.,Information,Analysis,Sampling
+Cluster Sampling,Indicates that entire clusters were used as sampling units.,Information,Analysis,Sampling
+Alternative Units as Reference,"Provides a secondary unit or scale to clarify the primary measurements (e.g., kilometers vs. miles).",Confirmation,Visual Encoding,Interpretation
+Complex Units,Indicates that this visualization contains units likely unfamilar to the intended audience requiring explanation or reference points,Warning,Context,"Audience, Interpretation"
+95% CI Error Bars,Indicates that 95% confidence intervals are displayed; out-of-range values are still possible but less likely.,Information,Analysis,Uncertainty
+Actual Time Offset,Indicates that the chart’s latest timestamp lags behind real time.,Warning,Analysis,"Uncertainty, Time"
+Time Range Selected,"Indicates that data is shown only for a chosen timeframe, excluding earlier or later periods.",Information,Context,"Filtering, Exploration, Time"
+Data Filtered,Indicates that data was included or excluded based on specific conditions or statuses.,Information,Context,"Filtering, Exploration"
+Geographically Filtered,Indicates that the dataset is filtered by geographic criteria.,Information,Context,"Filtering, Exploration"
+Demographic Filter,"Indicates that data was filtered by demographic attributes (e.g., age, gender).",Information,Context,"Exploration, Filtering"
+Data Manually Removed,Indicates that some data points were intentionally removed for specific reasons.,Warning,Analysis,"Constraints, Exploration"
+Can Sort & Filter,Indicates that viewers can reorder or filter data for a custom view.,Confirmation,Interaction,"Tools, Exploration"
+Aggregated Data,"Indicates that values were combined or averaged, which may hide variation.",Information,Analysis,Aggregation
+Simpson's Paradox,Indicates that aggregated data can mask or reverse trends visible in subgroups (Simpson's paradox).,Warning,Analysis,Interpretation
+Correlation ≠ Causation,Reminds viewers that observed correlation may not imply causation.,Warning,Analysis,Interpretation
+Major Finding,Indicates that the visualization presents a key or central result.,Confirmation,Context,"Interpretation, Usage"
+Adjusted Baseline,"Indicates that a non-zero or shifted reference point is used (e.g., per capita, moving average).",Confirmation,Analysis,Transformation
+Possible Visual Artifacts,Indicates that the visualization algorithm or scaling method may produce patterns not present in the underlying data,Warning,Analysis,Interpretation
+Rounding Errors,"Indicates that data in the visualization may contain rounding errors, e.g., values not adding up to 100%. ",Warning,Analysis,Constraints
+Mind False Conclusions,Warns the reader that a seemingly obvious visual pattern may lead to false conclusions,Warning,Analysis,Interpretation
+Shows Top N,"Indicates that only the top N elements are displayed, based on a certain criterion.",Information,Analysis,Filtering
+For General Audience,"Indicates that this visualization was designed to be easily understood by a general audience without domain-expertise, i.e., that it might make some simplifications or ommits some complexity",Information,Context,Audience
+For Experts Only,Indicates that the chart requires specialized or technical domain knowledge.,Information,Context,Audience
+For Policy Makers,"Indicates that the chart is primarily aimed at government officials or decision-makers, the visualization contains very condensed, high-level information.",Information,Context,Audience
+Public Domain Visualization,Indicates that the chart is free of copyright restrictions.,Information,Context,License
+<X> License,Indicates a specific license governing the chart’s distribution.,Information,Context,License
+Public Domain Data,Indicates that the dataset is free from copyright or usage restrictions.,Information,Context,License
+Data: CC0 Dedication,Indicates that the data is under the Creative Commons Public Domain Dedication (CC0).,Information,Context,License
+Data: ODC-PDDL,Indicates that the dataset is licensed under the Open Data Commons Public Domain Dedication and License (PDDL).,Information,Context,License
+Attributed Visualization Creators,Indicates that the individual or organization responsible for creation is acknowledged.,Confirmation,Context,Attribution
+Sensitive Topic,Indicates that the chart covers a sensitive topic that may upset some viewers.,Warning,Context,Audience
+Technical Terminology,Indicates that the visualization uses domain-specific terms that may be unfamiliar to many.,Warning,Context,Audience
+Terminology Explained,Indicates that definitions or clarifications of specialized terms are provided.,Confirmation,Context,Audience
+Background Reading Available,Indicates that extra materials or readings are provided for additional context.,Confirmation,Context,Usage
+Can Mouse Over,Indicates that hovering over elements reveals additional details.,Information,Interaction,Exploration
+Zoomable,Indicates that the map can be zoomed in or out.,Information,Interaction,Exploration
+Can Sort,Indicates that users can reorder elements by a certain dimension.,Information,Interaction,Exploration
+Parameterizable,Indicates that users can modify parameters or settings.,Information,Interaction,Exploration
+Brushing & Linking,Indicates that users can brush or highlight elements within or across multiple visualizations.,Information,Interaction,Exploration
+Details-on-Demand,Indicates that details appear when elements are hovered or selected.,Confirmation,Interaction,Exploration
+Interactive Pre-Filter,Indicates that the data is initially pre-filtered but can be manually adjusted.,Warning,Interaction,"Exploration, Filtering"
+Device-Responsive,Indicates that the chart adapts to different screen sizes and aspect ratios.,Confirmation,Interaction,"Exploration, Accessibility"
+Non-Area-Preserving Projection,Indicates that the chosen map projection does not preserve consistent area proportions.,Warning,Visual Encoding,Maps
+Points Don't Match Exact Locations,Indicates that symbol positions on the map may not reflect precise coordinates,Warning,Visual Encoding,"Maps, Uncertainty"
+Points Match Exact Locations,Indicated that symbol positions have exact coordinates for the event.,Confirmation,Visual Encoding,Maps
+Uncertainty Visualized,"Indicates that statistical or model uncertainty (e.g., error bars, confidence bands) is shown.",Confirmation,Visual Encoding,Uncertainty
+Uncertainty Omitted,Indicates that known uncertainty is not shown in the visualization.,Warning,Visual Encoding,Uncertainty
+Dual-Axis Encoding,Indicates that two different (vertical) axes are used to represent separate variables in the same chart.,Warning,Visual Encoding,"Axes, Interpretation"
+Truncated Axis,"Indicates that an axis starts from a non-zero point, explaining the rationale for that",Warning,Visual Encoding,"Axes, Interpretation"
+Inconsistent Axis Intervals,"Indicates that intervals on the axis are not uniform, potentially confusing scale perception.",Warning,Visual Encoding,Axes
+Inverted Axis,"Indicates that an axis direction is reversed with respect to an otherwise intuitive direction, e.g., higher values on the top, time passing from left to right, etc. ",Warning,Visual Encoding,"Axes, Interpretation"
+Differing Y-Axis,Indicates that multiple charts use different y-axis scales or baselines.,Warning,Visual Encoding,"Axes, Interpretation"
+Log Scale,Indicates that the data is plotted on a logarithmic scale.,Warning,Visual Encoding,Axes
+Size Distortion,Indicates that element sizes may not strictly match their underlying data values.,Warning,Visual Encoding,
+Small Values Exaggerated,Indicates that very small data points are magnified for better visibility.,Warning,Visual Encoding,
+Invisible Small Values,"Indicates that extremely small items may not be visible at the current scale, e.g., they cannot be seen at the current screen resolution or zoom level. ",Warning,Visual Encoding,
+Overlapping Elements,Indicates that elements can overlap in dense areas.,Warning,Visual Encoding,
+Colorblind Safe,Indicates that color choices remain distinguishable for colorblind viewers.,Confirmation,Visual Encoding,"Accessibility, Color"
+Printer Safe,Indicates that the design remains clear and readable when printed,Confirmation,Visual Encoding,Accessibility
+Area Encoding,Indicates that the size of visual elements is calculated as function of their value mapped to the area.,Information,Visual Encoding,
+False Friend,Indicates that a visualization may resemble a common visualization yet might require different interpretation,Warning,Visual Encoding,"Interpretation, Bias"
+Null-Values Removed,Indicates that null or infinite values have been excluded from the data.,Warning,Analysis,Constraints
+Varying Scales,"Indicates that multiple adjacent charts use different axis scales, complicating comparison across charts. ",Warning,Visual Encoding,Axes
+Rainbow Required,Indicates that a rainbow-like color gradient is required to show the specific data. ,Warning,Visual Encoding,Color
+Redundant Encodings,"Indicates that more than one visual channel (e.g., color and shape) encodes the same attribute.",Warning,Visual Encoding,Interpretation
+Labels Omitted,Indicates that axis text is provided in accompanying descriptions rather than on the axis itself,Warning,Visual Encoding,Axes
+Composite Index,Indicates that a combined metric synthesized from multiple factors is displayed,Information,Analysis,Aggregation
+Qualitative Categories,"Indicates that data is grouped into descriptive categories (e.g., high, medium, low).",Information,Analysis,Transformation
+Approximate Times,Indicates that the displayed timeframe is approximate.,Information,Visual Encoding,Time
+Estimated Geographic Boundaries,Indicates that shapes or borders are inferred rather than exact.,Warning,Visual Encoding,Maps
+Uneven Time Intervals,Indicates that the intervals between time points are inconsistent.,Warning,Visual Encoding,Time
+Known Data Gap,Indicates that there is a known gap in the dataset.,Warning,Data,"Uncertainty, Constraints"
+3D,Indicates that the chart visualizes three-dimensional or volume-based measurements. The chart may contain occlusion.,Information,Data,Source
+Experts Involved,Indicates that domain experts provided insights or guided the design and analysis,Confirmation,Context,Attribution
+AI-Generated Visualization,"Indicates that the chart was produced by generative AI tools (e.g., GPT, DALL-E).",Warning,Context,AI
+AI-Generated Data,Indicates that part or all of the dataset was generated by an AI model.,Warning,Data,"AI, Uncertainty"
+AI-Assisted Analysis,"Indicates that AI methods (e.g., clustering, pattern recognition) were used in data analysis.",Warning,Analysis,AI
+AI-Generated Captions,Indicates that descriptive text or annotations were produced by an AI system.,Warning,Context,"AI, Interpretation"
+AI-Derived Insight,Indicates that the key insights rely on AI-based evaluation.,Warning,Analysis,AI
+Human-Verified AI,Indicates that humans verified AI-generated results.,Confirmation,Analysis,"Attribution, Bias"
+Possible AI Bias,Indicates that the visualization may reflect distortions introduced by AI systems,Warning,Analysis,"Bias, AI"
+No AI Involved,Confirms that no AI was involved in creating this visualization.,Confirmation,Context,"Attribution, Bias"
+Secondary Data,Indicates that the dataset is derived from secondary or aggregated sources rather than raw data.,Information,Data,Source
+Data Off the Map,Indicates that some data points lie outside the current view and are not displayed.,Warning,Visual Encoding,Maps
+Semi-Auto Data Processing,Indicates that data processing involves both machine automation and manual cleaning.,Information,Analysis,Tools
+Additional Manual Cleaning,Indicates that the data processing was cross-checked manually.,Information,Analysis,Tools
+Irregular Patterns,Indicates that there are irregular patterns that may not yield meaningful conclusions.,Warning,Visual Encoding,Uncertainty
+Standard Scale Used,"Indicates that the visualization uses a standard scale (e.g., linear).",Information,Visual Encoding,Interpretation
+Interval Breaks,"Indicates that an axis in the visualization has one or more breaks, i.e., unequal intervals.",Warning,Visual Encoding,Interpretation
+Positionless Elements Not Shown,Indicates that this visualization does not or cannot show elements without a geographic position.,Warning,Visual Encoding,Maps
+Simplified Geographic Boundaries,Indicates that geographic boundaries have been simplified to improve readability of this visualization. ,Warning,Visual Encoding,Maps
+Interaction Linked Across Multiple Views,"Indicates that interactive changes in one view affect other views (e.g., linked small multiples).",Information,Interaction,Exploration
+User-Tested Vis,"Indicates that the visualization was validated through user testing (e.g., user study).",Confirmation,Context,Audience

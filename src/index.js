@@ -1,17 +1,16 @@
-// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles.css'; // Import your global styles
 import App from './App';
-import Type1Page from "./pages/Type1Page";
-import {createBrowserRouter, createHashRouter, RouterProvider} from "react-router-dom";
-import DbLayout from "./layout/DbLayout";
-import BadgeTable from "./pages/BadgeTable";
-import OrdinalBadgeDataGrid from "./pages/OrdinalBadgeGrid";
-import QuantitativeBadgeGrid from "./pages/QuantitativeBadgeGrid"
-import BadgeDataGrid from "./pages/BadgeTable";
-import {createTheme, ThemeProvider} from "@mui/material/styles";
-import BadgeEditorPage from "./pages/BadgeEditor";
+import Compact from "./pages/Compact";
+import {createHashRouter, RouterProvider} from "react-router-dom";
+import Main from "./Main";
+import BadgeDataGrid from "./pages/Table";
+import Design from "./pages/Design";
+import Genres from "./pages/Genres";
+import Examples from "./pages/Examples";
+import About from "./pages/About";
+import Guidelines from "./pages/Guidelines";
+import TeaserFigure from "./pages/TeaserFigure";
 
 const router = createHashRouter([
     {
@@ -19,55 +18,54 @@ const router = createHashRouter([
         children: [
             {
                 path: '/',
-                Component: DbLayout,
+                Component: Main,
                 children: [
                     {
                         path: '',
                         Component: BadgeDataGrid,
                     },
                     {
-                        path: 'type1',
-                        Component: Type1Page
+                        path: 'compact',
+                        Component: Compact
                     },
+                    // {
+                    //     path: 'teaser',
+                    //     Component: TeaserFigure
+                    // },
                     {
-                        path: 'type2',
+                        path: 'table',
                         Component: BadgeDataGrid
                     },
+                    // {
+                    //     path: 'design',
+                    //     Component: Design
+                    // },
                     {
-                        path: 'ordinalBadges',
-                        Component: OrdinalBadgeDataGrid
+                        path: 'about',
+                        Component: About
                     },
                     {
-                        path: 'quantitativeBadges',
-                        Component: QuantitativeBadgeGrid
+                        path: 'genres',
+                        Component: Genres
                     },
                     {
-                        path: 'badgeEditor',
-                        Component: BadgeEditorPage
+                        path: 'examples',
+                        Component: Examples
                     },
-                    ]
+                    {
+                        path: 'guidelines',
+                        Component: Guidelines
+                    }
+               ]
             },
         ],
     },
 ]);
-const theme = createTheme({
-    components: {
-        MuiChip: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: 'salmon',
-                }
-            },
-        },
-    },
-});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <ThemeProvider theme={theme}>
         <RouterProvider router={router} />
-        </ThemeProvider>
      </React.StrictMode>
 );
 

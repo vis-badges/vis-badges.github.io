@@ -1,91 +1,183 @@
+// BadgeDesignControls.jsx
 import React from 'react';
-import { Box, FormControl, InputLabel, Select, MenuItem, ToggleButtonGroup, ToggleButton, IconButton, Tooltip } from '@mui/material';
+import {
+    Box,
+    ToggleButtonGroup,
+    ToggleButton,
+    IconButton,
+    Tooltip,
+    Typography,
+} from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 
 const muiColorOptions = [
-    { value: 'default', label: 'Monochrome' },
-    { value: 'primary', label: 'Blue' },
-    { value: 'secondary', label: 'Pink' },
-    { value: 'success', label: 'Green' },
-    { value: 'warning', label: 'Orange' },
-    { value: 'error', label: 'Red' },
-    { value: 'info', label: 'Cyan' },
+    { value: 'default', label: '', fullName: 'Monochrome' },
+    { value: 'primary', label: '', fullName: 'Blue' },
+    { value: 'secondary', label: '', fullName: 'Pink' },
+    { value: 'success', label: '', fullName: 'Green' },
+    { value: 'warning', label: '', fullName: 'Orange' },
+    { value: 'error', label: '', fullName: 'Red' },
+    { value: 'info', label: '', fullName: 'Cyan' },
 ];
 
 export default function BadgeDesignControls({
-                                                chipSize, setChipSize,
-                                                chipVariant, setChipVariant,
-                                                colorMode, setColorMode,
-                                                muiColor, setMuiColor,
-                                                leftIconKey, setLeftIconKey,
-                                                rightIconKey, setRightIconKey,
+                                                chipSize,
+                                                setChipSize,
+                                                chipVariant,
+                                                setChipVariant,
+                                                colorMode,
+                                                setColorMode,
+                                                muiColor,
+                                                setMuiColor,
+                                                leftIconKey,
+                                                setLeftIconKey,
+                                                rightIconKey, // not used here, but left for consistency
+                                                setRightIconKey,
                                             }) {
+    // Handle color toggle: if a MUI color is chosen, set colorMode to "standard" and store that color in muiColor.
+    const handleColorChange = (event, newValue) => {
+        if (!newValue) return; // Prevent unselection
+        const isMuiColor = muiColorOptions.some((opt) => opt.value === newValue);
+        if (isMuiColor) {
+            setColorMode('standard');
+            setMuiColor(newValue);
+        } else {
+            // newValue might be "intent"
+            setColorMode(newValue);
+        }
+    };
+
+    // Compute the value for the ToggleButtonGroup
+    const colorValue = colorMode === 'standard' ? muiColor : colorMode;
+
     return (
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'center', mb: 2 }}>
-            <FormControl size="small" sx={{ minWidth: 100 }}>
-                <InputLabel>Size</InputLabel>
-                <Select value={chipSize} label="Size" onChange={(e) => setChipSize(e.target.value)}>
-                    <MenuItem value="small">MINI</MenuItem>
-                    <MenuItem value="medium">SMALL</MenuItem>
-                    <MenuItem value="large">MEDIUM</MenuItem>
-                </Select>
-            </FormControl>
+        <Box
+            sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: 2,
+                alignItems: 'flex-start',
+                mb: 2,
+            }}
+        >
+            {/* Size Selection */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <Typography variant="caption" sx={{ fontWeight: 'bold', mb: 0 }}>
+                    Size
+                </Typography>
+                <ToggleButtonGroup
+                    value={chipSize}
+                    exclusive
+                    onChange={(e, val) => val && setChipSize(val)}
+                    size="small"
+                >
+                    <ToggleButton value="small">Mini</ToggleButton>
+                    <ToggleButton value="medium">Small</ToggleButton>
+                    <ToggleButton value="large">Medium</ToggleButton>
+                </ToggleButtonGroup>
+            </Box>
 
-            <ToggleButtonGroup
-                value={chipVariant}
-                exclusive
-                onChange={(e, val) => val && setChipVariant(val)}
-                size="small"
-            >
-                <ToggleButton value="filled">Filled</ToggleButton>
-                <ToggleButton value="outlined">Outlined</ToggleButton>
-            </ToggleButtonGroup>
+            {/* Variant / Style Selection */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <Typography variant="caption" sx={{ fontWeight: 'bold', mb: 0 }}>
+                    Style
+                </Typography>
+                <ToggleButtonGroup
+                    value={chipVariant}
+                    exclusive
+                    onChange={(e, val) => val && setChipVariant(val)}
+                    size="small"
+                >
+                    <ToggleButton value="filled">Filled</ToggleButton>
+                    <ToggleButton value="outlined">Outlined</ToggleButton>
+                </ToggleButtonGroup>
+            </Box>
 
-            {/* Color Mode selection comes before icon selections */}
-            <FormControl size="small" sx={{ minWidth: 160 }}>
-                <InputLabel>Color Mode</InputLabel>
-                <Select value={colorMode === 'standard' ? muiColor : colorMode} label="Color Mode" onChange={(e) => {
-                    const val = e.target.value;
-                    if (muiColorOptions.some(opt => opt.value === val)) {
-                        setColorMode('standard');
-                        setMuiColor(val);
-                    } else {
-                        setColorMode(val);
-                    }
-                }}>
-                    <MenuItem value="intent">INTENT</MenuItem>
-                    <MenuItem value="type">CATEGORY</MenuItem>
-                    {muiColorOptions.map(color => (
-                        <MenuItem key={color.value} value={color.value}>{color.label}</MenuItem>
+            {/* Icon / Pictogram Selection */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <Typography variant="caption" sx={{ fontWeight: 'bold', mb: 0 }}>
+                    Pictogram
+                </Typography>
+                <ToggleButtonGroup
+                    value={leftIconKey}
+                    exclusive
+                    onChange={(e, val) => val && setLeftIconKey(val)}
+                    size="small"
+                >
+                    <ToggleButton value="iconIntent">INTENT</ToggleButton>
+                    <ToggleButton value="iconScope">SCOPE</ToggleButton>
+                    <ToggleButton value="none">NONE</ToggleButton>
+                </ToggleButtonGroup>
+            </Box>
+
+            {/* Color Selection */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <Typography variant="caption" sx={{ fontWeight: 'bold', mb: 0 }}>
+                    Color
+                </Typography>
+                <ToggleButtonGroup
+                    value={colorValue}
+                    exclusive
+                    onChange={handleColorChange}
+                    size="small"
+                >
+                    {/* INTENT button with tooltip */}
+                    <Tooltip title="Colored by Intent, Confirmation is Green, Information is Blue and Warning is Orange">
+                        <ToggleButton
+                            value="intent"
+                            sx={{
+                                background: 'linear-gradient(90deg, rgba(56,142,60,0.2), rgba(30,136,229,0.2), rgba(245,124,0,0.2))',
+                                textTransform: 'uppercase',
+                                borderRadius: 1,
+                                '&.Mui-selected': {
+                                    background: 'linear-gradient(90deg, rgba(56,142,60,0.2), rgba(30,136,229,0.2), rgba(245,124,0,0.2))',
+                                },
+                                '&:hover': {
+                                    background: 'linear-gradient(90deg, rgba(56,142,60,0.2), rgba(30,136,229,0.2), rgba(245,124,0,0.2))',
+                                },
+                            }}
+                        >
+                            INTENT
+                        </ToggleButton>
+                    </Tooltip>
+
+                    {muiColorOptions.map((item) => (
+                        <ToggleButton
+                            key={item.value}
+                            value={item.value}
+                            sx={{
+                                width: '20px',
+                                backgroundColor: (theme) =>
+                                    alpha(theme.palette[item.value]?.main || theme.palette.grey[500], 0.2),
+                                color: (theme) =>
+                                    theme.palette.getContrastText(
+                                        alpha(theme.palette[item.value]?.main || theme.palette.grey[500], 0.2)
+                                    ),
+                                fontWeight: 'bold',
+                                borderRadius: 1,
+                                '&.Mui-selected': {
+                                    backgroundColor: (theme) =>
+                                        theme.palette[item.value]?.dark || theme.palette.grey[700],
+                                },
+                                '&:hover': {
+                                    backgroundColor: (theme) =>
+                                        theme.palette[item.value]?.main || theme.palette.grey[500],
+                                },
+                            }}
+                        >
+                            {item.value === 'default' ? '' : item.label}
+                        </ToggleButton>
                     ))}
-                </Select>
-            </FormControl>
-
-            {/* Left Icon Selection: includes "None", "Avatar", "Icon 1", "Icon 2", "Icon 3" */}
-            <FormControl size="small" sx={{ minWidth: 150 }}>
-                <InputLabel>Left Icon</InputLabel>
-                <Select value={leftIconKey} label="Left Icon" onChange={(e) => setLeftIconKey(e.target.value)}>
-                    <MenuItem value="none">None</MenuItem>
-                    <MenuItem value="icon1">INTENT</MenuItem>
-                    <MenuItem value="icon2">CATEGORY</MenuItem>
-                    <MenuItem value="icon3">BADGE</MenuItem>
-                    <MenuItem value="avatar">AVATAR</MenuItem>
-                </Select>
-            </FormControl>
-
-            {/* Right Icon Selection: includes "None", "Icon 1", "Icon 2", "Icon 3" */}
-            <FormControl size="small" sx={{ minWidth: 150 }}>
-                <InputLabel>Right Icon</InputLabel>
-                <Select value={rightIconKey} label="Right Icon" onChange={(e) => setRightIconKey(e.target.value)}>
-                    <MenuItem value="none">None</MenuItem>
-                    <MenuItem value="icon1">INTENT</MenuItem>
-                    <MenuItem value="icon2">CATEGORY</MenuItem>
-                    <MenuItem value="icon3">BADGE</MenuItem>
-                </Select>
-            </FormControl>
+                </ToggleButtonGroup>
+            </Box>
 
             <Tooltip title="Reset to default">
-                <IconButton color="secondary" size="small" onClick={() => window.location.reload()}>
+                <IconButton
+                    color="default"
+                    size="small"
+                    onClick={() => window.location.reload()}
+                >
                     <RestartAltIcon />
                 </IconButton>
             </Tooltip>

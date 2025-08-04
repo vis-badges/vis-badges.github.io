@@ -1,26 +1,27 @@
-import React, {
-    useState,
-    useRef,
-    forwardRef,
-    useImperativeHandle,
-} from 'react';
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import { Box, Chip, Tooltip, Stack, Collapse, Badge, Avatar } from '@mui/material';
 import * as Icons from '@mui/icons-material';
-import domtoimage from 'dom-to-image';
-
-function getMuiIcon(iconName) {
-    if (!iconName || !Icons[iconName]) return null;
-    const IconComponent = Icons[iconName];
-    return <IconComponent fontSize="small" />;
-}
+import { downloadNodeAsPng } from "./utils/downloadUtils";
+import { getMuiIcon } from "./utils/getIcon";
+import {icon_intent_map, icon_scope_map} from "./utils/iconMappings";
 
 function getAvatarElement(avatar) {
     if (!avatar) return null;
-    if (avatar.type === 'letter') {
-        return <Avatar>{avatar.value}</Avatar>;
-    }
-    if (avatar.type === 'image') {
-        return <Avatar src={avatar.value} />;
+    if (avatar.type === 'letter') return <Avatar>{avatar.value}</Avatar>;
+    if (avatar.type === 'image') return <Avatar src={avatar.value} />;
+    return null;
+}
+
+function resolveIcon(key, badge) {
+    if (key === 'avatar') return getAvatarElement(badge.avatar);
+    if (key !== 'none') {
+        let iconValue = "";
+        if (key === 'iconIntent') {
+            iconValue = icon_intent_map[badge.intent] || "";
+        } else if (key === 'iconScope') {
+            iconValue = icon_scope_map[badge.type] || "";
+        }
+        return iconValue ? getMuiIcon(iconValue) : null;
     }
     return null;
 }
@@ -30,8 +31,8 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
         badge,
         size = 'medium',
         variant = 'filled',
-        leftIconKey = 'icon1', // 'none', 'avatar', 'icon1', 'icon2', 'icon3'
-        rightIconKey = 'icon1', // 'none', 'icon1', 'icon2', 'icon3'
+        leftIconKey = 'iconIntent',
+        rightIconKey = 'iconIntent',
         chipColor = 'default',
     },
     ref
@@ -41,70 +42,27 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
 
     const values = Array.isArray(badge.values) ? badge.values : [];
     const count = values.length;
-
-    const validMuiColors = [
-        'default',
-        'primary',
-        'secondary',
-        'success',
-        'warning',
-        'error',
-        'info',
-    ];
+    const validMuiColors = ['default', 'primary', 'secondary', 'success', 'warning', 'error', 'info'];
     const isMuiColor = validMuiColors.includes(chipColor);
 
-    let leftIcon = null;
-    if (leftIconKey === 'avatar') {
-        leftIcon = getAvatarElement(badge.avatar);
-    } else if (leftIconKey !== 'none') {
-        let iconValue;
-        if (leftIconKey === 'icon1') iconValue = badge.icon1;
-        else if (leftIconKey === 'icon2') iconValue = badge.icon2;
-        else if (leftIconKey === 'icon3') iconValue = badge.icon3;
-        leftIcon = getMuiIcon(iconValue);
-    }
+    const leftIcon = resolveIcon(leftIconKey, badge);
+    const rightIcon = resolveIcon(rightIconKey, badge);
 
-    let rightIcon = null;
-    if (rightIconKey !== 'none') {
-        let iconValue;
-        if (rightIconKey === 'icon1') iconValue = badge.icon1;
-        else if (rightIconKey === 'icon2') iconValue = badge.icon2;
-        else if (rightIconKey === 'icon3') iconValue = badge.icon3;
-        rightIcon = getMuiIcon(iconValue);
-    }
-
+    // For 'large', use medium size; for small chips, hide the label.
     const muiSize = size === 'large' ? 'medium' : 'small';
     const labelHidden = size === 'small';
-    const mainChipLabel = labelHidden ? '' : badge.label;
+    // When label is hidden, set it to undefined so MUI doesn't reserve space for it.
+    const mainChipLabel = labelHidden ? undefined : badge.label;
 
     const handleExpandClick = () => {
-        setExpanded(!expanded);
+        setExpanded((prev) => !prev);
     };
 
     const downloadBadge = () => {
-        const scale = 100; // Adjust scale for desired resolution
         const node = badgeRef.current;
         if (!node) return;
-        const width = node.clientWidth * scale;
-        const height = node.clientHeight * scale;
-        domtoimage
-            .toPng(node, {
-                width,
-                height,
-                style: {
-                    transform: `scale(${scale})`,
-                    transformOrigin: 'top left',
-                },
-            })
-            .then((dataUrl) => {
-                const pngLink = document.createElement('a');
-                pngLink.download = `${badge.badgeName || badge.label}.png`;
-                pngLink.href = dataUrl;
-                pngLink.click();
-            })
-            .catch((error) => {
-                console.error('oops, something went wrong!', error);
-            });
+        const fileName = `${badge.badgeName || badge.label}.png`;
+        downloadNodeAsPng(node, fileName);
     };
 
     useImperativeHandle(ref, () => ({
@@ -112,12 +70,11 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
     }));
 
     return (
-        <Box position="relative" ref={badgeRef}>
+        <div ref={badgeRef} style={{display: 'inline-block'}}>
             <Chip
                 label={mainChipLabel}
                 size={muiSize}
                 variant={variant}
-                // Render avatar if leftIconKey is 'avatar'; otherwise render icon
                 avatar={leftIconKey === 'avatar' ? leftIcon : null}
                 icon={leftIconKey !== 'avatar' ? leftIcon : null}
                 deleteIcon={rightIcon}
@@ -130,10 +87,17 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
                         backgroundColor: chipColor,
                         color: '#fff',
                     }),
+                    ...(labelHidden && {
+                        pl: 0,
+                        pr: 0,
+                        minWidth: 26, //IN CASE OF MINI
+                        '& .MuiChip-label': { display: 'none' },
+                        '& .MuiChip-icon': { marginLeft: 0, marginRight: 0 },
+                    }),
                 }}
             />
 
-            {!expanded && !!count && (
+            {!expanded && count > 0 && (
                 <Badge
                     badgeContent={count}
                     sx={{
@@ -162,18 +126,10 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
             )}
 
             <Collapse in={expanded} timeout={0} sx={{ transition: 'none' }} unmountOnExit>
-                <Stack direction="row" flexWrap="wrap" mt={0.3}>
+                <Stack direction="row" flexWrap="wrap" mt={0.1}>
                     {values.map((val, idx) => {
-                        let subLabel, subTooltip, subLink;
-                        if (typeof val === 'object' && val !== null) {
-                            subLabel = val.label || '';
-                            subTooltip = val.tooltip || '';
-                            subLink = val.link;
-                        } else {
-                            subLabel = String(val);
-                            subTooltip = '';
-                            subLink = null;
-                        }
+                        const { label: subLabel = '', tooltip: subTooltip = '', link: subLink } =
+                            typeof val === 'object' && val !== null ? val : { label: String(val) };
                         return (
                             <Tooltip key={idx} title={subTooltip}>
                                 <Chip
@@ -193,7 +149,7 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
                     })}
                 </Stack>
             </Collapse>
-        </Box>
+        </div>
     );
 });
 

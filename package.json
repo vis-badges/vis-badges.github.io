@@ -1,5 +1,5 @@
 {
-  "name": "chart-badgeschart-badges",
+  "name": "chart-badges",
   "homepage": "https://vis-badges.github.io",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +15,7 @@
     "@toolpad/core": "^0.12.1",
     "d3": "^7.9.0",
     "dom-to-image": "^2.6.0",
+    "gh-pages": "^6.3.0",
     "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",
     "imagetracerjs": "^1.2.6",
