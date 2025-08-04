@@ -1,29 +1,34 @@
 # Visualization Badges
 
-A simple web application that demonstrates **Visualization Badges**—graphical labels used to convey data provenance, design decisions, and analysis insights alongside visualizations.
+Interactive catalog of 132 visualization badges with examples and guidelines.
 
+## Citation
 
-- **Badge Types & Rendering**
-    - **Binary Badges:** Simple on/off indicators (e.g., "Open Data", "Data Sources Disclosed").
-    - **Ordinal Badges:** Show graded values (e.g., "Data Completeness: Complete/Low").
-    - **Categorical/List Badges:** Display multiple state options (e.g., "Data Licensing" choices).
-    - **Quantitative Badges:** Support numeric values and interactive details with download functionality.
-    - The `BadgeRenderer.jsx` component selects and renders the appropriate badge type based on metadata.
+```bibtex
+@article{edelsbrunner2026visualization,
+  title={Visualization Badges: Communicating Design and Provenance through Graphical Labels Alongside Visualizations},
+  author={Edelsbrunner, Valentin and Wang, Jinrui and Pister, Alexis and Vancisin, Tomas and Phillips, Sian and Chen, Min and Bach, Benjamin},
+  journal={IEEE Transactions in Visualization and Computer Graphics (TVCG)},
+  year={2026},
+  note={Published at the IEEE VIS Conference 2025, Vienna, Austria}
+}
+```
 
-- **Data & Metadata**
-    - Badge information is stored in JSON files:
-        - `db.json` for binary badges.
-        - `db-ordinal.json` for ordinal badges.
-        - `db-list.json` for categorical/list badges.
+## Live Site
 
+https://vis-badges.github.io
 
-## Installation & Running
+## Development
 
-1. **Clone the Repository:**
-   ```bash
-   git clone
-   cd repo
-   npm install
-   npm run start
+```bash
+npm install
+npm start
+```
+
+## Deploy
+
+```bash
+npm run deploy
+```
 
 
