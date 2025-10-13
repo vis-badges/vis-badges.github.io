@@ -9,6 +9,7 @@ import Genres from "./pages/Genres";
 import Examples from "./pages/Examples";
 import About from "./pages/About";
 import Guidelines from "./pages/Guidelines";
+import Submit from "./pages/Submit";
 
 const router = createHashRouter([
     {
@@ -53,6 +54,11 @@ const router = createHashRouter([
                     {
                         path: 'guidelines',
                         Component: Guidelines
+                    }
+                    ,
+                    {
+                        path: 'submit',
+                        Component: Submit
                     }
                ]
             },

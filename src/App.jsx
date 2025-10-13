@@ -4,6 +4,7 @@ import Compact from "./pages/Compact";
 import Apps from "@mui/icons-material/Apps";
 import React from "react";
 import {Assignment, Category, GroupsOutlined, UnfoldMore, ViewList} from "@mui/icons-material";
+import AddIcon from "@mui/icons-material/Add";
 
 
 const BRANDING = {
@@ -64,6 +65,11 @@ const NAVIGATION = [
     },
     {
         kind: 'divider',
+    },
+    {
+        segment: 'submit',
+        title: 'Submit a Badge',
+        icon: <AddIcon />,
     },
     {
         segment: 'about',
