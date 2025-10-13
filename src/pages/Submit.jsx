@@ -16,6 +16,9 @@ import {
     Typography,
 } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from 'vis-badges-react';
@@ -62,6 +65,14 @@ export default function Submit() {
         setCategories((prev) => prev.filter((v) => v !== value));
     };
 
+    // Submission UI state
+    const [submitting, setSubmitting] = useState(false);
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMsg, setSnackbarMsg] = useState('');
+    const [snackbarSeverity, setSnackbarSeverity] = useState('success');
+
+    const closeSnackbar = () => setSnackbarOpen(false);
+
     const previewBadge = useMemo(() => {
         const base = {
             label,
@@ -100,7 +111,67 @@ export default function Submit() {
         }
     }, [badgeType, previewBadge, size, variant, effectiveChipColor]);
 
+    const handleSubmit = async () => {
+        setSubmitting(true);
+        try {
+            const payload = {
+                label,
+                description,
+                intent,
+                scope,
+                badgeType,
+                ordinalValue: badgeType === 'ORDINAL' ? ordinalValue : undefined,
+                quantitative: badgeType === 'QUANTITATIVE' ? { value: quantValue, unit: quantUnit } : undefined,
+                categories: badgeType === 'CATEGORICAL' ? categories : undefined,
+            };
+
+            const endpoint = process.env.REACT_APP_FORM_ENDPOINT;
+            const mode = process.env.REACT_APP_SUBMIT_MODE || (endpoint ? 'formspree' : 'github');
+
+            if (mode === 'formspree' && endpoint) {
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+                if (!res.ok) throw new Error(`Submit failed (${res.status})`);
+                setSnackbarSeverity('success');
+                setSnackbarMsg('Thank you for submitting! We will review your badge.');
+                setSnackbarOpen(true);
+            } else {
+                // Fallback: open a prefilled GitHub issue
+                const title = encodeURIComponent(`Badge: ${label}`);
+                const bodyLines = [
+                    `Label: ${label}`,
+                    `Description: ${description}`,
+                    `Type: ${badgeType}`,
+                    `Intent: ${intent}`,
+                    `Scope: ${scope}`,
+                ];
+                if (badgeType === 'ORDINAL') bodyLines.push(`Value: ${ordinalValue}`);
+                if (badgeType === 'QUANTITATIVE') bodyLines.push(`Value: ${quantValue} ${quantUnit}`);
+                if (badgeType === 'CATEGORICAL') bodyLines.push(`Values: ${categories.join(', ')}`);
+                const body = encodeURIComponent(bodyLines.join('\n'));
+                const url = `https://github.com/vis-badges/vis-badges.github.io/issues/new?title=${title}&body=${body}`;
+                window.open(url, '_blank', 'noopener,noreferrer');
+                setSnackbarSeverity('info');
+                setSnackbarMsg('Opened a GitHub issue with your submission. Thank you!');
+                setSnackbarOpen(true);
+            }
+        } catch (e) {
+            setSnackbarSeverity('error');
+            setSnackbarMsg('Submission failed. Please try again later.');
+            setSnackbarOpen(true);
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
     return (
+        <>
         <Container maxWidth="md" sx={{ py: 2 }}>
             <Grid container spacing={2} alignItems="stretch">
                 <Grid item xs={12} md={7}>
@@ -197,6 +268,11 @@ export default function Submit() {
                             </Grid>
 
                             {/* Icon configuration removed per request */}
+                            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                                <Button onClick={handleSubmit} disabled={submitting} variant="contained" size="small">
+                                    {submitting ? 'Submitting…' : 'Submit'}
+                                </Button>
+                            </Box>
                         </Stack>
                     </Paper>
                 </Grid>
@@ -216,6 +292,12 @@ export default function Submit() {
                 </Grid>
             </Grid>
         </Container>
+        <Snackbar open={snackbarOpen} autoHideDuration={3500} onClose={closeSnackbar} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+            <Alert onClose={closeSnackbar} severity={snackbarSeverity} variant="filled" sx={{ width: '100%' }}>
+                {snackbarMsg}
+            </Alert>
+        </Snackbar>
+        </>
     );
 }
 
