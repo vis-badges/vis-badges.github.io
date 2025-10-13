@@ -1,0 +1,32 @@
+{
+  "name": "@vis-badges/react",
+  "version": "0.1.0",
+  "private": false,
+  "sideEffects": false,
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "echo 'using source files'",
+    "clean": "rimraf dist || true"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17",
+    "@mui/material": ">=5",
+    "@mui/icons-material": ">=5",
+    "react-icons": ">=4"
+  },
+  "dependencies": {
+    "dom-to-image": "^2.6.0"
+  }
+}
+

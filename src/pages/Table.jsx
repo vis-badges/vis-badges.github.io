@@ -4,7 +4,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import { DataGrid } from '@mui/x-data-grid';
 import useBadges from '../hooks/useBadges';
 import BadgeDesignControls from '../components/BadgeDesignControls';
-import BadgeRenderer from "../components/BadgeRenderer";
+import { BadgeRenderer } from "@vis-badges/react";
 import { computeChipColor } from "../components/utils/badgeUtils";
 import { filterBadges } from '../components/utils/filterBadges';
 
