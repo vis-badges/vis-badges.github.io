@@ -15,6 +15,12 @@ module.exports = {
             },
           }
       );
+      // Allow imports that resolve outside of src (fix react-refresh absolute path issue)
+      if (webpackConfig.resolve && Array.isArray(webpackConfig.resolve.plugins)) {
+        webpackConfig.resolve.plugins = webpackConfig.resolve.plugins.filter(
+          (plugin) => plugin && plugin.constructor && plugin.constructor.name !== 'ModuleScopePlugin'
+        );
+      }
       // Default CRA config is fine when consuming published package
       return webpackConfig;
     },

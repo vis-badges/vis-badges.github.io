@@ -28,7 +28,7 @@
     "react-scripts": "5.0.1",
     "react-sparklines": "^1.7.0",
     "react-window": "^1.8.11",
-    "vis-badges-react": "^0.1.1",
+    "vis-badges-react": "^0.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

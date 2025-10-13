@@ -37,7 +37,7 @@ export default function BadgeDataGrid() {
         badgeType: badge.badgeType || "Binary",
     }));
 
-    // removed unused handleDownloadAll to satisfy lint warnings
+    // Download all feature removed per request
 
     const columns = [
         {
@@ -142,10 +142,6 @@ export default function BadgeDataGrid() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                {/*DOWNLOAD ALL BADGES QUICK */}
-                {/*<Button variant="contained" onClick={handleDownloadAll}>*/}
-                {/*    Download All Badges*/}
-                {/*</Button>*/}
             </Box>
 
 

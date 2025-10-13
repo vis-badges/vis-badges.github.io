@@ -5,7 +5,6 @@ import {
     Card,
     CardContent,
     Typography,
-    Divider,
 } from '@mui/material';
 import { BinaryBadge } from "vis-badges-react";
 
