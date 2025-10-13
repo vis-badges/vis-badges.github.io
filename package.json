@@ -3,9 +3,6 @@
   "homepage": "https://vis-badges.github.io",
   "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@emotion/react": "^11.14.0",
@@ -31,8 +28,9 @@
     "react-scripts": "5.0.1",
     "react-sparklines": "^1.7.0",
     "react-window": "^1.8.11",
-    "vis-badges-react": "^0.1.0",
-    "web-vitals": "^2.1.4"
+    "vis-badges-react": "^0.1.1",
+    "web-vitals": "^2.1.4",
+    "vis-badges-react": "^0.1.1"
   },
   "scripts": {
     "start": "craco start",
