@@ -3,8 +3,7 @@ import {Outlet} from "react-router-dom";
 import Compact from "./pages/Compact";
 import Apps from "@mui/icons-material/Apps";
 import React from "react";
-import {Assignment, Category, ColorLens, GroupsOutlined, Info, UnfoldMore, ViewList} from "@mui/icons-material";
-import TeaserFigure from "./pages/TeaserFigure";
+import {Assignment, Category, GroupsOutlined, UnfoldMore, ViewList} from "@mui/icons-material";
 
 
 const BRANDING = {

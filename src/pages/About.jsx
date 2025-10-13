@@ -5,11 +5,10 @@ import {
     Card,
     CardContent,
     Avatar,
-    Divider,
     Container,
     Grid2
 } from '@mui/material';
-import { Email, School, Download, Description, FolderZip } from '@mui/icons-material';
+import { Email, School, Description, FolderZip } from '@mui/icons-material';
 
 const authors = [
     {

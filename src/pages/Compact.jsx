@@ -16,7 +16,7 @@ export default function Compact() {
     const [colorMode, setColorMode] = useState("intent");
     const [muiColor, setMuiColor] = useState("default");
     const [selectedBadge, setSelectedBadge] = useState(null);
-    const [searchQuery, setSearchQuery] = useState("");
+    const [searchQuery] = useState("");
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     if (loading) return <div>Loading badges...</div>;

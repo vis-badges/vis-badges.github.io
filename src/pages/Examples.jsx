@@ -15,10 +15,6 @@ import GetAppIcon from '@mui/icons-material/GetApp';
 // Badge‑usage case studies (verbatim reasoning text; no paper‑internal refs)
 // -----------------------------------------------------------------------------
 
-const introLines = [
-    'Examples of badge usage in real‑world context',
-    'The three case studies below reproduce, verbatim, the reasoning texts that explain why specific badges were chosen in each collaborative project. PDFs are embedded for instant viewing; use the download button for offline access.',
-];
 
 const cases = [
     {

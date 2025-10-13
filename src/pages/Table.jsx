@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import {Box, TextField, IconButton, Tooltip, Button, Divider} from '@mui/material';
+import {Box, TextField, IconButton, Tooltip, Divider} from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import { DataGrid } from '@mui/x-data-grid';
 import useBadges from '../hooks/useBadges';
@@ -19,7 +19,7 @@ export default function BadgeDataGrid() {
     const [colorMode, setColorMode] = useState("intent");
     const [muiColor, setMuiColor] = useState("default");
     const [searchQuery, setSearchQuery] = useState("");
-    const [selectedBadge, setSelectedBadge] = useState(null);
+    const [selectedBadge] = useState(null);
 
     if (loading) return <div>Loading badges...</div>;
     if (error) return <div>Error: {error.message}</div>;
@@ -37,15 +37,7 @@ export default function BadgeDataGrid() {
         badgeType: badge.badgeType || "Binary",
     }));
 
-    const handleDownloadAll = () => {
-        Object.values(badgeRefs.current).forEach((badgeComponent) => {
-            if (badgeComponent?.downloadBadge) {
-                badgeComponent.downloadBadge();
-            } else {
-                console.warn('downloadBadge function not available for a badge');
-            }
-        });
-    };
+    // removed unused handleDownloadAll to satisfy lint warnings
 
     const columns = [
         {

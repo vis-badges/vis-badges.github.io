@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Divider, Typography, Grid } from '@mui/material';
+import { Box, Divider, Grid } from '@mui/material';
 import BadgeDesignControls from '../components/BadgeDesignControls';
 import useBadges from '../hooks/useBadges';
 import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from "vis-badges-react";
@@ -121,13 +121,7 @@ export default function TeaserFigure() {
         return idx === -1 ? intentOrder.length : idx;
     };
 
-    // Badge cell styling for uniform width.
-    const badgeStyle = {
-        maxWidth: 140,
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis'
-    };
+    // removed unused badgeStyle to satisfy lint warnings
 
     return (
         <>

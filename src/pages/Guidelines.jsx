@@ -5,7 +5,6 @@ import {
     Step,
     StepLabel,
     StepContent,
-    Paper,
     Typography,
 } from '@mui/material';
 

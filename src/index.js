@@ -5,12 +5,10 @@ import Compact from "./pages/Compact";
 import {createHashRouter, RouterProvider} from "react-router-dom";
 import Main from "./Main";
 import BadgeDataGrid from "./pages/Table";
-import Design from "./pages/Design";
 import Genres from "./pages/Genres";
 import Examples from "./pages/Examples";
 import About from "./pages/About";
 import Guidelines from "./pages/Guidelines";
-import TeaserFigure from "./pages/TeaserFigure";
 
 const router = createHashRouter([
     {
