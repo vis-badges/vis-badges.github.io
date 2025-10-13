@@ -1,32 +1,32 @@
 {
-  "name": "@vis-badges/react",
-  "version": "0.1.0",
+  "name": "vis-badges-react",
+  "version": "0.1.1",
   "private": false,
   "sideEffects": false,
-  "main": "src/index.js",
-  "module": "src/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "exports": {
     ".": {
-      "import": "./src/index.js",
-      "require": "./src/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
-    "build": "echo 'using source files'",
+    "build": "tsup src/index.js --format cjs,esm --sourcemap --clean",
     "clean": "rimraf dist || true"
   },
   "peerDependencies": {
+    "@mui/icons-material": ">=5",
+    "@mui/material": ">=5",
     "react": ">=17",
     "react-dom": ">=17",
-    "@mui/material": ">=5",
-    "@mui/icons-material": ">=5",
     "react-icons": ">=4"
   },
-  "dependencies": {
-    "dom-to-image": "^2.6.0"
+  "dependencies": {},
+  "devDependencies": {
+    "tsup": "^8.5.0"
   }
 }
-

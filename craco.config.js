@@ -23,7 +23,7 @@ module.exports = {
       }
       // Ensure our local workspace package is transpiled even if resolved from node_modules
       const packageSrc = path.resolve(__dirname, 'packages/vis-badges-react/src');
-      const packageNodeModulesSrc = path.resolve(__dirname, 'node_modules/@vis-badges/react/src');
+      const packageNodeModulesSrc = path.resolve(__dirname, 'node_modules/vis-badges-react/src');
       const oneOfRule = webpackConfig.module.rules.find((rule) => Array.isArray(rule.oneOf));
       if (oneOfRule) {
         oneOfRule.oneOf.forEach((rule) => {
@@ -37,7 +37,7 @@ module.exports = {
               // Allow transpiling our package in node_modules by narrowing the exclude
               const origExclude = rule.exclude;
               rule.exclude = (filepath) => {
-                if (filepath.includes('@vis-badges/react')) return false;
+                if (filepath.includes('vis-badges-react')) return false;
                 return typeof origExclude === 'function' ? origExclude(filepath) : origExclude.test?.(filepath) || false;
               };
             }

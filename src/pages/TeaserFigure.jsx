@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Divider, Typography, Grid } from '@mui/material';
 import BadgeDesignControls from '../components/BadgeDesignControls';
 import useBadges from '../hooks/useBadges';
-import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from "@vis-badges/react";
+import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from "vis-badges-react";
 import { computeChipColor } from "../components/utils/badgeUtils";
 
 export default function TeaserFigure() {

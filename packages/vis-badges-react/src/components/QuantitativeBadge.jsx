@@ -1,13 +1,11 @@
-import React, { useRef, forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef } from 'react';
 import { useTheme } from '@mui/material/styles';
 import BadgeBase from './BadgeBase';
-import { downloadNodeAsPng } from "../utils/downloadUtils";
 
 const QuantitativeBadge = forwardRef(function QuantitativeBadge(
     { badge, chipColor, ...otherProps },
     ref
 ) {
-    const badgeRef = useRef(null);
     const theme = useTheme();
     const isLightMode = theme.palette.mode === 'light';
 
@@ -37,15 +35,6 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
         }
     }
 
-    const downloadBadge = () => {
-        if (!badgeRef.current) return;
-        const fileName = `${badge.badgeName || badge.label}.png`;
-        downloadNodeAsPng(badgeRef.current, fileName, 100);
-    };
-
-    useImperativeHandle(ref, () => ({
-        downloadBadge,
-    }));
 
     const leftLabel = badge.label || '';
     const rightValue = badge.value || '';
@@ -89,7 +78,7 @@ const QuantitativeBadge = forwardRef(function QuantitativeBadge(
     };
 
     return (
-        <div ref={badgeRef} style={{display: 'inline-block'}}>
+        <div ref={ref} style={{display: 'inline-block'}}>
             <BadgeBase
                 label={finalLabel}
                 description={badge.description}

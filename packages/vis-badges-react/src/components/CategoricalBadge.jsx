@@ -1,7 +1,6 @@
-import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, forwardRef } from 'react';
 import { Box, Chip, Tooltip, Stack, Collapse, Badge, Avatar } from '@mui/material';
 import * as Icons from '@mui/icons-material';
-import { downloadNodeAsPng } from "../utils/downloadUtils";
 import { getMuiIcon } from "../utils/getIcon";
 import {icon_intent_map, icon_scope_map} from "../utils/iconMappings";
 
@@ -38,7 +37,6 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
     ref
 ) {
     const [expanded, setExpanded] = useState(false);
-    const badgeRef = useRef(null);
 
     const values = Array.isArray(badge.values) ? badge.values : [];
     const count = values.length;
@@ -58,19 +56,8 @@ const CategoricalBadge = forwardRef(function CategoricalBadge(
         setExpanded((prev) => !prev);
     };
 
-    const downloadBadge = () => {
-        const node = badgeRef.current;
-        if (!node) return;
-        const fileName = `${badge.badgeName || badge.label}.png`;
-        downloadNodeAsPng(node, fileName);
-    };
-
-    useImperativeHandle(ref, () => ({
-        downloadBadge,
-    }));
-
     return (
-        <div ref={badgeRef} style={{display: 'inline-block'}}>
+        <div ref={ref} style={{display: 'inline-block'}}>
             <Chip
                 label={mainChipLabel}
                 size={muiSize}

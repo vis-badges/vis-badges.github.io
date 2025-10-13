@@ -3,7 +3,7 @@ import { Box, Divider, Drawer, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Grid';
 import BadgeDesignControls from '../components/BadgeDesignControls';
 import useBadges from '../hooks/useBadges';
-import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from "@vis-badges/react";
+import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from "vis-badges-react";
 import { computeChipColor } from "../components/utils/badgeUtils";
 import { filterBadges } from '../components/utils/filterBadges';
 

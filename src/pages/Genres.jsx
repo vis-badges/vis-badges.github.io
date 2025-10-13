@@ -7,7 +7,7 @@ import {
     Typography,
     Divider,
 } from '@mui/material';
-import { BinaryBadge } from "@vis-badges/react";
+import { BinaryBadge } from "vis-badges-react";
 
 // ----------------------------------------------------------------------------
 // Example badge data (kept for future use – do not remove)
