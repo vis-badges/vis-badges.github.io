@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Divider, Typography, Grid } from '@mui/material';
 import BadgeDesignControls from '../components/BadgeDesignControls';
 import useBadges from '../hooks/useBadges';
-import BadgeRenderer from "../components/BadgeRenderer";
+import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from "@vis-badges/react";
 import { computeChipColor } from "../components/utils/badgeUtils";
 
 export default function TeaserFigure() {
@@ -173,14 +173,26 @@ export default function TeaserFigure() {
                                             const chipColor = computeChipColor(badge, colorMode, muiColor);
                                             return (
                                                 <Grid item key={badge.id}>
-                                                    <BadgeRenderer
-                                                        badge={badge}
-                                                        size={chipSize}
-                                                        variant={chipVariant}
-                                                        chipColor={chipColor}
-                                                        renderProps={{ leftIconKey, rightIconKey }}
-                                                        chipSx={badgeStyle}
-                                                    />
+                                                {(() => {
+                                                    const commonProps = {
+                                                        badge,
+                                                        size: chipSize,
+                                                        variant: chipVariant,
+                                                        chipColor: chipColor,
+                                                        leftIconKey,
+                                                        rightIconKey,
+                                                    };
+                                                    switch (badge.badgeType) {
+                                                        case 'ORDINAL':
+                                                            return <OrdinalBadge {...commonProps} />;
+                                                        case 'QUANTITATIVE':
+                                                            return <QuantitativeBadge {...commonProps} />;
+                                                        case 'CATEGORICAL':
+                                                            return <CategoricalBadge {...commonProps} />;
+                                                        default:
+                                                            return <BinaryBadge {...commonProps} />;
+                                                    }
+                                                })()}
                                                 </Grid>
                                             );
                                         })}

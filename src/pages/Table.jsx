@@ -4,7 +4,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import { DataGrid } from '@mui/x-data-grid';
 import useBadges from '../hooks/useBadges';
 import BadgeDesignControls from '../components/BadgeDesignControls';
-import { BadgeRenderer } from "@vis-badges/react";
+import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from "@vis-badges/react";
 import { computeChipColor } from "../components/utils/badgeUtils";
 import { filterBadges } from '../components/utils/filterBadges';
 
@@ -59,14 +59,27 @@ export default function BadgeDataGrid() {
                 return (
                     // Wrap in a Box that disables pointer events to prevent clicks on the badge.
                     <Box sx={{ pointerEvents: 'none' }}>
-                        <BadgeRenderer
-                            forwardedRef={(el) => (badgeRefs.current[params.id] = el)}
-                            badge={badge}
-                            size={chipSize}
-                            variant={chipVariant}
-                            chipColor={chipColor}
-                            renderProps={{ leftIconKey, rightIconKey }}
-                        />
+                        {(() => {
+                            const commonProps = {
+                                badge,
+                                size: chipSize,
+                                variant: chipVariant,
+                                chipColor,
+                                leftIconKey,
+                                rightIconKey,
+                                ref: (el) => (badgeRefs.current[params.id] = el),
+                            };
+                            switch (badge.badgeType) {
+                                case 'ORDINAL':
+                                    return <OrdinalBadge {...commonProps} />;
+                                case 'QUANTITATIVE':
+                                    return <QuantitativeBadge {...commonProps} />;
+                                case 'CATEGORICAL':
+                                    return <CategoricalBadge {...commonProps} />;
+                                default:
+                                    return <BinaryBadge {...commonProps} />;
+                            }
+                        })()}
                     </Box>
                 );
             },

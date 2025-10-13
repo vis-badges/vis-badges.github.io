@@ -7,10 +7,7 @@ import {
     Typography,
     Divider,
 } from '@mui/material';
-import BinaryBadge from "../components/BinaryBadge";
-import OrdinalBadge from "../components/OrdinalBadge";
-import CategoricalBadge from "../components/CategoricalBadge";
-import QuantitativeBadge from "../components/QuantitativeBadge";
+import { BinaryBadge } from "@vis-badges/react";
 
 // ----------------------------------------------------------------------------
 // Example badge data (kept for future use – do not remove)

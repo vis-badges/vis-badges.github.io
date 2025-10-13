@@ -3,7 +3,7 @@ import { Box, Divider, Drawer, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Grid';
 import BadgeDesignControls from '../components/BadgeDesignControls';
 import useBadges from '../hooks/useBadges';
-import { BadgeRenderer } from "@vis-badges/react";
+import { BinaryBadge, OrdinalBadge, CategoricalBadge, QuantitativeBadge } from "@vis-badges/react";
 import { computeChipColor } from "../components/utils/badgeUtils";
 import { filterBadges } from '../components/utils/filterBadges';
 
@@ -84,13 +84,26 @@ export default function Compact() {
                                     onClick={() => handleBadgeClick(badge)}
                                     sx={{ cursor: 'pointer' }}
                                 >
-                                    <BadgeRenderer
-                                        badge={badge}
-                                        size={chipSize}
-                                        variant={chipVariant}
-                                        chipColor={chipColor}
-                                        renderProps={{ leftIconKey, rightIconKey }}
-                                    />
+                                    {(() => {
+                                        const commonProps = {
+                                            badge,
+                                            size: chipSize,
+                                            variant: chipVariant,
+                                            chipColor,
+                                            leftIconKey,
+                                            rightIconKey,
+                                        };
+                                        switch (badge.badgeType) {
+                                            case 'ORDINAL':
+                                                return <OrdinalBadge {...commonProps} />;
+                                            case 'QUANTITATIVE':
+                                                return <QuantitativeBadge {...commonProps} />;
+                                            case 'CATEGORICAL':
+                                                return <CategoricalBadge {...commonProps} />;
+                                            default:
+                                                return <BinaryBadge {...commonProps} />;
+                                        }
+                                    })()}
                                 </Grid2>
                             );
                         })}
