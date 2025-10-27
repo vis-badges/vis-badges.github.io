@@ -8,7 +8,7 @@ import {
     Container,
     Grid2
 } from '@mui/material';
-import { Email, School, Description, FolderZip } from '@mui/icons-material';
+import { Email, School, Description, FolderZip, Code, OpenInNew } from '@mui/icons-material';
 
 const authors = [
     {
@@ -88,20 +88,22 @@ export default function About() {
                 </Typography>
             </Box>
 
+            
+
             <Box sx={{ mb: 4 }}>
                 <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 2 }}>
                     Citation
                 </Typography>
                 <Card sx={{ p: 2 }}>
-                    <Typography variant="body1" color="text.secondary" sx={{ fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.4 }}>
-                        @article{'{'}edelsbrunner2026visualization,
-                        {'\n'}  title={'{'}Visualization Badges: Communicating Design and Provenance through Graphical Labels Alongside Visualizations},
-                        {'\n'}  author={'{'}Edelsbrunner, Valentin and Wang, Jinrui and Pister, Alexis and Vancisin, Tomas and Phillips, Sian and Chen, Min and Bach, Benjamin},
-                        {'\n'}  journal={'{'}IEEE Transactions in Visualization and Computer Graphics (TVCG)},
-                        {'\n'}  year={'{'}2026},
-                        {'\n'}  note={'{'}Published at the IEEE VIS Conference 2025, Vienna, Austria}
-                        {'\n'}{'}'}
-                    </Typography>
+                    <Box component="pre" sx={{ m: 0, p: 1.5, bgcolor: 'grey.50', borderRadius: 1, border: '1px solid', borderColor: 'divider', fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.4, overflow: 'auto' }}>
+                        {`@article{edelsbrunner2026visualization,
+  title={Visualization Badges: Communicating Design and Provenance through Graphical Labels Alongside Visualizations},
+  author={Edelsbrunner, Valentin and Wang, Jinrui and Pister, Alexis and Vancisin, Tomas and Phillips, Sian and Chen, Min and Bach, Benjamin},
+  journal={IEEE Transactions in Visualization and Computer Graphics (TVCG)},
+  year={2026},
+  note={Published at the IEEE VIS Conference 2025, Vienna, Austria}
+}`}
+                    </Box>
                 </Card>
             </Box>
 
@@ -187,6 +189,44 @@ export default function About() {
             </Grid2>
 
             <Box sx={{ mt: 4, mb: 2 }}>
+                <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 1 }}>
+                    Library
+                </Typography>
+                <Card sx={{ p: 2 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                        <Code sx={{ fontSize: 22, color: 'primary.main' }} />
+                        <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                            Install the React library
+                        </Typography>
+                    </Box>
+                    <Box component="pre" sx={{ m: 0, p: 1.5, bgcolor: 'grey.50', borderRadius: 1, border: '1px solid', borderColor: 'divider', fontFamily: 'monospace', fontSize: '0.95rem', overflow: 'auto' }}>
+                        <Box component="code" sx={{ display: 'block' }}>npm install vis-badges-react</Box>
+                    </Box>
+                </Card>
+            </Box>
+
+            <Box sx={{ mb: 4 }}>
+                <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 1 }}>
+                    Source
+                </Typography>
+                <Card sx={{ p: 2 }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                        <Typography variant="body2">
+                            NPM package:{' '}
+                            <Box component="a" href="https://www.npmjs.com/package/vis-badges-react" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
+                                vis-badges-react
+                            </Box>
+                        </Typography>
+                        <Typography variant="body2">
+                            Website repository:{' '}
+                            <Box component="a" href="https://github.com/vis-badges/vis-badges.github.io" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
+                                vis-badges.github.io
+                            </Box>
+                        </Typography>
+                    </Box>
+                </Card>
+            </Box>
+            <Box sx={{ mt: 4, mb: 2 }}>
                 <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 2 }}>
                     Downloads
                 </Typography>
@@ -203,7 +243,6 @@ export default function About() {
                                 transition: 'all 0.2s ease-in-out',
                                 '&:hover': {
                                     transform: 'translateY(-2px)',
-                                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
                                 }
                             }}
                         >
@@ -233,7 +272,6 @@ export default function About() {
                                 transition: 'all 0.2s ease-in-out',
                                 '&:hover': {
                                     transform: 'translateY(-2px)',
-                                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
                                 }
                             }}
                         >

@@ -36,9 +36,9 @@ export default function System() {
                         The intent of a visualization badge specifies the interpretative stance (or purpose) of the badge. During our coding and co-design processes, we found that the collected badges naturally aligned on three core interpretative stances (positive, neutral, warning), leading us to settle on three instances for badge intent:
                     </Typography>
                     <Stack direction="row" spacing={1} sx={{ mt: 1 }} useFlexGap flexWrap="wrap">
-                        <Chip size="small" icon={<CheckCircleOutline fontSize="small" />} color="success" label="Positive" />
-                        <Chip size="small" icon={<InfoOutlined fontSize="small" />} color="info" label="Neutral" />
-                        <Chip size="small" icon={<WarningAmber fontSize="small" />} color="warning" label="Warning" />
+                        <Chip size="small" variant="outlined" icon={<CheckCircleOutline sx={{ color: 'success.main' }} fontSize="small" />} label="Positive" />
+                        <Chip size="small" variant="outlined" icon={<InfoOutlined sx={{ color: 'info.main' }} fontSize="small" />} label="Neutral" />
+                        <Chip size="small" variant="outlined" icon={<WarningAmber sx={{ color: 'warning.main' }} fontSize="small" />} label="Warning" />
                     </Stack>
                     <Box
                         component="img"
@@ -48,15 +48,11 @@ export default function System() {
                             display: 'block',
                             mt: 2,
                             maxWidth: 720,
-                            mx: 'auto',
                             height: 'auto',
                             borderRadius: 1,
-                            border: '1px solid',
-                            borderColor: 'divider',
-                            boxShadow: 1,
                         }}
                     />
-                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', textAlign: 'center', mt: 1 }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', textAlign: 'left', mt: 1 }}>
                         Three intent stances
                     </Typography>
                 </Grid>
@@ -78,12 +74,9 @@ export default function System() {
                             maxWidth: '100%',
                             height: 'auto',
                             borderRadius: 1,
-                            border: '1px solid',
-                            borderColor: 'divider',
-                            boxShadow: 1,
                         }}
                     />
-                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', textAlign: 'center', mt: 1 }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', textAlign: 'left', mt: 1 }}>
                         Badge genres overview
                     </Typography>
                 </Grid>
@@ -127,15 +120,11 @@ export default function System() {
                             display: 'block',
                             mt: 2,
                             maxWidth: 960,
-                            mx: 'auto',
                             height: 'auto',
                             borderRadius: 1,
-                            border: '1px solid',
-                            borderColor: 'divider',
-                            boxShadow: 1,
                         }}
                     />
-                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', textAlign: 'center', mt: 1 }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block', textAlign: 'left', mt: 1 }}>
                         Badge scopes overview
                     </Typography>
                 </Grid>
