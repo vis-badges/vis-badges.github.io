@@ -43,8 +43,8 @@ const NAVIGATION = [
         title: 'Visualization Badge',
     },
     {
-        segment: 'genres',
-        title: 'Genres',
+        segment: 'system',
+        title: 'System',
         icon: <Category />,
 
     },

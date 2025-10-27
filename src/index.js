@@ -5,7 +5,7 @@ import Compact from "./pages/Compact";
 import {createHashRouter, RouterProvider} from "react-router-dom";
 import Main from "./Main";
 import BadgeDataGrid from "./pages/Table";
-import Genres from "./pages/Genres";
+import System from "./pages/System";
 import Examples from "./pages/Examples";
 import About from "./pages/About";
 import Guidelines from "./pages/Guidelines";
@@ -44,8 +44,8 @@ const router = createHashRouter([
                         Component: About
                     },
                     {
-                        path: 'genres',
-                        Component: Genres
+                        path: 'system',
+                        Component: System
                     },
                     {
                         path: 'examples',
