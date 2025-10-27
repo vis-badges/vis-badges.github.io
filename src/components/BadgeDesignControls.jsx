@@ -34,6 +34,7 @@ export default function BadgeDesignControls({
                                                 setLeftIconKey,
                                                 rightIconKey, // not used here, but left for consistency
                                                 setRightIconKey,
+                                                showReset = true,
                                             }) {
     // Handle color toggle: if a MUI color is chosen, set colorMode to "standard" and store that color in muiColor.
     const handleColorChange = (event, newValue) => {
@@ -104,6 +105,7 @@ export default function BadgeDesignControls({
                     exclusive
                     onChange={(e, val) => val && setLeftIconKey(val)}
                     size="small"
+                    sx={{ justifyContent: 'flex-start' }}
                 >
                     <ToggleButton value="iconIntent">INTENT</ToggleButton>
                     <ToggleButton value="iconScope">SCOPE</ToggleButton>
@@ -121,6 +123,7 @@ export default function BadgeDesignControls({
                     exclusive
                     onChange={handleColorChange}
                     size="small"
+                    sx={{ justifyContent: 'flex-start' }}
                 >
                     {/* INTENT button with tooltip */}
                     <Tooltip title="Colored by Intent, Confirmation is Green, Information is Blue and Warning is Orange">
@@ -172,15 +175,17 @@ export default function BadgeDesignControls({
                 </ToggleButtonGroup>
             </Box>
 
-            <Tooltip title="Reset to default">
-                <IconButton
-                    color="default"
-                    size="small"
-                    onClick={() => window.location.reload()}
-                >
-                    <RestartAltIcon />
-                </IconButton>
-            </Tooltip>
+            {showReset && (
+                <Tooltip title="Reset to default">
+                    <IconButton
+                        color="default"
+                        size="small"
+                        onClick={() => window.location.reload()}
+                    >
+                        <RestartAltIcon />
+                    </IconButton>
+                </Tooltip>
+            )}
         </Box>
     );
 }
