@@ -240,40 +240,36 @@ export default function Submit() {
                             </FormControl>
 
                             <FormControl fullWidth size="small" error={isLabelError}>
-                                <TextField size="small" required label="Badge Label" value={label} onChange={(e) => setLabel(e.target.value)} fullWidth />
+                                <TextField size="small" required label="Badge Label" placeholder="e.g., Open Data" value={label} onChange={(e) => setLabel(e.target.value)} fullWidth />
                                 {isLabelError && <FormHelperText>Label is required.</FormHelperText>}
                             </FormControl>
                             <FormControl fullWidth size="small" error={isDescriptionError}>
-                                <TextField size="small" required label="Badge Description" value={description} onChange={(e) => setDescription(e.target.value)} fullWidth multiline minRows={2} placeholder="Concise description that clarifies the badge" />
+                                <TextField size="small" required label="Badge Description" placeholder="Concise description that clarifies the badge" value={description} onChange={(e) => setDescription(e.target.value)} fullWidth multiline minRows={2} />
                                 {isDescriptionError && <FormHelperText>Description is required.</FormHelperText>}
                             </FormControl>
 
-                            <Grid container spacing={1} sx={{ ml: { xs: -0.5, sm: -1 } }}>
-                                <Grid item xs={12} sm={6}>
-                                    <FormControl fullWidth size="small">
-                                        <InputLabel>Intent</InputLabel>
-                                        <Select label="Intent" value={intent} onChange={(e) => setIntent(e.target.value)}>
-                                            {INTENTS.map((i) => (
-                                                <MenuItem key={i} value={i}>{i}</MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <FormControl fullWidth size="small">
-                                        <InputLabel>Scope</InputLabel>
-                                        <Select label="Scope" value={scope} onChange={(e) => setScope(e.target.value)}>
-                                            {SCOPES.map((s) => (
-                                                <MenuItem key={s} value={s}>{s}</MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                            </Grid>
+                            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
+                                <FormControl fullWidth size="small" sx={{ flex: 1 }}>
+                                    <InputLabel>Intent</InputLabel>
+                                    <Select label="Intent" value={intent} onChange={(e) => setIntent(e.target.value)}>
+                                        {INTENTS.map((i) => (
+                                            <MenuItem key={i} value={i}>{i}</MenuItem>
+                                        ))}
+                                    </Select>
+                                </FormControl>
+                                <FormControl fullWidth size="small" sx={{ flex: 1 }}>
+                                    <InputLabel>Scope</InputLabel>
+                                    <Select label="Scope" value={scope} onChange={(e) => setScope(e.target.value)}>
+                                        {SCOPES.map((s) => (
+                                            <MenuItem key={s} value={s}>{s}</MenuItem>
+                                        ))}
+                                    </Select>
+                                </FormControl>
+                            </Stack>
 
                             {badgeType === 'ORDINAL' && (
                                 <FormControl fullWidth size="small" error={isOrdinalError}>
-                                    <TextField size="small" required label="Value (e.g., Up-to-date)" value={ordinalValue} onChange={(e) => setOrdinalValue(e.target.value)} fullWidth />
+                                    <TextField size="small" required label="Value" placeholder="e.g., Up-to-date" value={ordinalValue} onChange={(e) => setOrdinalValue(e.target.value)} fullWidth />
                                     {isOrdinalError && <FormHelperText>Value is required for ordinal badges.</FormHelperText>}
                                 </FormControl>
                             )}
@@ -282,12 +278,12 @@ export default function Submit() {
                                 <Grid container spacing={2}>
                                     <Grid item xs={8}>
                                         <FormControl fullWidth size="small" error={isQuantValueError}>
-                                            <TextField size="small" type="number" required label="Value" value={quantValue} onChange={(e) => setQuantValue(Number(e.target.value))} fullWidth />
+                                            <TextField size="small" type="number" required label="Value" placeholder="e.g., 5" value={quantValue} onChange={(e) => setQuantValue(Number(e.target.value))} fullWidth />
                                             {isQuantValueError && <FormHelperText>Enter a numeric value.</FormHelperText>}
                                         </FormControl>
                                     </Grid>
                                     <Grid item xs={4}>
-                                        <TextField size="small" label="Unit" value={quantUnit} onChange={(e) => setQuantUnit(e.target.value)} fullWidth />
+                                        <TextField size="small" label="Unit" placeholder="e.g., % or days" value={quantUnit} onChange={(e) => setQuantUnit(e.target.value)} fullWidth />
                                     </Grid>
                                 </Grid>
                             )}
@@ -296,7 +292,7 @@ export default function Submit() {
                                 <Box>
                                     <FormControl fullWidth size="small" error={isCategoricalError}>
                                         <Stack direction="row" spacing={1} alignItems="center">
-                                            <TextField label="Add value" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)} size="small" fullWidth />
+                                            <TextField label="Add value" placeholder="e.g., CC-BY 4.0" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)} size="small" fullWidth />
                                             <IconButton color="primary" onClick={addCategory} aria-label="add value"><AddIcon /></IconButton>
                                         </Stack>
                                         {isCategoricalError && <FormHelperText sx={{ mt: 0.5 }}>Add at least one value.</FormHelperText>}
