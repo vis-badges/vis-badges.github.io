@@ -44,7 +44,7 @@ const NAVIGATION = [
     },
     {
         segment: 'system',
-        title: 'System',
+        title: 'Framework',
         icon: <Category />,
 
     },
@@ -70,6 +70,9 @@ const NAVIGATION = [
         segment: 'submit',
         title: 'Submit a Badge',
         icon: <AddIcon />,
+    },
+    {
+        kind: 'divider',
     },
     {
         segment: 'about',
