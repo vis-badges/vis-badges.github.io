@@ -218,12 +218,6 @@ export default function Submit() {
     return (
         <>
         <Container maxWidth="md" sx={{ py: 2 }}>
-            <Box sx={{ mb: 2 }}>
-                <Typography variant="h5" sx={{ fontWeight: 600 }}>Submit a Badge</Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                    Fill in the badge details, choose the genre-specific options, preview your badge, and submit. Required fields are marked.
-                </Typography>
-            </Box>
             <Grid container spacing={2} alignItems="stretch">
                 <Grid item xs={12} md={7}>
                     <Paper variant="outlined" sx={{ p: 1.5 }}>
