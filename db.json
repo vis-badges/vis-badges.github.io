@@ -1615,5 +1615,88 @@
       "Audience"
     ],
     "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "133",
+    "label": "Linear Projection",
+    "description": "Indicates that the dimensionality reduction method produces a linear projection (e.g. PCA, classical MDS, or a linear autoencoder).",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Dimensionality Reduction",
+      "Projection",
+      "Analysis",
+      "Algorithm",
+      "Transformation",
+      "Method"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "134",
+    "label": "Non-Linear Projection",
+    "description": "Indicates that the dimensionality reduction method produces a non-linear projection (e.g. t-SNE, UMAP, densMAP or den-SNE).",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Dimensionality Reduction",
+      "Projection",
+      "Analysis",
+      "Algorithm",
+      "Transformation",
+      "Method"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "135",
+    "label": "Preserves Local Structure",
+    "description": "Indicates that the dimensionality reduction method was chosen and parametrized to preserve local structures, such as nearest neighbors and small neighborhoods.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Dimensionality Reduction",
+      "Projection",
+      "Analysis",
+      "Local Structure",
+      "Transformation"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "136",
+    "label": "Preserves Global Structure",
+    "description": "Indicates that the dimensionality reduction method was chosen and parametrized to preserve the global structure of the data, including overall distances, large-scale geometry and variance.",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Dimensionality Reduction",
+      "Projection",
+      "Analysis",
+      "Global Structure",
+      "Geometry",
+      "Transformation"
+    ],
+    "link": ""
+  },
+  {
+    "badgeType": "BINARY",
+    "id": "137",
+    "label": "Density-Preserving Projection",
+    "description": "Indicates that the dimensionality reduction method aims to explicitly preserve relative data density. This means that dense and sparse regions in the embedding should reflect dense and sparse regions in the original space (e.g. densMAP and den-SNE).",
+    "type": "ANALYSIS",
+    "intent": "INFORMATION",
+    "topics": [
+      "Dimensionality Reduction",
+      "Projection",
+      "Analysis",
+      "Density",
+      "Transformation"
+    ],
+    "link": ""
   }
 ]

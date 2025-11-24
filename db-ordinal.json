@@ -129,5 +129,27 @@
     "type": "CONTEXT",
     "intent": "WARNING",
     "topics": ["Audience"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "148",
+    "label": "Dimensionality Reduction",
+    "description": "Indicates the dimensionality reduction algorithm used to compute this embedding.",
+    "value": "t-SNE",
+    "type": "ANALYSIS",
+    "link": "",
+    "intent": "INFORMATION",
+    "topics": ["Dimensionality Reduction", "Projection", "Algorithm", "Transformation", "Method"]
+  },
+  {
+    "badgeType": "ORDINAL",
+    "id": "149",
+    "label": "Dimensionality Reduction",
+    "description": "Indicates the dimensionality reduction algorithm used to compute this embedding.",
+    "value": "PCA",
+    "type": "ANALYSIS",
+    "link": "",
+    "intent": "INFORMATION",
+    "topics": ["Dimensionality Reduction", "Projection", "Algorithm", "Transformation", "Method"]
   }
 ]
