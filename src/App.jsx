@@ -109,6 +109,7 @@ const NAVIGATION = [
         segment: 'about',
         title: 'About',
         icon: <GroupsOutlined />,
+        action: NEW_PILL,
     }
 ];
 
