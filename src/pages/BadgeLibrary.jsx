@@ -2,7 +2,6 @@ import React from "react";
 import {
     Alert,
     Box,
-    Button,
     Card,
     CardContent,
     Grid,
@@ -12,7 +11,6 @@ import {
 import useVisBadgeLibrary from "../hooks/useVisBadgeLibrary";
 
 const HOSTED_BUNDLE_URL = "https://vedelsbrunner.github.io/badge-lib/dist-wc/vis-badge.js";
-const LOCAL_BUNDLE_URL = `${(process.env.PUBLIC_URL || "").replace(/\/+$/, "") || ""}/vis-badge.js`;
 const INSTALL_SNIPPET = `<script type="module" src="${HOSTED_BUNDLE_URL}"></script>`;
 
 const EXAMPLE_CARDS = [
@@ -283,26 +281,6 @@ function PreviewPanel({ children, minHeight = 108 }) {
     );
 }
 
-function getSourceText(source) {
-    if (source === "local") {
-        return "Preview uses the local bundle.";
-    }
-
-    if (source === "hosted-pinned") {
-        return "Preview uses a pinned hosted bundle.";
-    }
-
-    if (source === "hosted") {
-        return "Preview uses the hosted fallback bundle.";
-    }
-
-    if (source === "existing") {
-        return "Preview uses an existing vis-badge registration.";
-    }
-
-    return "Loading badge preview.";
-}
-
 function ExampleCard({ title, helper, badges, markup, isReady }) {
     return (
         <Grid item xs={12} md={4}>
@@ -351,7 +329,7 @@ function ExampleCard({ title, helper, badges, markup, isReady }) {
 }
 
 export default function BadgeLibrary() {
-    const { status, source, error } = useVisBadgeLibrary();
+    const { status, error } = useVisBadgeLibrary();
     const isReady = status === "ready";
 
     return (

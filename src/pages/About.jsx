@@ -8,7 +8,7 @@ import {
     Container,
     Grid2
 } from '@mui/material';
-import { Email, School, Description, FolderZip, Code, OpenInNew } from '@mui/icons-material';
+import { Email, School, Description, FolderZip } from '@mui/icons-material';
 
 const authors = [
     {
@@ -63,6 +63,28 @@ const authors = [
     }
 ];
 
+const NewPill = () => (
+    <Box
+        component="span"
+        sx={{
+            px: 0.75,
+            py: 0.15,
+            borderRadius: 999,
+            border: '1px solid',
+            borderColor: 'divider',
+            bgcolor: 'background.paper',
+            color: 'text.secondary',
+            fontSize: '0.62rem',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            lineHeight: 1.5,
+            whiteSpace: 'nowrap',
+        }}
+    >
+        NEW
+    </Box>
+);
+
 export default function About() {
     return (
         <Container maxWidth="lg" sx={{ py: 4 }}>
@@ -88,7 +110,7 @@ export default function About() {
                 </Typography>
             </Box>
 
-            
+
 
             <Box sx={{ mb: 4 }}>
                 <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 2 }}>
@@ -116,9 +138,9 @@ export default function About() {
             <Grid2 container spacing={2}>
                 {authors.map((author, index) => (
                     <Grid2 item xs={12} sm={6} lg={4} key={index}>
-                        <Card 
+                        <Card
                             elevation={2}
-                            sx={{ 
+                            sx={{
                                 height: 220,
                                 transition: 'all 0.3s ease-in-out',
                                 '&:hover': {
@@ -145,11 +167,11 @@ export default function About() {
                                         {author.name.split(' ').map(n => n[0]).join('')}
                                     </Avatar>
                                 </Box>
-                                
+
                                 <Typography variant="h6" component="h3" sx={{ fontWeight: 600, mb: 1, fontSize: '1rem' }}>
                                     {author.name}
                                 </Typography>
-                                
+
                                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1, gap: 0.5 }}>
                                     <School sx={{ fontSize: 14, color: 'text.secondary', flexShrink: 0 }} />
                                     <Box sx={{ textAlign: 'left' }}>
@@ -163,14 +185,14 @@ export default function About() {
                                         )}
                                     </Box>
                                 </Box>
-                                
+
                                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     <Email sx={{ fontSize: 14, mr: 0.5, color: 'text.secondary' }} />
-                                    <Typography 
-                                        variant="body2" 
-                                        component="a" 
+                                    <Typography
+                                        variant="body2"
+                                        component="a"
                                         href={`mailto:${author.email}`}
-                                        sx={{ 
+                                        sx={{
                                             color: 'primary.main',
                                             textDecoration: 'none',
                                             fontSize: '0.85rem',
@@ -188,51 +210,51 @@ export default function About() {
                 ))}
             </Grid2>
 
-            <Box sx={{ mt: 4, mb: 2 }}>
-                <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 1 }}>
-                    Library
-                </Typography>
-                <Card sx={{ p: 2 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                        <Code sx={{ fontSize: 22, color: 'primary.main' }} />
-                        <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-                            Install the React library
-                        </Typography>
-                    </Box>
-                    <Box component="pre" sx={{ m: 0, p: 1.5, bgcolor: 'grey.50', borderRadius: 1, border: '1px solid', borderColor: 'divider', fontFamily: 'monospace', fontSize: '0.95rem', overflow: 'auto' }}>
-                        <Box component="code" sx={{ display: 'block' }}>npm install vis-badges-react</Box>
-                    </Box>
-                </Card>
-            </Box>
+            {/*<Box sx={{ mt: 4, mb: 2 }}>*/}
+            {/*    <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 1 }}>*/}
+            {/*        Library*/}
+            {/*    </Typography>*/}
+            {/*    <Card sx={{ p: 2 }}>*/}
+            {/*        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>*/}
+            {/*            <Code sx={{ fontSize: 22, color: 'primary.main' }} />*/}
+            {/*            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>*/}
+            {/*                Install the React library*/}
+            {/*            </Typography>*/}
+            {/*        </Box>*/}
+            {/*        <Box component="pre" sx={{ m: 0, p: 1.5, bgcolor: 'grey.50', borderRadius: 1, border: '1px solid', borderColor: 'divider', fontFamily: 'monospace', fontSize: '0.95rem', overflow: 'auto' }}>*/}
+            {/*            <Box component="code" sx={{ display: 'block' }}>npm install vis-badges-react</Box>*/}
+            {/*        </Box>*/}
+            {/*    </Card>*/}
+            {/*</Box>*/}
 
-            <Box sx={{ mb: 4 }}>
-                <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 1 }}>
-                    Source
-                </Typography>
-                <Card sx={{ p: 2 }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                        <Typography variant="body2">
-                            NPM package:{' '}
-                            <Box component="a" href="https://www.npmjs.com/package/vis-badges-react" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
-                                vis-badges-react
-                            </Box>
-                        </Typography>
-                        <Typography variant="body2">
-                            Website repository:{' '}
-                            <Box component="a" href="https://github.com/vis-badges/vis-badges.github.io" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
-                                vis-badges.github.io
-                            </Box>
-                        </Typography>
-                    </Box>
-                </Card>
-            </Box>
+            {/*<Box sx={{ mb: 4 }}>*/}
+            {/*    <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 1 }}>*/}
+            {/*        Source*/}
+            {/*    </Typography>*/}
+            {/*    <Card sx={{ p: 2 }}>*/}
+            {/*        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>*/}
+            {/*            <Typography variant="body2">*/}
+            {/*                NPM package:{' '}*/}
+            {/*                <Box component="a" href="https://www.npmjs.com/package/vis-badges-react" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>*/}
+            {/*                    vis-badges-react*/}
+            {/*                </Box>*/}
+            {/*            </Typography>*/}
+            {/*            <Typography variant="body2">*/}
+            {/*                Website repository:{' '}*/}
+            {/*                <Box component="a" href="https://github.com/vis-badges/vis-badges.github.io" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.main', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>*/}
+            {/*                    vis-badges.github.io*/}
+            {/*                </Box>*/}
+            {/*            </Typography>*/}
+            {/*        </Box>*/}
+            {/*    </Card>*/}
+            {/*</Box>*/}
             <Box sx={{ mt: 4, mb: 2 }}>
                 <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 2 }}>
                     Downloads
                 </Typography>
                 <Grid2 container spacing={2}>
-                    <Grid2 item xs={12} sm={6}>
-                        <Card 
+                    <Grid2 item xs={12} sm={6} md={4}>
+                        <Card
                             component="a"
                             href="/visualization-badges.pdf"
                             download
@@ -259,9 +281,9 @@ export default function About() {
                             </CardContent>
                         </Card>
                     </Grid2>
-                    
-                    <Grid2 item xs={12} sm={6}>
-                        <Card 
+
+                    <Grid2 item xs={12} sm={6} md={4}>
+                        <Card
                             component="a"
                             href="/vis-badges-suppl-material.zip"
                             download
@@ -281,6 +303,38 @@ export default function About() {
                                     <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
                                         Download our supplementary materials
                                     </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        ZIP format
+                                    </Typography>
+                                </Box>
+                            </CardContent>
+                        </Card>
+                    </Grid2>
+
+                    <Grid2 item xs={12} sm={6} md={4}>
+                        <Card
+                            component="a"
+                            href="/mind-the-badge-supplementary-material.zip"
+                            download
+                            sx={{
+                                textDecoration: 'none',
+                                color: 'inherit',
+                                height: '100%',
+                                transition: 'all 0.2s ease-in-out',
+                                '&:hover': {
+                                    transform: 'translateY(-2px)',
+                                }
+                            }}
+                        >
+                            <CardContent sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
+                                <FolderZip sx={{ fontSize: 24, color: 'primary.main' }} />
+                                <Box>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5, flexWrap: 'wrap' }}>
+                                        <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                                            Download Mind the Badge supplementary materials
+                                        </Typography>
+                                        <NewPill />
+                                    </Box>
                                     <Typography variant="body2" color="text.secondary">
                                         ZIP format
                                     </Typography>
