@@ -10,6 +10,7 @@ import {
     ListItem,
 } from '@mui/material';
 import GetAppIcon from '@mui/icons-material/GetApp';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 // -----------------------------------------------------------------------------
 // Badge‑usage case studies (verbatim reasoning text; no paper‑internal refs)
@@ -61,6 +62,47 @@ const cases = [
     },
 ];
 
+const interactiveExamples = [
+    {
+        title: 'Atlas',
+        examples: [
+            {
+                label: 'Air Quality Improvements',
+                href: 'https://ukcobenefitsatlas.net/cobenefit?cobenefit=Air%20quality',
+            },
+            {
+                label: 'Noise Reduction',
+                href: 'https://ukcobenefitsatlas.net/cobenefit?cobenefit=Noise',
+            },
+            {
+                label: 'City of Edinburgh',
+                href: 'https://ukcobenefitsatlas.net/location?location=S12000036',
+            },
+            {
+                label: 'Scotland',
+                href: 'https://ukcobenefitsatlas.net/nation?nation=Scotland',
+            },
+        ],
+    },
+    {
+        title: 'PeaceRep',
+        examples: [
+            {
+                label: 'Actor Network',
+                href: 'https://vedelsbrunner.github.io/actor-network/country/RUS',
+            },
+            {
+                label: 'Messy Timelines',
+                href: 'https://vedelsbrunner.github.io/v7_messy_timeline/',
+            },
+            {
+                label: 'Peace-Scroll',
+                href: 'https://vedelsbrunner.github.io/peace_scroll/?subset=china#',
+            },
+        ],
+    },
+];
+
 const PdfViewer = ({ src }) => (
     <Box
         component="iframe"
@@ -70,11 +112,84 @@ const PdfViewer = ({ src }) => (
     />
 );
 
+const NewPill = () => (
+    <Box
+        component="span"
+        sx={{
+            px: 0.75,
+            py: 0.15,
+            borderRadius: 999,
+            border: '1px solid',
+            borderColor: 'divider',
+            bgcolor: 'background.paper',
+            color: 'text.secondary',
+            fontSize: '0.62rem',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            lineHeight: 1.5,
+            whiteSpace: 'nowrap',
+        }}
+    >
+        NEW
+    </Box>
+);
+
 export default function Examples() {
     return (
         <Box sx={{ px: { xs: 2, md: 4 }, py: { xs: 3, md: 5 } }}>
+            <Typography variant="h6" gutterBottom>
+                Interactive Examples
+            </Typography>
 
-            <Stack spacing={4} mt={2}>
+            <Stack spacing={3} mt={2}>
+                {interactiveExamples.map(({ title, examples }) => (
+                    <Box key={title}>
+                        <Typography variant="subtitle1" sx={{ mb: 1.25, fontWeight: 600 }}>
+                            {title}
+                        </Typography>
+
+                        <Stack spacing={1.25}>
+                            {examples.map(({ label, href }) => (
+                                <Button
+                                    key={href}
+                                    variant="outlined"
+                                    fullWidth
+                                    href={href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    sx={{
+                                        justifyContent: 'space-between',
+                                        textTransform: 'none',
+                                        px: 1.5,
+                                        py: 1.25,
+                                    }}
+                                >
+                                    <Box sx={{ textAlign: 'left', minWidth: 0 }}>
+                                        <Typography variant="body1">{label}</Typography>
+                                        <Typography
+                                            variant="caption"
+                                            color="text.secondary"
+                                            sx={{ display: 'block', whiteSpace: 'normal' }}
+                                        >
+                                            {href.replace('https://', '')}
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, ml: 2, flexShrink: 0 }}>
+                                        <NewPill />
+                                        <OpenInNewIcon fontSize="small" />
+                                    </Box>
+                                </Button>
+                            ))}
+                        </Stack>
+                    </Box>
+                ))}
+            </Stack>
+
+            <Typography variant="h6" sx={{ mt: 5, mb: 2 }}>
+                Static Examples
+            </Typography>
+
+            <Stack spacing={4}>
                 {cases.map(({ key, title, pdf, paragraph, bullets }) => (
                     <Card key={key} elevation={2}>
                         <CardContent>

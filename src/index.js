@@ -10,6 +10,7 @@ import Examples from "./pages/Examples";
 import About from "./pages/About";
 import Guidelines from "./pages/Guidelines";
 import Submit from "./pages/Submit";
+import BadgeLibrary from "./pages/BadgeLibrary";
 
 const router = createHashRouter([
     {
@@ -52,6 +53,10 @@ const router = createHashRouter([
                         Component: Examples
                     },
                     {
+                        path: 'badge-library',
+                        Component: BadgeLibrary
+                    },
+                    {
                         path: 'guidelines',
                         Component: Guidelines
                     }
@@ -72,5 +77,4 @@ root.render(
         <RouterProvider router={router} />
      </React.StrictMode>
 );
-
 

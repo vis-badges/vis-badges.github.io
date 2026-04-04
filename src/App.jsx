@@ -3,8 +3,9 @@ import {Outlet} from "react-router-dom";
 import Compact from "./pages/Compact";
 import Apps from "@mui/icons-material/Apps";
 import React from "react";
-import {Assignment, Category, GroupsOutlined, UnfoldMore, ViewList} from "@mui/icons-material";
+import {Assignment, Category, GroupsOutlined, UnfoldMore, ViewInAr, ViewList} from "@mui/icons-material";
 import AddIcon from "@mui/icons-material/Add";
+import { Box } from "@mui/material";
 
 
 const BRANDING = {
@@ -13,6 +14,29 @@ const BRANDING = {
     // logo: <Category />,
     // homeUrl: 'http://google.com',
 };
+
+const NEW_PILL = (
+    <Box
+        component="span"
+        sx={{
+            mr: 1.25,
+            px: 0.75,
+            py: 0.15,
+            borderRadius: 999,
+            border: '1px solid',
+            borderColor: 'divider',
+            bgcolor: 'background.paper',
+            color: 'text.secondary',
+            fontSize: '0.62rem',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            lineHeight: 1.5,
+            whiteSpace: 'nowrap',
+        }}
+    >
+        NEW
+    </Box>
+);
 
 const NAVIGATION = [
     // {
@@ -62,6 +86,13 @@ const NAVIGATION = [
         segment: 'examples',
         title: 'Examples',
         icon: <UnfoldMore />,
+        action: NEW_PILL,
+    },
+    {
+        segment: 'badge-library',
+        title: 'badge Library',
+        icon: <ViewInAr />,
+        action: NEW_PILL,
     },
     {
         kind: 'divider',
