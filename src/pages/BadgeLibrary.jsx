@@ -184,7 +184,7 @@ const EXAMPLE_CARDS = [
             },
             {
                 label: "Key Metrics",
-                description: "A compact summary of the most important figures in the current view.",
+                description: "Key Metric",
                 color: "rgb(2, 136, 209)",
                 icon: "Info",
                 type: "round",
