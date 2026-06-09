@@ -8,6 +8,7 @@ import BadgeDataGrid from "./pages/Table";
 import System from "./pages/System";
 import Examples from "./pages/Examples";
 import About from "./pages/About";
+import Supplementary from "./pages/Supplementary";
 import Guidelines from "./pages/Guidelines";
 import Submit from "./pages/Submit";
 import BadgeLibrary from "./pages/BadgeLibrary";
@@ -43,6 +44,10 @@ const router = createHashRouter([
                     {
                         path: 'about',
                         Component: About
+                    },
+                    {
+                        path: 'supplementary',
+                        Component: Supplementary
                     },
                     {
                         path: 'system',

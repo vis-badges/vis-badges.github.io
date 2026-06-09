@@ -3,7 +3,7 @@ import {Outlet} from "react-router-dom";
 import Compact from "./pages/Compact";
 import Apps from "@mui/icons-material/Apps";
 import React from "react";
-import {Assignment, Category, GroupsOutlined, UnfoldMore, ViewInAr, ViewList} from "@mui/icons-material";
+import {Assignment, Category, FolderZip, GroupsOutlined, UnfoldMore, ViewInAr, ViewList} from "@mui/icons-material";
 import AddIcon from "@mui/icons-material/Add";
 import { Box } from "@mui/material";
 
@@ -109,6 +109,12 @@ const NAVIGATION = [
         segment: 'about',
         title: 'About',
         icon: <GroupsOutlined />,
+        action: NEW_PILL,
+    },
+    {
+        segment: 'supplementary',
+        title: 'Supplementary Material',
+        icon: <FolderZip />,
         action: NEW_PILL,
     }
 ];
