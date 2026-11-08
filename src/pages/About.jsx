@@ -8,7 +8,7 @@ import {
     Container,
     Grid2
 } from '@mui/material';
-import { Email, School, Description } from '@mui/icons-material';
+import { Email, School } from '@mui/icons-material';
 
 const authors = [
     {
@@ -60,6 +60,13 @@ const authors = [
         email: 'benjamin.bach@inria.fr',
         avatar: '/api/placeholder/150/150',
         color: '#388e3c'
+    },
+    {
+        name: 'Pierre Dragicevic',
+        institution: 'Inria',
+        email: 'pierre.dragicevic@inria.fr',
+        avatar: '/api/placeholder/150/150',
+        color: '#f57c00'
     }
 ];
 
@@ -92,9 +99,9 @@ export default function About() {
 
             <Box sx={{ mb: 4 }}>
                 <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 2 }}>
-                    Citation
+                    Citation: Visualization Badges: Communicating Design and Provenance through Graphical Labels Alongside Visualizations
                 </Typography>
-                <Card sx={{ p: 2 }}>
+                <Card sx={{ p: 2, mb: 3 }}>
                     <Box component="pre" sx={{ m: 0, p: 1.5, bgcolor: 'grey.50', borderRadius: 1, border: '1px solid', borderColor: 'divider', fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.4, overflow: 'auto' }}>
                         {`@article{edelsbrunner2026visualization,
   title={Visualization Badges: Communicating Design and Provenance through Graphical Labels Alongside Visualizations},
@@ -102,6 +109,20 @@ export default function About() {
   journal={IEEE Transactions in Visualization and Computer Graphics (TVCG)},
   year={2026},
   note={Published at the IEEE VIS Conference 2025, Vienna, Austria}
+}`}
+                    </Box>
+                </Card>
+
+                <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 2 }}>
+                    Citation: Mind the Badge: How Visualization Badges Impact Reading Visualizations
+                </Typography>
+                <Card sx={{ p: 2 }}>
+                    <Box component="pre" sx={{ m: 0, p: 1.5, bgcolor: 'grey.50', borderRadius: 1, border: '1px solid', borderColor: 'divider', fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.4, overflow: 'auto' }}>
+                        {`@article{edelsbrunner2027mind,
+  title={Mind the Badge: How Visualization Badges Impact Reading Visualizations},
+  author={Edelsbrunner, Valentin and Wang, Jinrui and Chen, Min and Dragicevic, Pierre and Bach, Benjamin},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
+  year={2027}
 }`}
                     </Box>
                 </Card>
@@ -226,44 +247,6 @@ export default function About() {
             {/*        </Box>*/}
             {/*    </Card>*/}
             {/*</Box>*/}
-            <Box sx={{ mt: 4, mb: 2 }}>
-                <Typography variant="h6" component="h2" sx={{ fontWeight: 600, mb: 2 }}>
-                    Downloads
-                </Typography>
-                <Grid2 container spacing={2}>
-                    <Grid2 item xs={12} sm={6} md={4}>
-                        <Card
-                            component="a"
-                            href="/visualization-badges.pdf"
-                            download
-                            sx={{
-                                textDecoration: 'none',
-                                color: 'inherit',
-                                height: '100%',
-                                transition: 'all 0.2s ease-in-out',
-                                '&:hover': {
-                                    transform: 'translateY(-2px)',
-                                }
-                            }}
-                        >
-                            <CardContent sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-                                <Description sx={{ fontSize: 24, color: 'primary.main' }} />
-                                <Box>
-                                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
-                                        Download our paper
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        PDF format
-                                    </Typography>
-                                </Box>
-                            </CardContent>
-                        </Card>
-                    </Grid2>
-                </Grid2>
-            </Box>
-
-
-
             <Box sx={{ mt: 6, mb: 4 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4, flexWrap: 'wrap' }}>
                     <Box
